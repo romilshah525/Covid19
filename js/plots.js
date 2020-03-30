@@ -1,10 +1,13 @@
-var jsondata;
+var jsondata, entiredata;
 const ctx11 = document.getElementById("myChart11"),
   ctx12 = document.getElementById("myChart12"),
   ctx13 = document.getElementById("myChart13"),
   ctx14 = document.getElementById("myChart14");
 let myChart11, myChart12, myChart13, myChart14;
-function plotGraph(jsondata, val) {
+function plotGraph(data = entiredata, val = false, id = null) {
+  if (id) {
+    jsondata = data[id];
+  }
   if (myChart11) {
     myChart11.destroy();
     myChart12.destroy();
@@ -20,7 +23,7 @@ function plotGraph(jsondata, val) {
     prevD = 0,
     prevR = 0,
     prevA = 0;
-  jsondata.forEach(element => {
+  data.forEach(element => {
     labels.push(
       element["date"]
         .split("-")
@@ -299,17 +302,30 @@ let country = "India";
 //         fetch("https://pomber.github.io/covid19/timeseries.json")
 //     })
 // console.log(country);
-fetch("./time_series_data.json")
-  .then(response => response.json())
-  .then(data => {
-    let elem = document.getElementById("data-cases");
-    return data[country];
-  })
-  .then(data => {
-    jsondata = data;
-    const val = document.getElementById("mySwitch").checked;
-    plotGraph(jsondata, val);
-  });
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("./time_series_data.json")
+    .then(response => response.json())
+    .then(data => {
+      let elem = document.getElementById("my-select");
+      let res = "";
+      Object.keys(data).forEach(key => {
+        res += `<option value="${key}" id="${key}">${key}</option>`;
+      });
+      elem.innerHTML = res;
+      elem.value = country;
+      entiredata = data;
+      $(document).ready(function() {
+        $("select").formSelect();
+      });
+      return data[country];
+    })
+    .then(data => {
+      jsondata = data;
+      const val = document.getElementById("mySwitch").checked;
+      plotGraph(jsondata, val);
+    });
+});
+
 function toggle() {
   plotGraph(jsondata, document.getElementById("mySwitch").checked);
 }
