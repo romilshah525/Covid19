@@ -11,17 +11,48 @@
 </head>
 
 <body>
-  <nav class="deep-purple darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Covid19 Global
+  <ul id="dropdownforlinks" class="dropdown-content">
+    <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
+    <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a></li>
+    <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">CDC</a></li>
+    <li><a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a></li>
+  </ul>
+  <ul id="dropdownforpdfs" class="dropdown-content">
+    <li><a
+        href="https://www.who.int/docs/default-source/coronaviruse/who-rights-roles-respon-hw-covid-19.pdf?sfvrsn=bcabd401_0"
+        target="_blank">WHO (1)</a></li>
+    <li><a
+        href="https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200221-sitrep-32-covid-19.pdf?sfvrsn=4802d089_2"
+        target="_blank">WHO (2)</a></li>
+    <li><a href="https://www.mohfw.gov.in/Corona_comic_PGI.pdf" target="_blank">MOHFW</a></li>
+  </ul>
+  <nav class="deep-purple darken-4 " role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Covid19 Global
         Dashboard</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Important Links</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdownforlinks">Important Links<i
+              class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdownforpdfs">Important PDF's<i
+              class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="https://github.com/romilshah525" target="_blank">Find Me On Github</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Important Links</a></li>
+        <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
+        <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a></li>
+        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">CDC</a></li>
+        <li><a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a></li>
+        <li class="divider"></li>
+        <li><a
+          href="https://www.who.int/docs/default-source/coronaviruse/who-rights-roles-respon-hw-covid-19.pdf?sfvrsn=bcabd401_0"
+          target="_blank">WHO (1)</a></li>
+          <li><a
+            href="https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200221-sitrep-32-covid-19.pdf?sfvrsn=4802d089_2"
+            target="_blank">WHO (2)</a></li>
+            <li><a href="https://www.mohfw.gov.in/Corona_comic_PGI.pdf" target="_blank">MOHFW</a></li>
+            <li class="divider"></li>
         <li><a href="https://github.com/romilshah525" target="_blank">Find Me On Github</a></li>
+        <li class="divider"></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -68,43 +99,32 @@
     </div>
 
   </div>
-  <!-- <footer class="page-footer orange">
-    <div class="container">
+  <br><br>
+  <footer class="page-footer deep-purple darken-4 ">
+    <div class="container valign-wrapper">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our
-            full time job. Any amount would help support and continue development on this project and is greatly
-            appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li class="col s3">
+            <a target="_blank" class="white-text" href="https://github.com/romilshah525">Github</a>
+          </li>
+          <li class="col s3">
+            <a target="_blank" class="white-text" href="mailto:romilshah525@gmail.com">Email</a>
+          </li>
+          <li class="col s3">
+            <a target="_blank" class="white-text" href="https://linkedin.com/in/romil-shah-990303150">LinkedIn</a>
+          </li>
+          <li class="col s3">
+            <a target="_blank" class="white-text" href="https://www.instagram.com/romilshah525">Instagram</a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      <div class="container center">
+        &copy; Made by <a href="https://github.com/romilshah525">Romil Shah</a>
       </div>
     </div>
-  </footer> -->
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>

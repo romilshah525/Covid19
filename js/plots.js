@@ -338,3 +338,10 @@ function countryChanged() {
   country = document.getElementById("my-select").value;
   plotGraph(entiredata[country], document.getElementById("mySwitch").checked);
 }
+
+$(".dropdown-trigger").dropdown();
+$(".sidenav")
+  .sidenav()
+  .on("click tap", "li a", () => {
+    $(".sidenav").sidenav("close");
+  });
