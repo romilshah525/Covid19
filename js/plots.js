@@ -304,8 +304,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(res => res.json())
     .then(data => {
       country = data["geoplugin_countryName"];
-    });
-  fetch("./time_series_data.json")
+      return fetch("https://pomber.github.io/covid19/timeseries.json");
+    })
+    .catch(err => fetch("../data.json"))
     .then(response => response.json())
     .then(data => {
       let elem = document.getElementById("my-select");
