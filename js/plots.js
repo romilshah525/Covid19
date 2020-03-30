@@ -40,17 +40,25 @@ function plotGraph(data = entiredata, val = false, id = null) {
         element["confirmed"] - (element["deaths"] + element["recovered"])
       );
     } else {
-      confirmed.push(element["confirmed"] - prevC);
+      confirmed.push(Math.max(element["confirmed"] - prevC, 0));
       death.push(Math.max(element["deaths"] - prevD, 0));
       recovered.push(element["recovered"] - prevR);
       temp =
         element["confirmed"] -
         (element["deaths"] + element["recovered"] + prevA);
       active.push(temp < 0 ? 0 : temp);
-      prevC = element["confirmed"];
+      prevC = Math.max(element["confirmed"], 0);
       prevD = Math.max(element["deaths"] - prevD, 0);
       prevR = element["recovered"];
       prevA = temp < 0 ? 0 : temp;
+      // confirmed.push(element["confirmed"] - prevC);
+      // death.push(element["deaths"] - prevD);
+      // recovered.push(element["recovered"]-prevR);
+      // active.push(element["confirmed"] - (element["deaths"] + element["recovered"])- prevA);
+      // prevC = element["confirmed"];
+      // prevD = element["deaths"];
+      // prevR = element["recovered"];
+      // prevA = element["confirmed"] - (element["deaths"] + element["recovered"]);
     }
   });
   myChart11 = new Chart(ctx11.getContext("2d"), {
@@ -292,18 +300,11 @@ function plotGraph(data = entiredata, val = false, id = null) {
 }
 let country = "India";
 document.addEventListener("DOMContentLoaded", function() {
-  // fetch("http://www.geoplugin.net/json.gp?ip=")
-  //     .then(res => res.json())
-  //     .then(data => {
-  //         country = data['geoplugin_countryName'];
-  //         $("#data-ip").html(data['geoplugin_request']);
-  //         $("#data-cc").html(data['geoplugin_countryCode']);
-  //         $("#data-cn").html(data['geoplugin_countryName']);
-  //     })
-  //     .then(() => {
-  //         fetch("https://pomber.github.io/covid19/timeseries.json")
-  //     })
-  // console.log(country);
+  fetch("http://www.geoplugin.net/json.gp?ip=")
+    .then(res => res.json())
+    .then(data => {
+      country = data["geoplugin_countryName"];
+    });
   fetch("./time_series_data.json")
     .then(response => response.json())
     .then(data => {
