@@ -37,14 +37,14 @@ function plotGraph(jsondata, val) {
       );
     } else {
       confirmed.push(element["confirmed"] - prevC);
-      death.push(element["deaths"] - prevD);
+      death.push(Math.max(element["deaths"] - prevD, 0));
       recovered.push(element["recovered"] - prevR);
       temp =
         element["confirmed"] -
         (element["deaths"] + element["recovered"] + prevA);
       active.push(temp < 0 ? 0 : temp);
       prevC = element["confirmed"];
-      prevD = element["deaths"];
+      prevD = Math.max(element["deaths"] - prevD, 0);
       prevR = element["recovered"];
       prevA = temp < 0 ? 0 : temp;
     }
