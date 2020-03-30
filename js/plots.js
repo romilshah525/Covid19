@@ -6,7 +6,8 @@ const ctx11 = document.getElementById("myChart11"),
 let myChart11, myChart12, myChart13, myChart14;
 function plotGraph(data = entiredata, val = false, id = null) {
   if (id) {
-    jsondata = data[id];
+    console.log(id);
+    data = entiredata[id];
   }
   if (myChart11) {
     myChart11.destroy();
@@ -31,7 +32,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
         .join("-")
         .slice(0, 4)
     );
-    if (val) {
+    if (!val) {
       confirmed.push(element["confirmed"]);
       death.push(element["deaths"]);
       recovered.push(element["recovered"]);
@@ -290,30 +291,31 @@ function plotGraph(data = entiredata, val = false, id = null) {
   });
 }
 let country = "India";
-// fetch("http://www.geoplugin.net/json.gp?ip=")
-//     .then(res => res.json())
-//     .then(data => {
-//         country = data['geoplugin_countryName'];
-//         $("#data-ip").html(data['geoplugin_request']);
-//         $("#data-cc").html(data['geoplugin_countryCode']);
-//         $("#data-cn").html(data['geoplugin_countryName']);
-//     })
-//     .then(() => {
-//         fetch("https://pomber.github.io/covid19/timeseries.json")
-//     })
-// console.log(country);
 document.addEventListener("DOMContentLoaded", function() {
+  // fetch("http://www.geoplugin.net/json.gp?ip=")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //         country = data['geoplugin_countryName'];
+  //         $("#data-ip").html(data['geoplugin_request']);
+  //         $("#data-cc").html(data['geoplugin_countryCode']);
+  //         $("#data-cn").html(data['geoplugin_countryName']);
+  //     })
+  //     .then(() => {
+  //         fetch("https://pomber.github.io/covid19/timeseries.json")
+  //     })
+  // console.log(country);
   fetch("./time_series_data.json")
     .then(response => response.json())
     .then(data => {
       let elem = document.getElementById("my-select");
       let res = "";
       Object.keys(data).forEach(key => {
-        res += `<option value="${key}" id="${key}">${key}</option>`;
+        res += `<option value="${key}">${key}</option>`;
       });
       elem.innerHTML = res;
       elem.value = country;
       entiredata = data;
+
       $(document).ready(function() {
         $("select").formSelect();
       });
@@ -327,5 +329,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function toggle() {
-  plotGraph(jsondata, document.getElementById("mySwitch").checked);
+  country = document.getElementById("my-select").value;
+  plotGraph(entiredata[country], document.getElementById("mySwitch").checked);
+}
+
+function countryChanged() {
+  country = document.getElementById("my-select").value;
+  plotGraph(entiredata[country], document.getElementById("mySwitch").checked);
 }
