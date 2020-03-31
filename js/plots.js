@@ -1,9 +1,30 @@
-var jsondata, entiredata;
+let jsondata, entiredata;
 const ctx11 = document.getElementById("myChart11"),
   ctx12 = document.getElementById("myChart12"),
   ctx13 = document.getElementById("myChart13"),
   ctx14 = document.getElementById("myChart14");
 let myChart11, myChart12, myChart13, myChart14;
+Chart.pluginService.register({
+  beforeDraw: function(chart, easing) {
+    if (
+      chart.config.options.chartArea &&
+      chart.config.options.chartArea.backgroundColor
+    ) {
+      var ctx = chart.chart.ctx;
+      var chartArea = chart.chartArea;
+
+      ctx.save();
+      ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
+      ctx.fillRect(
+        chartArea.left,
+        chartArea.top,
+        chartArea.right - chartArea.left,
+        chartArea.bottom - chartArea.top
+      );
+      ctx.restore();
+    }
+  }
+});
 function plotGraph(data = entiredata, val = false, id = null) {
   if (id) {
     console.log(id);
@@ -23,7 +44,11 @@ function plotGraph(data = entiredata, val = false, id = null) {
     prevC = 0,
     prevD = 0,
     prevR = 0,
-    prevA = 0;
+    prevA = 0,
+    totalDeath = 0,
+    totalRecovered = 0,
+    totalConfirmed = 0,
+    totalActive = 0;
   data.forEach(element => {
     labels.push(
       element["date"]
@@ -51,16 +76,37 @@ function plotGraph(data = entiredata, val = false, id = null) {
       prevD = Math.max(element["deaths"] - prevD, 0);
       prevR = element["recovered"];
       prevA = temp < 0 ? 0 : temp;
-      // confirmed.push(element["confirmed"] - prevC);
-      // death.push(element["deaths"] - prevD);
-      // recovered.push(element["recovered"]-prevR);
-      // active.push(element["confirmed"] - (element["deaths"] + element["recovered"])- prevA);
-      // prevC = element["confirmed"];
-      // prevD = element["deaths"];
-      // prevR = element["recovered"];
-      // prevA = element["confirmed"] - (element["deaths"] + element["recovered"]);
     }
   });
+  totalDeath = death.slice(-1);
+  totalRecovered = recovered.slice(-1);
+  totalConfirmed = confirmed.slice(-1);
+  totalActive = active.slice(-1);
+  document.getElementById(
+    "total-confirmed-cases"
+  ).innerText = `Total Positives: ${totalConfirmed}`;
+  document.getElementById(
+    "total-recovered-cases"
+  ).innerText = `Total Recoveries: ${totalRecovered}`;
+  document.getElementById(
+    "total-active-cases"
+  ).innerText = `Total Active: ${totalActive}`;
+  document.getElementById(
+    "total-death-cases"
+  ).innerText = `Total Deaths: ${totalDeath}`;
+  if (!val) {
+    document.getElementById(
+      "recovery-rate"
+    ).innerText = `Recovery Rate: ${String(
+      (totalRecovered / totalConfirmed) * 100
+    ).slice(0, 5)}%`;
+    document.getElementById("death-rate").innerText = `Death Rate: ${String(
+      (totalDeath / totalConfirmed) * 100
+    ).slice(0, 5)}%`;
+  } else {
+    document.getElementById("recovery-rate").innerText = `Recovery Rate: NA (Choose Cumulative Type)`;
+    document.getElementById("death-rate").innerText = `Death Rate: NA (Choose Cumulative Type)`;
+  }
   myChart11 = new Chart(ctx11.getContext("2d"), {
     type: "line",
     data: {
@@ -69,7 +115,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
         {
           label: "Confirmed ",
           data: confirmed,
-          fill: false,
+          fill: true,
           backgroundColor: "#223e80a0",
           hoverBorderColor: "#223e80ff",
           borderColor: "#223e80ff"
@@ -97,6 +143,10 @@ function plotGraph(data = entiredata, val = false, id = null) {
       hover: {
         mode: "nearest",
         intersect: true
+      },
+      responsive: true,
+      chartArea: {
+        backgroundColor: "#223e8011"
       },
       scales: {
         xAxes: [
@@ -128,7 +178,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
         {
           label: "Active ",
           data: active,
-          fill: false,
+          fill: true,
           backgroundColor: "#e82727a0",
           hoverBorderColor: "#e82727ff",
           borderColor: "#e82727ff"
@@ -156,6 +206,10 @@ function plotGraph(data = entiredata, val = false, id = null) {
       hover: {
         mode: "nearest",
         intersect: true
+      },
+      responsive: true,
+      chartArea: {
+        backgroundColor: "#e8272711"
       },
       scales: {
         xAxes: [
@@ -187,7 +241,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
         {
           label: "Recovered ",
           data: recovered,
-          fill: false,
+          fill: true,
           backgroundColor: "#2adb2aa0",
           hoverBorderColor: "#2adb2aff",
           borderColor: "#2adb2aff"
@@ -215,6 +269,10 @@ function plotGraph(data = entiredata, val = false, id = null) {
       hover: {
         mode: "nearest",
         intersect: true
+      },
+      responsive: true,
+      chartArea: {
+        backgroundColor: "#2adb2a11"
       },
       scales: {
         xAxes: [
@@ -246,7 +304,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
         {
           label: "Deaths ",
           data: death,
-          fill: false,
+          fill: true,
           backgroundColor: "#8f8c8ca0",
           hoverBorderColor: "#8f8c8cff",
           borderColor: "#8f8c8cf0"
@@ -274,6 +332,10 @@ function plotGraph(data = entiredata, val = false, id = null) {
       hover: {
         mode: "nearest",
         intersect: true
+      },
+      responsive: true,
+      chartArea: {
+        backgroundColor: "#8f8c8c10"
       },
       scales: {
         xAxes: [
@@ -304,9 +366,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(res => res.json())
     .then(data => {
       country = data["geoplugin_countryName"];
-      return fetch("https://pomber.github.io/covid19/timeseries.json");
+      return fetch("../data.json");
     })
-    .catch(err => fetch("../data.json"))
+    // .catch(err => fetch("../data.json"))
     .then(response => response.json())
     .then(data => {
       let elem = document.getElementById("my-select");

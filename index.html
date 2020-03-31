@@ -8,16 +8,25 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+  </style>
 </head>
 
 <body>
   <ul id="dropdownforlinks" class="dropdown-content">
+    <li><a href="#">Important Links</a></li>
+    <li class="divider"></li>
     <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
     <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a></li>
     <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">CDC</a></li>
     <li><a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a></li>
   </ul>
   <ul id="dropdownforpdfs" class="dropdown-content">
+    <li><a href="#">Important PDF's</a></li>
+    <li class="divider"></li>
     <li><a
         href="https://www.who.int/docs/default-source/coronaviruse/who-rights-roles-respon-hw-covid-19.pdf?sfvrsn=bcabd401_0"
         target="_blank">WHO (1)</a></li>
@@ -57,7 +66,7 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <br>
+  <!-- <br> -->
   <main>
     <div class="container">
       <div class="section">
@@ -79,7 +88,7 @@
             <label>Choose Country</label>
           </div>
         </div>
-        <br>
+        <!-- <br> -->
         <div class="row">
           <div class="col s12 l6">
             <canvas id="myChart11" class="center hoverable"></canvas>
@@ -99,8 +108,44 @@
         </div>
       </div>
     </div>
-    <br><br>
+    <section class="container">
+      <div class="row">
+        <div class="col s6 m3 center-align">
+          <div class="card-panel">
+            <span class="blue-text text-darken-4" id="total-confirmed-cases"></span>
+          </div>
+        </div>
+        <div class="col s6 m3 center-align">
+          <div class="card-panel">
+            <span class="grey-text text-darken-1" id="total-death-cases"></span>
+          </div>
+        </div>
+        <div class="col s6 m3 center-align">
+          <div class="card-panel">
+            <span id="total-active-cases" style="color: #e82727;"></span>
+          </div>
+        </div>
+        <div class="col s6 m3 center-align">
+          <div class="card-panel">
+            <span class="light-green-text text-accent-3" id="total-recovered-cases"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <div class="card-panel center-align">
+            <span class="light-green-text text-accent-3" id="recovery-rate"></span>
+          </div>
+        </div>
+        <div class="col s6">
+          <div class="card-panel center-align">
+            <span class="grey-text text-darken-1" id="death-rate"></span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="page-footer deep-purple darken-4 ">
     <div class="container valign-wrapper">
       <div class="row">
