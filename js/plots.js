@@ -104,8 +104,12 @@ function plotGraph(data = entiredata, val = false, id = null) {
       (totalDeath / totalConfirmed) * 100
     ).slice(0, 5)}%`;
   } else {
-    document.getElementById("recovery-rate").innerText = `Recovery Rate: NA (Choose Cumulative Type)`;
-    document.getElementById("death-rate").innerText = `Death Rate: NA (Choose Cumulative Type)`;
+    document.getElementById(
+      "recovery-rate"
+    ).innerText = `Recovery Rate: NA (Choose Cumulative Type)`;
+    document.getElementById(
+      "death-rate"
+    ).innerText = `Death Rate: NA (Choose Cumulative Type)`;
   }
   myChart11 = new Chart(ctx11.getContext("2d"), {
     type: "line",
@@ -362,16 +366,17 @@ function plotGraph(data = entiredata, val = false, id = null) {
 }
 let country = "India";
 document.addEventListener("DOMContentLoaded", function() {
-  fetch("https://www.geoplugin.net/json.gp?ip=")
-    .then(res => res.json())
-    .then(data => {
-      country = data["geoplugin_countryName"];
-      return fetch("https://pomber.github.io/covid19/timeseries.json");
-    })
+  // fetch("https://www.geoplugin.net/json.gp?ip=")
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     country = data["geoplugin_countryName"];
+  //     return fetch("https://pomber.github.io/covid19/timeseries.json");
+  //   })
+  fetch("https://pomber.github.io/covid19/timeseries.json")
     .catch(err => fetch("../data.json"))
     .then(response => response.json())
     .then(data => {
-      let elem = document.getElementgById("my-select");
+      let elem = document.getElementById("my-select");
       let res = "";
       Object.keys(data).forEach(key => {
         res += `<option value="${key}">${key}</option>`;
