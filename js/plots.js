@@ -362,16 +362,16 @@ function plotGraph(data = entiredata, val = false, id = null) {
 }
 let country = "India";
 document.addEventListener("DOMContentLoaded", function() {
-  fetch("http://www.geoplugin.net/json.gp?ip=")
+  fetch("https://www.geoplugin.net/json.gp?ip=")
     .then(res => res.json())
     .then(data => {
       country = data["geoplugin_countryName"];
-      return fetch("../data.json");
+      return fetch("https://pomber.github.io/covid19/timeseries.json");
     })
-    // .catch(err => fetch("../data.json"))
+    .catch(err => fetch("../data.json"))
     .then(response => response.json())
     .then(data => {
-      let elem = document.getElementById("my-select");
+      let elem = document.getElementgById("my-select");
       let res = "";
       Object.keys(data).forEach(key => {
         res += `<option value="${key}">${key}</option>`;
