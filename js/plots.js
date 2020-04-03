@@ -5,14 +5,13 @@ const ctx11 = document.getElementById("myChart11"),
   ctx14 = document.getElementById("myChart14");
 let myChart11, myChart12, myChart13, myChart14;
 Chart.pluginService.register({
-  beforeDraw: function(chart, easing) {
+  beforeDraw: function (chart, easing) {
     if (
       chart.config.options.chartArea &&
       chart.config.options.chartArea.backgroundColor
     ) {
-      var ctx = chart.chart.ctx;
-      var chartArea = chart.chartArea;
-
+      let ctx = chart.chart.ctx,
+        chartArea = chart.chartArea;
       ctx.save();
       ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
       ctx.fillRect(
@@ -23,7 +22,7 @@ Chart.pluginService.register({
       );
       ctx.restore();
     }
-  }
+  },
 });
 function plotGraph(data = entiredata, val = false, id = null) {
   if (id) {
@@ -49,14 +48,8 @@ function plotGraph(data = entiredata, val = false, id = null) {
     totalRecovered = 0,
     totalConfirmed = 0,
     totalActive = 0;
-  data.forEach(element => {
-    labels.push(
-      element["date"]
-        .split("-")
-        .reverse()
-        .join("-")
-        .slice(0, 4)
-    );
+  data.forEach((element) => {
+    labels.push(element["date"].split("-").reverse().join("-").slice(0, 4));
     if (!val) {
       confirmed.push(element["confirmed"]);
       death.push(element["deaths"]);
@@ -123,45 +116,29 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#223e80a0",
             hoverBorderColor: "#223e80ff",
-            borderColor: "#223e80ff"
-          }
-        ]
+            borderColor: "#223e80ff",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#223e80ff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
         title: {
           display: true,
           text: `Covid19 Confirmed ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#223e8011"
-        },
+        chartArea: { backgroundColor: "#223e8011" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
@@ -170,16 +147,13 @@ function plotGraph(data = entiredata, val = false, id = null) {
                 min: 0,
                 max:
                   Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10
+                stepSize: 10,
               },
-              scaleLabel: {
-                display: true,
-                labelString: "Confirmed Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Confirmed Count " },
+            },
+          ],
+        },
+      },
     });
     myChart12 = new Chart(ctx12.getContext("2d"), {
       type: "line",
@@ -192,45 +166,29 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#e82727a0",
             hoverBorderColor: "#e82727ff",
-            borderColor: "#e82727ff"
-          }
-        ]
+            borderColor: "#e82727ff",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#e82727ff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
         title: {
           display: true,
           text: `Covid19 Active ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#e8272711"
-        },
+        chartArea: { backgroundColor: "#e8272711" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
@@ -239,16 +197,13 @@ function plotGraph(data = entiredata, val = false, id = null) {
                 min: 0,
                 max:
                   Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10
+                stepSize: 10,
               },
-              scaleLabel: {
-                display: true,
-                labelString: "Active Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Active Count " },
+            },
+          ],
+        },
+      },
     });
     myChart13 = new Chart(ctx13.getContext("2d"), {
       type: "line",
@@ -261,45 +216,29 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#2adb2aa0",
             hoverBorderColor: "#2adb2aff",
-            borderColor: "#2adb2aff"
-          }
-        ]
+            borderColor: "#2adb2aff",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#34bf34ff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
         title: {
           display: true,
           text: `Covid19 Recovered ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#2adb2a11"
-        },
+        chartArea: { backgroundColor: "#2adb2a11" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
@@ -308,16 +247,13 @@ function plotGraph(data = entiredata, val = false, id = null) {
                 min: 0,
                 max:
                   Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10
+                stepSize: 10,
               },
-              scaleLabel: {
-                display: true,
-                labelString: "Recovered Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Recovered Count " },
+            },
+          ],
+        },
+      },
     });
     myChart14 = new Chart(ctx14.getContext("2d"), {
       type: "line",
@@ -330,45 +266,29 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#8f8c8ca0",
             hoverBorderColor: "#8f8c8cff",
-            borderColor: "#8f8c8cf0"
-          }
-        ]
+            borderColor: "#8f8c8cf0",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#8f8c8cff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
         title: {
           display: true,
           text: `Covid19 Death ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#8f8c8c10"
-        },
+        chartArea: { backgroundColor: "#8f8c8c10" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
@@ -377,16 +297,13 @@ function plotGraph(data = entiredata, val = false, id = null) {
                 min: 0,
                 max:
                   Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10
+                stepSize: 10,
               },
-              scaleLabel: {
-                display: true,
-                labelString: "Deaths Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Deaths Count " },
+            },
+          ],
+        },
+      },
     });
   } else {
     myChart11 = new Chart(ctx11.getContext("2d"), {
@@ -400,57 +317,38 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#223e80a0",
             hoverBorderColor: "#223e80ff",
-            borderColor: "#223e80ff"
-          }
-        ]
+            borderColor: "#223e80ff",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#223e80ff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
         title: {
           display: true,
           text: `Covid19 Confirmed ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#223e8011"
-        },
+        chartArea: { backgroundColor: "#223e8011" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Confirmed Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Confirmed Count " },
+            },
+          ],
+        },
+      },
     });
     myChart12 = new Chart(ctx12.getContext("2d"), {
       type: "line",
@@ -463,57 +361,38 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#e82727a0",
             hoverBorderColor: "#e82727ff",
-            borderColor: "#e82727ff"
-          }
-        ]
+            borderColor: "#e82727ff",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#e82727ff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
         title: {
           display: true,
           text: `Covid19 Active ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#e8272711"
-        },
+        chartArea: { backgroundColor: "#e8272711" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Active Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Active Count " },
+            },
+          ],
+        },
+      },
     });
     myChart13 = new Chart(ctx13.getContext("2d"), {
       type: "line",
@@ -526,57 +405,38 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#2adb2aa0",
             hoverBorderColor: "#2adb2aff",
-            borderColor: "#2adb2aff"
-          }
-        ]
+            borderColor: "#2adb2aff",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#34bf34ff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
         title: {
           display: true,
           text: `Covid19 Recovered ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#2adb2a11"
-        },
+        chartArea: { backgroundColor: "#2adb2a11" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Recovered Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Recovered Count " },
+            },
+          ],
+        },
+      },
     });
     myChart14 = new Chart(ctx14.getContext("2d"), {
       type: "line",
@@ -589,62 +449,44 @@ function plotGraph(data = entiredata, val = false, id = null) {
             fill: true,
             backgroundColor: "#8f8c8ca0",
             hoverBorderColor: "#8f8c8cff",
-            borderColor: "#8f8c8cf0"
-          }
-        ]
+            borderColor: "#8f8c8cf0",
+          },
+        ],
       },
       options: {
         responsive: true,
-        legend: {
-          position: "bottom",
-          labels: {
-            fontColor: "#8f8c8cff"
-          }
-        },
+        legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
         title: {
           display: true,
           text: `Covid19 Death ${
             !val ? "Cumulative" : "Daily"
-          } Count - ${country}`
+          } Count - ${country}`,
         },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
+        tooltips: { mode: "index", intersect: false },
+        hover: { mode: "nearest", intersect: true },
         responsive: true,
-        chartArea: {
-          backgroundColor: "#8f8c8c10"
-        },
+        chartArea: { backgroundColor: "#8f8c8c10" },
         scales: {
           xAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Date"
-              }
-            }
+              scaleLabel: { display: true, labelString: "Date" },
+            },
           ],
           yAxes: [
             {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "Deaths Count "
-              }
-            }
-          ]
-        }
-      }
+              scaleLabel: { display: true, labelString: "Deaths Count " },
+            },
+          ],
+        },
+      },
     });
   }
 }
+
 let country = "India";
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // fetch("https://www.geoplugin.net/json.gp?ip=")
   //   .then(res => res.json())
   //   .then(data => {
@@ -652,38 +494,37 @@ document.addEventListener("DOMContentLoaded", function() {
   //     return fetch("https://pomber.github.io/covid19/timeseries.json");
   //   })
   fetch("https://pomber.github.io/covid19/timeseries.json")
-    .catch(err => fetch("Covid19/data.json"))
-    .then(response => response.json())
-    .then(data => {
+    .catch((err) => fetch("Covid19/data.json"))
+    .then((response) => response.json())
+    .then((data) => {
       let elem = document.getElementById("my-select");
       let res = "";
-      Object.keys(data).forEach(key => {
+      Object.keys(data).forEach((key) => {
         res += `<option value="${key}">${key}</option>`;
       });
       elem.innerHTML = res;
       elem.value = country;
       entiredata = data;
 
-      $(document).ready(function() {
+      $(document).ready(function () {
         $("select").formSelect();
       });
       return data[country];
     })
-    .then(data => {
+    .then((data) => {
       jsondata = data;
-      const val = document.getElementById("mySwitch").checked;
-      plotGraph(jsondata, val);
+      plotGraph(jsondata, !document.getElementById("mySwitch").checked);
     });
 });
 
 function toggle() {
   country = document.getElementById("my-select").value;
-  plotGraph(entiredata[country], document.getElementById("mySwitch").checked);
+  plotGraph(entiredata[country], !document.getElementById("mySwitch").checked);
 }
 
 function countryChanged() {
   country = document.getElementById("my-select").value;
-  plotGraph(entiredata[country], document.getElementById("mySwitch").checked);
+  plotGraph(entiredata[country], !document.getElementById("mySwitch").checked);
 }
 
 $(".dropdown-trigger").dropdown();
