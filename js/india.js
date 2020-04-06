@@ -17,12 +17,13 @@ const ctx11 = document.getElementById("myChart11").getContext("2d"),
 let country = "India";
 
 fetch("https://api.covid19india.org/data.json")
+  .catch(fetch("../india.json"))
   .then((res) => res.json())
   .then((res) => {
     entireData = res;
     statewise = res.statewise;
     time_series_data = res.cases_time_series;
-    plotBubbleChart();
+    // plotBubbleChart();
     plotGraph((data = time_series_data));
   });
 
