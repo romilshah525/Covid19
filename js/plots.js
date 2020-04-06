@@ -505,7 +505,6 @@ document.addEventListener("DOMContentLoaded", function () {
       elem.innerHTML = res;
       elem.value = country;
       entiredata = data;
-
       $(document).ready(function () {
         $("select").formSelect();
       });

@@ -17,7 +17,7 @@ const ctx11 = document.getElementById("myChart11").getContext("2d"),
 let country = "India";
 
 fetch("https://api.covid19india.org/data.json")
-  .catch(fetch("Covid19/india.json"))
+  // .catch(fetch("Covid19/india.json"))
   .then((res) => res.json())
   .then((res) => {
     entireData = res;
@@ -247,3 +247,9 @@ function printSummary() {
     (totalDeathsCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;
 }
+$(".dropdown-trigger").dropdown();
+$(".sidenav")
+  .sidenav()
+  .on("click tap", "li a", () => {
+    $(".sidenav").sidenav("close");
+  });
