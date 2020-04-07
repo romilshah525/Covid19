@@ -13,7 +13,7 @@ const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx13 = document.getElementById("myChart13").getContext("2d"),
   ctx14 = document.getElementById("myChart14").getContext("2d");
 
-let country = "India";
+let name = "India";
 
 function readData() {
   fetch("https://api.covid19india.org/data.json")
@@ -23,6 +23,19 @@ function readData() {
       entireData = res;
       statewise = res.statewise;
       time_series_data = res.cases_time_series;
+      console.log(statewise);
+      statewise[0]["state"] = "India";
+      console.log(statewise);
+      let elem = document.getElementById("my-select");
+      let ret = "";
+      statewise.forEach((a) => {
+        ret += `<option value="${a["state"]}">${a["state"]}</option>`;
+      });
+      elem.innerHTML = ret;
+      elem.value = name;
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
       printSummary();
       if (window.screen.availWidth <= 650)
         plotGraph((data = time_series_data), (size = 6));
@@ -30,17 +43,14 @@ function readData() {
     });
 }
 
-function plotGraph(data = time_series_data, size) {
+function plotGraph(data = entireData, size) {
   let confirmed = [],
     deceased = [],
     active = [],
     recovered = [],
     date = [];
-  console.log(window.screen.availWidth);
-  console.log(window.screen.availHeight);
   if (size < 12) {
     for (let i = 0; i < data.length; i += 5) {
-      console.log(data[i]["date"]);
       element = data[i];
       date.push(element["date"].slice(0, 6));
       confirmed.push(Number(element["dailyconfirmed"]));
@@ -85,7 +95,7 @@ function plotGraph(data = time_series_data, size) {
       },
       title: {
         display: true,
-        text: `Covid19 Confirmed Daily Count - India`,
+        text: `Covid19 Confirmed Daily Count - ${name}`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
@@ -130,7 +140,7 @@ function plotGraph(data = time_series_data, size) {
       },
       title: {
         display: true,
-        text: `Covid19 Active Daily Count - India`,
+        text: `Covid19 Active Daily Count - ${name}`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
@@ -175,7 +185,7 @@ function plotGraph(data = time_series_data, size) {
       },
       title: {
         display: true,
-        text: `Covid19 Recovered Daily Count - India`,
+        text: `Covid19 Recovered Daily Count - ${name}`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
@@ -221,7 +231,7 @@ function plotGraph(data = time_series_data, size) {
       },
       title: {
         display: true,
-        text: `Covid19 Death Daily Count - India`,
+        text: `Covid19 Death Daily Count - ${name}`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },

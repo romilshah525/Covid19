@@ -11,6 +11,12 @@ Global and India-specific dashboard for Covid19 pandemic to help easily visualiz
 
 Fork and clone the repository [Covid19](https://github.com/romilshah525/Covid19) to get started. Active internet connection is required for dynamic data fetching requests.
 
+## Learnings:
+- Effectively visualize the data.
+- Effectively interprating the data.
+- Handling large data effectively.
+- Using live data/API.
+
 ## API's used:
 
 - Global data: [Rodrigo Pombo](https://github.com/pomber/covid19)
@@ -23,4 +29,4 @@ Fork and clone the repository [Covid19](https://github.com/romilshah525/Covid19)
 
 ## Contributing
 
-Incase of any suggesstions feel free to mail me at [Romil Shah](mailto:romilshah525@gmail.com)
+For any queries or any suggesstions, feel free to contact me at [Romil Shah](mailto:romilshah525@gmail.com)
