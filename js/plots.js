@@ -1,9 +1,9 @@
-let jsondata, entiredata;
+let jsondata, entiredata, myChart11, myChart12, myChart13, myChart14;
 const ctx11 = document.getElementById("myChart11"),
   ctx12 = document.getElementById("myChart12"),
   ctx13 = document.getElementById("myChart13"),
   ctx14 = document.getElementById("myChart14");
-let myChart11, myChart12, myChart13, myChart14;
+
 Chart.pluginService.register({
   beforeDraw: function (chart, easing) {
     if (
@@ -24,9 +24,9 @@ Chart.pluginService.register({
     }
   },
 });
-function plotGraph(data = entiredata, val = false, id = null) {
+
+function plotGraph(data = entiredata, daily = false, id = null) {
   if (id) {
-    console.log(id);
     data = entiredata[id];
   }
   if (myChart11) {
@@ -50,14 +50,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
     totalActive = 0;
   data.forEach((element) => {
     labels.push(element["date"].split("-").reverse().join("-").slice(0, 4));
-    if (!val) {
-      confirmed.push(element["confirmed"]);
-      death.push(element["deaths"]);
-      recovered.push(element["recovered"]);
-      active.push(
-        element["confirmed"] - (element["deaths"] + element["recovered"])
-      );
-    } else {
+    if (daily) {
       confirmed.push(Math.max(element["confirmed"] - prevC, 0));
       death.push(Math.max(element["deaths"] - prevD, 0));
       recovered.push(element["recovered"] - prevR);
@@ -69,6 +62,13 @@ function plotGraph(data = entiredata, val = false, id = null) {
       prevD = Math.max(element["deaths"] - prevD, 0);
       prevR = element["recovered"];
       prevA = temp < 0 ? 0 : temp;
+    } else {
+      confirmed.push(element["confirmed"]);
+      death.push(element["deaths"]);
+      recovered.push(element["recovered"]);
+      active.push(
+        element["confirmed"] - (element["deaths"] + element["recovered"])
+      );
     }
   });
   totalDeath = death.slice(-1);
@@ -87,7 +87,192 @@ function plotGraph(data = entiredata, val = false, id = null) {
   document.getElementById(
     "total-death-cases"
   ).innerText = `Deaths: ${totalDeath}`;
-  if (!val) {
+  let optionsConfirmed = {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Confirmed ",
+          data: confirmed,
+          fill: true,
+          backgroundColor: "#223e80a0",
+          hoverBorderColor: "#223e80ff",
+          borderColor: "#223e80ff",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
+      title: {
+        display: true,
+        text: `Covid19 Confirmed ${
+          daily ? "Daily" : "Cumulative"
+        } Count - ${country}`,
+      },
+      tooltips: { mode: "index", intersect: false },
+      hover: { mode: "nearest", intersect: true },
+      responsive: true,
+      chartArea: { backgroundColor: "#223e8011" },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Date" },
+          },
+        ],
+        yAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Confirmed Count " },
+          },
+        ],
+      },
+    },
+  };
+
+  let optionsActive = {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Active ",
+          data: active,
+          fill: true,
+          backgroundColor: "#e82727a0",
+          hoverBorderColor: "#e82727ff",
+          borderColor: "#e82727ff",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
+      title: {
+        display: true,
+        text: `Covid19 Active ${
+          daily ? "Daily" : "Cumulative"
+        } Count - ${country}`,
+      },
+      tooltips: { mode: "index", intersect: false },
+      hover: { mode: "nearest", intersect: true },
+      responsive: true,
+      chartArea: { backgroundColor: "#e8272711" },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Date" },
+          },
+        ],
+        yAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Active Count " },
+          },
+        ],
+      },
+    },
+  };
+
+  let optionsRecovered = {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Recovered ",
+          data: recovered,
+          fill: true,
+          backgroundColor: "#2adb2aa0",
+          hoverBorderColor: "#2adb2aff",
+          borderColor: "#2adb2aff",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
+      title: {
+        display: true,
+        text: `Covid19 Recovered ${
+          daily ? "Daily" : "Cumulative"
+        } Count - ${country}`,
+      },
+      tooltips: { mode: "index", intersect: false },
+      hover: { mode: "nearest", intersect: true },
+      responsive: true,
+      chartArea: { backgroundColor: "#2adb2a11" },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Date" },
+          },
+        ],
+        yAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Recovered Count " },
+          },
+        ],
+      },
+    },
+  };
+  let optionsDeaths = {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Deaths ",
+          data: death,
+          fill: true,
+          backgroundColor: "#8f8c8ca0",
+          hoverBorderColor: "#8f8c8cff",
+          borderColor: "#8f8c8cf0",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
+      title: {
+        display: true,
+        text: `Covid19 Death ${
+          daily ? "Daily" : "Cumulative"
+        } Count - ${country}`,
+      },
+      tooltips: { mode: "index", intersect: false },
+      hover: { mode: "nearest", intersect: true },
+      responsive: true,
+      chartArea: { backgroundColor: "#8f8c8c10" },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Date" },
+          },
+        ],
+        yAxes: [
+          {
+            display: true,
+            scaleLabel: { display: true, labelString: "Deaths Count " },
+          },
+        ],
+      },
+    },
+  };
+  if (daily) {
+    document.getElementById(
+      "recovery-rate"
+    ).innerText = `Recovery Rate: NA (Choose Cumulative Type)`;
+    document.getElementById(
+      "death-rate"
+    ).innerText = `Death Rate: NA (Choose Cumulative Type)`;
+  } else {
     document.getElementById(
       "recovery-rate"
     ).innerText = `Recovery Rate: ${String(
@@ -96,393 +281,11 @@ function plotGraph(data = entiredata, val = false, id = null) {
     document.getElementById("death-rate").innerText = `Death Rate: ${String(
       (totalDeath / totalConfirmed) * 100
     ).slice(0, 5)}%`;
-  } else {
-    document.getElementById(
-      "recovery-rate"
-    ).innerText = `Recovery Rate: NA (Choose Cumulative Type)`;
-    document.getElementById(
-      "death-rate"
-    ).innerText = `Death Rate: NA (Choose Cumulative Type)`;
   }
-  if (!val) {
-    myChart11 = new Chart(ctx11.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Confirmed ",
-            data: confirmed,
-            fill: true,
-            backgroundColor: "#223e80a0",
-            hoverBorderColor: "#223e80ff",
-            borderColor: "#223e80ff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
-        title: {
-          display: true,
-          text: `Covid19 Confirmed ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#223e8011" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              ticks: {
-                min: 0,
-                max:
-                  Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10,
-              },
-              scaleLabel: { display: true, labelString: "Confirmed Count " },
-            },
-          ],
-        },
-      },
-    });
-    myChart12 = new Chart(ctx12.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Active ",
-            data: active,
-            fill: true,
-            backgroundColor: "#e82727a0",
-            hoverBorderColor: "#e82727ff",
-            borderColor: "#e82727ff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
-        title: {
-          display: true,
-          text: `Covid19 Active ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#e8272711" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              ticks: {
-                min: 0,
-                max:
-                  Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10,
-              },
-              scaleLabel: { display: true, labelString: "Active Count " },
-            },
-          ],
-        },
-      },
-    });
-    myChart13 = new Chart(ctx13.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Recovered ",
-            data: recovered,
-            fill: true,
-            backgroundColor: "#2adb2aa0",
-            hoverBorderColor: "#2adb2aff",
-            borderColor: "#2adb2aff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
-        title: {
-          display: true,
-          text: `Covid19 Recovered ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#2adb2a11" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              ticks: {
-                min: 0,
-                max:
-                  Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10,
-              },
-              scaleLabel: { display: true, labelString: "Recovered Count " },
-            },
-          ],
-        },
-      },
-    });
-    myChart14 = new Chart(ctx14.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Deaths ",
-            data: death,
-            fill: true,
-            backgroundColor: "#8f8c8ca0",
-            hoverBorderColor: "#8f8c8cff",
-            borderColor: "#8f8c8cf0",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
-        title: {
-          display: true,
-          text: `Covid19 Death ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#8f8c8c10" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              ticks: {
-                min: 0,
-                max:
-                  Math.max(...confirmed, ...active, ...recovered, ...death) + 1,
-                stepSize: 10,
-              },
-              scaleLabel: { display: true, labelString: "Deaths Count " },
-            },
-          ],
-        },
-      },
-    });
-  } else {
-    myChart11 = new Chart(ctx11.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Confirmed ",
-            data: confirmed,
-            fill: true,
-            backgroundColor: "#223e80a0",
-            hoverBorderColor: "#223e80ff",
-            borderColor: "#223e80ff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
-        title: {
-          display: true,
-          text: `Covid19 Confirmed ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#223e8011" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Confirmed Count " },
-            },
-          ],
-        },
-      },
-    });
-    myChart12 = new Chart(ctx12.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Active ",
-            data: active,
-            fill: true,
-            backgroundColor: "#e82727a0",
-            hoverBorderColor: "#e82727ff",
-            borderColor: "#e82727ff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
-        title: {
-          display: true,
-          text: `Covid19 Active ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#e8272711" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Active Count " },
-            },
-          ],
-        },
-      },
-    });
-    myChart13 = new Chart(ctx13.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Recovered ",
-            data: recovered,
-            fill: true,
-            backgroundColor: "#2adb2aa0",
-            hoverBorderColor: "#2adb2aff",
-            borderColor: "#2adb2aff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
-        title: {
-          display: true,
-          text: `Covid19 Recovered ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#2adb2a11" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Recovered Count " },
-            },
-          ],
-        },
-      },
-    });
-    myChart14 = new Chart(ctx14.getContext("2d"), {
-      type: "line",
-      data: {
-        labels,
-        datasets: [
-          {
-            label: "Deaths ",
-            data: death,
-            fill: true,
-            backgroundColor: "#8f8c8ca0",
-            hoverBorderColor: "#8f8c8cff",
-            borderColor: "#8f8c8cf0",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
-        title: {
-          display: true,
-          text: `Covid19 Death ${
-            !val ? "Cumulative" : "Daily"
-          } Count - ${country}`,
-        },
-        tooltips: { mode: "index", intersect: false },
-        hover: { mode: "nearest", intersect: true },
-        responsive: true,
-        chartArea: { backgroundColor: "#8f8c8c10" },
-        scales: {
-          xAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Date" },
-            },
-          ],
-          yAxes: [
-            {
-              display: true,
-              scaleLabel: { display: true, labelString: "Deaths Count " },
-            },
-          ],
-        },
-      },
-    });
-  }
+  myChart11 = new Chart(ctx11.getContext("2d"), optionsConfirmed);
+  myChart12 = new Chart(ctx12.getContext("2d"), optionsActive);
+  myChart13 = new Chart(ctx13.getContext("2d"), optionsRecovered);
+  myChart14 = new Chart(ctx14.getContext("2d"), optionsDeaths);
 }
 
 let country = "India";
@@ -524,17 +327,4 @@ function toggle() {
 function countryChanged() {
   country = document.getElementById("my-select").value;
   plotGraph(entiredata[country], !document.getElementById("mySwitch").checked);
-}
-
-$(".dropdown-trigger").dropdown();
-$(".sidenav")
-  .sidenav()
-  .on("click tap", "li a", () => {
-    $(".sidenav").sidenav("close");
-  });
-if ($(window).width() <= 599) {
-  let a = document.getElementsByClassName("add-class");
-  for (i of a) {
-    i.classList.remove("container");
-  }
 }

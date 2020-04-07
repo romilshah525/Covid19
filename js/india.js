@@ -11,30 +11,33 @@ let entireData,
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx12 = document.getElementById("myChart12").getContext("2d"),
   ctx13 = document.getElementById("myChart13").getContext("2d"),
-  ctx14 = document.getElementById("myChart14").getContext("2d"),
-  ctx15 = document.getElementById("myChart15").getContext("2d");
+  ctx14 = document.getElementById("myChart14").getContext("2d");
 
 let country = "India";
 
-fetch("https://api.covid19india.org/data.json")
-  // .catch(fetch("Covid19/india.json"))
-  .then((res) => res.json())
-  .then((res) => {
-    entireData = res;
-    statewise = res.statewise;
-    time_series_data = res.cases_time_series;
-    printSummary();
-    plotGraph((data = time_series_data));
-  });
+function readData() {
+  fetch("https://api.covid19india.org/data.json")
+    // .catch(fetch("Covid19/india.json"))
+    .then((res) => res.json())
+    .then((res) => {
+      entireData = res;
+      statewise = res.statewise;
+      time_series_data = res.cases_time_series;
+      printSummary();
+      plotGraph((data = time_series_data), (size = 20));
+    });
+}
 
-function plotGraph(data = entiredata, val = false, id = null) {
+function plotGraph(data = time_series_data, size = 12) {
   let confirmed = [],
     deceased = [],
     active = [],
     recovered = [],
     date = [];
+  console.log(window.screen.availWidth);
+  console.log(window.screen.availHeight);
   data.forEach((element) => {
-    date.push(element["date"]);
+    date.push(element["date"].slice(0, 6));
     confirmed.push(Number(element["dailyconfirmed"]));
     deceased.push(Number(element["dailydeceased"]));
     recovered.push(Number(element["dailyrecovered"]));
@@ -51,21 +54,22 @@ function plotGraph(data = entiredata, val = false, id = null) {
         {
           label: "Confirmed ",
           data: confirmed,
-          fill: true,
-          backgroundColor: "#223e80a0",
-          hoverBorderColor: "#223e80ff",
+          fill: false,
+          backgroundColor: "#223e80ff",
           borderColor: "#223e80ff",
         },
       ],
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#223e80ff", fontSize: size },
+      },
       title: {
         display: true,
-        text: `Covid19 Confirmed ${
-          !val ? "Cumulative" : "Daily"
-        } Count - ${country}`,
+        text: `Covid19 Confirmed Daily Count - India`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -75,7 +79,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
         xAxes: [
           {
             display: true,
-            scaleLabel: { display: true, labelString: "Date" },
+            scaleLabel: { display: false, labelString: "Date" },
           },
         ],
         yAxes: [
@@ -107,9 +111,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
       legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
       title: {
         display: true,
-        text: `Covid19 Active ${
-          !val ? "Cumulative" : "Daily"
-        } Count - ${country}`,
+        text: `Covid19 Active Daily Count - India`,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -151,9 +153,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
       legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
       title: {
         display: true,
-        text: `Covid19 Recovered ${
-          !val ? "Cumulative" : "Daily"
-        } Count - ${country}`,
+        text: `Covid19 Recovered Daily Count - India`,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -195,9 +195,7 @@ function plotGraph(data = entiredata, val = false, id = null) {
       legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
       title: {
         display: true,
-        text: `Covid19 Death ${
-          !val ? "Cumulative" : "Daily"
-        } Count - ${country}`,
+        text: `Covid19 Death Daily Count - India`,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -247,9 +245,3 @@ function printSummary() {
     (totalDeathsCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;
 }
-$(".dropdown-trigger").dropdown();
-$(".sidenav")
-  .sidenav()
-  .on("click tap", "li a", () => {
-    $(".sidenav").sidenav("close");
-  });

@@ -2,8 +2,23 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
 }
-
 main {
   flex: 1 0 auto;
+}
+
+canvas {
+  height: 35rem !important;
+}
+.select-dropdown {
+  overflow-y: auto !important;
+}
+
+#mySpan.lever::after {
+  background-color: #424242;
+}
+
+.dropdown-content {
+  max-height: 550px;
 }
