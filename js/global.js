@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //     return fetch("https://pomber.github.io/covid19/timeseries.json");
   //   })
   fetch("https://pomber.github.io/covid19/timeseries.json")
-    .catch((err) => fetch("Covid19/data.json"))
+    .catch((err) => fetch("Covid19/json/data.json"))
     .then((response) => response.json())
     .then((data) => {
       let elem = document.getElementById("my-select");

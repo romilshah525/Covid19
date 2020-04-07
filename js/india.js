@@ -17,18 +17,20 @@ let country = "India";
 
 function readData() {
   fetch("https://api.covid19india.org/data.json")
-    // .catch(fetch("Covid19/india.json"))
+    .catch((err) => fetch("Covid19/json/india.json"))
     .then((res) => res.json())
     .then((res) => {
       entireData = res;
       statewise = res.statewise;
       time_series_data = res.cases_time_series;
       printSummary();
-      plotGraph((data = time_series_data), (size = 20));
+      if (window.screen.availWidth <= 650)
+        plotGraph((data = time_series_data), (size = 8));
+      else plotGraph((data = time_series_data), (size = 12));
     });
 }
 
-function plotGraph(data = time_series_data, size = 12) {
+function plotGraph(data = time_series_data, size) {
   let confirmed = [],
     deceased = [],
     active = [],
@@ -36,16 +38,31 @@ function plotGraph(data = time_series_data, size = 12) {
     date = [];
   console.log(window.screen.availWidth);
   console.log(window.screen.availHeight);
-  data.forEach((element) => {
-    date.push(element["date"].slice(0, 6));
-    confirmed.push(Number(element["dailyconfirmed"]));
-    deceased.push(Number(element["dailydeceased"]));
-    recovered.push(Number(element["dailyrecovered"]));
-    active.push(
-      Number(element["dailyconfirmed"]) -
-        (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
-    );
-  });
+  if (size < 12) {
+    for (let i = 0; i < data.length; i += 5) {
+      console.log(data[i]["date"]);
+      element = data[i];
+      date.push(element["date"].slice(0, 6));
+      confirmed.push(Number(element["dailyconfirmed"]));
+      deceased.push(Number(element["dailydeceased"]));
+      recovered.push(Number(element["dailyrecovered"]));
+      active.push(
+        Number(element["dailyconfirmed"]) -
+          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
+      );
+    }
+  } else {
+    data.forEach((element) => {
+      date.push(element["date"].slice(0, 6));
+      confirmed.push(Number(element["dailyconfirmed"]));
+      deceased.push(Number(element["dailydeceased"]));
+      recovered.push(Number(element["dailyrecovered"]));
+      active.push(
+        Number(element["dailyconfirmed"]) -
+          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
+      );
+    });
+  }
   myChart11 = new Chart(ctx11, {
     type: "line",
     data: {
@@ -99,19 +116,22 @@ function plotGraph(data = time_series_data, size = 12) {
         {
           label: "Active ",
           data: active,
-          fill: true,
+          fill: false,
           backgroundColor: "#e82727a0",
-          hoverBorderColor: "#e82727ff",
           borderColor: "#e82727ff",
         },
       ],
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#e82727ff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Active Daily Count - India`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -141,19 +161,22 @@ function plotGraph(data = time_series_data, size = 12) {
         {
           label: "Recovered ",
           data: recovered,
-          fill: true,
+          fill: false,
           backgroundColor: "#2adb2aa0",
-          hoverBorderColor: "#2adb2aff",
           borderColor: "#2adb2aff",
         },
       ],
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#34bf34ff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Recovered Daily Count - India`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -183,7 +206,7 @@ function plotGraph(data = time_series_data, size = 12) {
         {
           label: "Deaths ",
           data: deceased,
-          fill: true,
+          fill: false,
           backgroundColor: "#8f8c8ca0",
           hoverBorderColor: "#8f8c8cff",
           borderColor: "#8f8c8cf0",
@@ -192,10 +215,14 @@ function plotGraph(data = time_series_data, size = 12) {
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#8f8c8cff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Death Daily Count - India`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },

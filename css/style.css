@@ -9,8 +9,16 @@ main {
 }
 
 canvas {
-  height: 35rem !important;
+  height: auto;
+  max-width: 100%;
 }
+
+@media screen and (max-width: 750px) {
+  .container {
+    width: 100%; 
+  }
+}
+
 .select-dropdown {
   overflow-y: auto !important;
 }
