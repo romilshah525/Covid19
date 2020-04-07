@@ -25,7 +25,7 @@ function readData() {
       time_series_data = res.cases_time_series;
       printSummary();
       if (window.screen.availWidth <= 650)
-        plotGraph((data = time_series_data), (size = 8));
+        plotGraph((data = time_series_data), (size = 6));
       else plotGraph((data = time_series_data), (size = 12));
     });
 }
