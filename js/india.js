@@ -1,40 +1,41 @@
 const mapper = {
-  mh: "Maharashtra",
-  tn: "Tamil Nadu",
-  dl: "Delhi",
-  tg: "Telangana",
-  rj: "Rajasthan",
-  kl: "Kerala",
-  up: "Uttar Pradesh",
+  in: "India",
+  an: "Andaman and Nicobar Islands",
   ap: "Andhra Pradesh",
-  mp: "Madhya Pradesh",
-  ka: "Karnataka",
+  ar: "Arunachal Pradesh",
+  as: "Assam",
+  br: "Bihar",
+  ch: "Chandigarh",
+  ct: "Chhattisgarh",
+  dd: "Daman and Diu",
+  dl: "Delhi",
+  dn: "Dadra and Nagar Haveli",
+  ga: "Goa",
   gj: "Gujarat",
+  hp: "Himachal Pradesh",
   hr: "Haryana",
   jk: "Jammu and Kashmir",
-  pb: "Punjab",
-  wb: "West Bengal",
-  or: "Odisha",
-  br: "Bihar",
-  ut: "Uttarakhand",
-  as: "Assam",
-  ch: "Chandigarh",
-  hp: "Himachal Pradesh",
+  ka: "Karnataka",
+  kl: "Kerala",
   la: "Ladakh",
-  an: "Andaman and Nicobar Islands",
-  ct: "Chhattisgarh",
-  ga: "Goa",
-  py: "Puducherry",
-  mn: "Manipur",
-  mz: "Mizoram",
-  ar: "Arunachal Pradesh",
-  dn: "Dadra and Nagar Haveli",
-  tr: "Tripura",
-  dd: "Daman and Diu",
   ld: "Lakshadweep",
+  mh: "Maharashtra",
   ml: "Meghalaya",
+  mn: "Manipur",
+  mp: "Madhya Pradesh",
+  mz: "Mizoram",
   nl: "Nagaland",
+  or: "Odisha",
+  pb: "Punjab",
+  py: "Puducherry",
+  rj: "Rajasthan",
   sk: "Sikkim",
+  tg: "Telangana",
+  tn: "Tamil Nadu",
+  tr: "Tripura",
+  up: "Uttar Pradesh",
+  ut: "Uttarakhand",
+  wb: "West Bengal",
 };
 
 let entireData,
@@ -64,30 +65,31 @@ function readData() {
       entireData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
-      printSummary();
-      if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
-      else plotGraph(time_series_data, 14, "in");
+      // printSummary();
     })
     .then((res) => fetch("https://api.covid19india.org/states_daily.json"))
     .catch((err) => fetch("Covid19/json/states_daily.json"))
     .then((res) => res.json())
     .then((res) => {
       states_daily = res.states_daily;
-      statewise[0]["state"] = "India";
-      statewise[0]["statecode"] = "IN";
       let elem = document.getElementById("my-select");
       let ret = "";
-      statewise.forEach((a) => {
-        ret += `<option value="${a["statecode"].toLowerCase()}">${
-          a["state"]
-        }</option>`;
-      });
-      // let keys = Object.keys(mapper);
-      // keys.forEach((a) => {
-      //   ret += `<option value="${a}">${mapper[a]}</option>`;
+      statewise[0]["state"] = "India";
+      statewise[0]["statecode"] = "IN";
+      // statewise.forEach((a) => {
+      //   ret += `<option value="${a["statecode"].toLowerCase()}">${
+      //     a["state"]
+      //   }</option>`;
       // });
+      let keys = Object.keys(mapper);
+      keys.forEach((a) => {
+        ret += `<option value="${a}">${mapper[a]}</option>`;
+      });
       elem.innerHTML = ret;
       elem.value = name;
+      document.getElementById("my-select").value = "in";
+      if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
+      else plotGraph(time_series_data, 14, "in");
       $(document).ready(function () {
         $("select").formSelect();
       });
@@ -303,10 +305,7 @@ function plotGraph(data, size, ct) {
   myChart12 = new Chart(ctx12, optionsActive);
   myChart13 = new Chart(ctx13, optionsRecovered);
   myChart14 = new Chart(ctx14, optionsDeath);
-}
-
-function printSummary() {
-  element = statewise[0];
+  element = statewise.filter((el) => el["statecode"] == ct.toUpperCase())[0];
   total = element.confirmed;
   totalActiveCovidOrg = element.active;
   totalConfirmedCovidOrg = element.confirmed;
@@ -331,7 +330,7 @@ function printSummary() {
     (totalDeathsCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;
 }
-let g;
+
 function toggle() {
   name = document.getElementById("my-select").value;
   if (name != "in") {
