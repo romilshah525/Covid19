@@ -1,6 +1,4 @@
 let entireData,
-  state_district_wise,
-  state_daily,
   time_series_data,
   statewise,
   totalActiveCovidOrg,
@@ -20,19 +18,20 @@ function readData() {
     .then((res) => res.json())
     .then((res) => {
       entireData = res;
-      statewise = res.statewise;
       time_series_data = res.cases_time_series;
-      statewise[0]["state"] = "India";
-      let elem = document.getElementById("my-select");
-      let ret = "";
-      statewise.forEach((a) => {
-        ret += `<option value="${a["state"]}">${a["state"]}</option>`;
-      });
-      elem.innerHTML = ret;
-      elem.value = name;
-      $(document).ready(function () {
-        $("select").formSelect();
-      });
+      statewise = res.statewise;
+      // statewise[0]["state"] = "India";
+      // statewise[0]["statecode"] = "IN";
+      // let elem = document.getElementById("my-select");
+      // let ret = "";
+      // statewise.forEach((a) => {
+      //   ret += `<option value="${a["statecode.toLowerCase"]}">${a["state"]}</option>`;
+      // });
+      // elem.innerHTML = ret;
+      // elem.value = name;
+      // $(document).ready(function () {
+      //   $("select").formSelect();
+      // });
       printSummary();
       if (window.screen.availWidth <= 650)
         plotGraph(time_series_data, 6, "India");
