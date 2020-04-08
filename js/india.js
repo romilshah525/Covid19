@@ -6,14 +6,13 @@ let entireData,
   totalActiveCovidOrg,
   totalConfirmedCovidOrg,
   totalDeathsCovidOrg,
-  totalReceoveredCovidOrg;
+  totalReceoveredCovidOrg,
+  name = "India";
 
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx12 = document.getElementById("myChart12").getContext("2d"),
   ctx13 = document.getElementById("myChart13").getContext("2d"),
   ctx14 = document.getElementById("myChart14").getContext("2d");
-
-let name = "India";
 
 function readData() {
   fetch("https://api.covid19india.org/data.json")
@@ -37,9 +36,8 @@ function readData() {
         $("select").formSelect();
       });
       printSummary();
-      if (window.screen.availWidth <= 650)
-        plotGraph((data = time_series_data), (size = 6));
-      else plotGraph((data = time_series_data), (size = 12));
+      if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6);
+      else plotGraph(time_series_data, 14);
     });
 }
 
@@ -73,7 +71,7 @@ function plotGraph(data = entireData, size) {
       );
     });
   }
-  myChart11 = new Chart(ctx11, {
+  let optionsConfirmed = {
     type: "line",
     data: {
       labels: date,
@@ -103,22 +101,12 @@ function plotGraph(data = entireData, size) {
       responsive: true,
       chartArea: { backgroundColor: "#223e8011" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: false, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Confirmed Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
-  });
-  myChart12 = new Chart(ctx12, {
+  };
+  let optionsActive = {
     type: "line",
     data: {
       labels: date,
@@ -148,22 +136,12 @@ function plotGraph(data = entireData, size) {
       responsive: true,
       chartArea: { backgroundColor: "#e8272711" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Active Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
-  });
-  myChart13 = new Chart(ctx13, {
+  };
+  let optionsRecovered = {
     type: "line",
     data: {
       labels: date,
@@ -193,22 +171,12 @@ function plotGraph(data = entireData, size) {
       responsive: true,
       chartArea: { backgroundColor: "#2adb2a11" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Recovered Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
-  });
-  myChart14 = new Chart(ctx14, {
+  };
+  let optionsDeath = {
     type: "line",
     data: {
       labels: date,
@@ -239,21 +207,37 @@ function plotGraph(data = entireData, size) {
       responsive: true,
       chartArea: { backgroundColor: "#8f8c8c10" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Deaths Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
-  });
+  };
+  if (size > 12) {
+    let allOptions = [
+      optionsConfirmed,
+      optionsDeath,
+      optionsRecovered,
+      optionsActive,
+    ];
+    allOptions.forEach((opt) => {
+      opt.options.scales.xAxes = [
+        {
+          display: true,
+          scaleLabel: { display: true, labelString: "Date" },
+        },
+      ];
+      opt.options.scales.yAxes = [
+        {
+          display: true,
+          scaleLabel: { display: true, labelString: "Count " },
+        },
+      ];
+    });
+  }
+  myChart11 = new Chart(ctx11, optionsConfirmed);
+  myChart12 = new Chart(ctx12, optionsActive);
+  myChart13 = new Chart(ctx13, optionsRecovered);
+  myChart14 = new Chart(ctx14, optionsDeath);
 }
 
 function printSummary() {

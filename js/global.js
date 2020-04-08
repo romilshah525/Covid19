@@ -1,4 +1,10 @@
-let jsondata, entiredata, myChart11, myChart12, myChart13, myChart14;
+let jsondata,
+  entiredata,
+  myChart11,
+  myChart12,
+  myChart13,
+  myChart14,
+  country = "India";
 const ctx11 = document.getElementById("myChart11"),
   ctx12 = document.getElementById("myChart12"),
   ctx13 = document.getElementById("myChart13"),
@@ -25,7 +31,7 @@ Chart.pluginService.register({
   },
 });
 
-function plotGraph(data = entiredata, daily = false, id = null) {
+function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
   if (id) {
     data = entiredata[id];
   }
@@ -104,34 +110,27 @@ function plotGraph(data = entiredata, daily = false, id = null) {
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#223e80ff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#223e80ff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Confirmed ${
           daily ? "Daily" : "Cumulative"
         } Count - ${country}`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
       responsive: true,
       chartArea: { backgroundColor: "#223e8011" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Confirmed Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
   };
-
   let optionsActive = {
     type: "line",
     data: {
@@ -149,34 +148,27 @@ function plotGraph(data = entiredata, daily = false, id = null) {
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#e82727ff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#e82727ff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Active ${
           daily ? "Daily" : "Cumulative"
         } Count - ${country}`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
       responsive: true,
       chartArea: { backgroundColor: "#e8272711" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Active Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
   };
-
   let optionsRecovered = {
     type: "line",
     data: {
@@ -194,30 +186,24 @@ function plotGraph(data = entiredata, daily = false, id = null) {
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#34bf34ff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#34bf34ff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Recovered ${
           daily ? "Daily" : "Cumulative"
         } Count - ${country}`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
       responsive: true,
       chartArea: { backgroundColor: "#2adb2a11" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Recovered Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
   };
@@ -238,33 +224,49 @@ function plotGraph(data = entiredata, daily = false, id = null) {
     },
     options: {
       responsive: true,
-      legend: { position: "bottom", labels: { fontColor: "#8f8c8cff" } },
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#8f8c8cff", fontSize: size },
+      },
       title: {
         display: true,
         text: `Covid19 Death ${
           daily ? "Daily" : "Cumulative"
         } Count - ${country}`,
+        fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
       responsive: true,
       chartArea: { backgroundColor: "#8f8c8c10" },
       scales: {
-        xAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Date" },
-          },
-        ],
-        yAxes: [
-          {
-            display: true,
-            scaleLabel: { display: true, labelString: "Deaths Count " },
-          },
-        ],
+        xAxes: [{}],
+        yAxes: [{}],
       },
     },
   };
+  if (size > 12) {
+    let allOptions = [
+      optionsConfirmed,
+      optionsDeaths,
+      optionsRecovered,
+      optionsActive,
+    ];
+    allOptions.forEach((opt) => {
+      opt.options.scales.xAxes = [
+        {
+          display: true,
+          scaleLabel: { display: true, labelString: "Date" },
+        },
+      ];
+      opt.options.scales.yAxes = [
+        {
+          display: true,
+          scaleLabel: { display: true, labelString: "Count " },
+        },
+      ];
+    });
+  }
   if (daily) {
     document.getElementById(
       "recovery-rate"
@@ -288,14 +290,7 @@ function plotGraph(data = entiredata, daily = false, id = null) {
   myChart14 = new Chart(ctx14.getContext("2d"), optionsDeaths);
 }
 
-let country = "India";
-document.addEventListener("DOMContentLoaded", function () {
-  // fetch("https://www.geoplugin.net/json.gp?ip=")
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     country = data["geoplugin_countryName"];
-  //     return fetch("https://pomber.github.io/covid19/timeseries.json");
-  //   })
+function readData() {
   fetch("https://pomber.github.io/covid19/timeseries.json")
     .catch((err) => fetch("Covid19/json/data.json"))
     .then((response) => response.json())
@@ -315,9 +310,22 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then((data) => {
       jsondata = data;
-      plotGraph(jsondata, !document.getElementById("mySwitch").checked);
+      if (window.screen.availWidth <= 650)
+        plotGraph(
+          jsondata,
+          !document.getElementById("mySwitch").checked,
+          null,
+          8
+        );
+      else
+        plotGraph(
+          jsondata,
+          !document.getElementById("mySwitch").checked,
+          null,
+          14
+        );
     });
-});
+}
 
 function toggle() {
   country = document.getElementById("my-select").value;
