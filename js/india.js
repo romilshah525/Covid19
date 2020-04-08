@@ -1,11 +1,55 @@
+const mapper = {
+  mh: "Maharashtra",
+  tn: "Tamil Nadu",
+  dl: "Delhi",
+  tg: "Telangana",
+  rj: "Rajasthan",
+  kl: "Kerala",
+  up: "Uttar Pradesh",
+  ap: "Andhra Pradesh",
+  mp: "Madhya Pradesh",
+  ka: "Karnataka",
+  gj: "Gujarat",
+  hr: "Haryana",
+  jk: "Jammu and Kashmir",
+  pb: "Punjab",
+  wb: "West Bengal",
+  or: "Odisha",
+  br: "Bihar",
+  ut: "Uttarakhand",
+  as: "Assam",
+  ch: "Chandigarh",
+  hp: "Himachal Pradesh",
+  la: "Ladakh",
+  an: "Andaman and Nicobar Islands",
+  ct: "Chhattisgarh",
+  ga: "Goa",
+  py: "Puducherry",
+  mn: "Manipur",
+  mz: "Mizoram",
+  ar: "Arunachal Pradesh",
+  dn: "Dadra and Nagar Haveli",
+  tr: "Tripura",
+  dd: "Daman and Diu",
+  ld: "Lakshadweep",
+  ml: "Meghalaya",
+  nl: "Nagaland",
+  sk: "Sikkim",
+};
+
 let entireData,
   time_series_data,
+  states_daily,
   statewise,
   totalActiveCovidOrg,
   totalConfirmedCovidOrg,
   totalDeathsCovidOrg,
   totalReceoveredCovidOrg,
-  name = "India";
+  name = "India",
+  myChart11,
+  myChart12,
+  myChart13,
+  myChart14;
 
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx12 = document.getElementById("myChart12").getContext("2d"),
@@ -20,58 +64,77 @@ function readData() {
       entireData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
-      // statewise[0]["state"] = "India";
-      // statewise[0]["statecode"] = "IN";
-      // let elem = document.getElementById("my-select");
-      // let ret = "";
-      // statewise.forEach((a) => {
-      //   ret += `<option value="${a["statecode.toLowerCase"]}">${a["state"]}</option>`;
-      // });
-      // elem.innerHTML = ret;
-      // elem.value = name;
-      // $(document).ready(function () {
-      //   $("select").formSelect();
-      // });
       printSummary();
-      if (window.screen.availWidth <= 650)
-        plotGraph(time_series_data, 6, "India");
-      else plotGraph(time_series_data, 14, "India");
+      if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
+      else plotGraph(time_series_data, 14, "in");
+    })
+    .then((res) => fetch("https://api.covid19india.org/states_daily.json"))
+    .catch((err) => fetch("Covid19/json/states_daily.json"))
+    .then((res) => res.json())
+    .then((res) => {
+      states_daily = res.states_daily;
+      statewise[0]["state"] = "India";
+      statewise[0]["statecode"] = "IN";
+      let elem = document.getElementById("my-select");
+      let ret = "";
+      statewise.forEach((a) => {
+        ret += `<option value="${a["statecode"].toLowerCase()}">${
+          a["state"]
+        }</option>`;
+      });
+      // let keys = Object.keys(mapper);
+      // keys.forEach((a) => {
+      //   ret += `<option value="${a}">${mapper[a]}</option>`;
+      // });
+      elem.innerHTML = ret;
+      elem.value = name;
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
     });
 }
 
 function plotGraph(data, size, ct) {
+  if (myChart11) {
+    myChart11.destroy();
+    myChart12.destroy();
+    myChart13.destroy();
+    myChart14.destroy();
+  }
   let confirmed = [],
     deceased = [],
     active = [],
     recovered = [],
     date = [];
-  if (ct == "India") {
-    if (size < 12) {
-      for (let i = 0; i < data.length; i += 5) {
-        element = data[i];
-        date.push(element["date"].slice(0, 6));
-        confirmed.push(Number(element["dailyconfirmed"]));
-        deceased.push(Number(element["dailydeceased"]));
-        recovered.push(Number(element["dailyrecovered"]));
-        active.push(
-          Number(element["dailyconfirmed"]) -
-            (Number(element["dailyrecovered"]) +
-              Number(element["dailydeceased"]))
-        );
-      }
-    } else {
-      data.forEach((element) => {
-        date.push(element["date"].slice(0, 6));
-        confirmed.push(Number(element["dailyconfirmed"]));
-        deceased.push(Number(element["dailydeceased"]));
-        recovered.push(Number(element["dailyrecovered"]));
-        active.push(
-          Number(element["dailyconfirmed"]) -
-            (Number(element["dailyrecovered"]) +
-              Number(element["dailydeceased"]))
-        );
-      });
+  if (ct == "in") {
+    name = "India";
+  } else {
+    name = mapper[ct];
+  }
+  // name = ct == "in" ? "India" : mapper[ct];
+  if (size < 12) {
+    for (let i = 0; i < data.length; i += 5) {
+      element = data[i];
+      date.push(element["date"].slice(0, 6));
+      confirmed.push(Number(element["dailyconfirmed"]));
+      deceased.push(Number(element["dailydeceased"]));
+      recovered.push(Number(element["dailyrecovered"]));
+      active.push(
+        Number(element["dailyconfirmed"]) -
+          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
+      );
     }
+  } else {
+    data.forEach((element) => {
+      date.push(element["date"].slice(0, 6));
+      confirmed.push(Number(element["dailyconfirmed"]));
+      deceased.push(Number(element["dailydeceased"]));
+      recovered.push(Number(element["dailyrecovered"]));
+      active.push(
+        Number(element["dailyconfirmed"]) -
+          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
+      );
+    });
   }
   let optionsConfirmed = {
     type: "line",
@@ -268,14 +331,21 @@ function printSummary() {
     (totalDeathsCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;
 }
-
+let g;
 function toggle() {
   name = document.getElementById("my-select").value;
-  if (name == "India") {
-    if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, name);
-    else plotGraph(time_series_data, 14, name);
-  } else {
-    if (window.screen.availWidth <= 650) plotGraph(statewise, 6, name);
-    else plotGraph(statewise, 14, name);
+  if (name != "in") {
+    selectedData = [];
+    for (let i = 0; i < states_daily.length; i += 3) {
+      let temp = {};
+      temp["date"] = states_daily[i]["date"];
+      temp["dailyconfirmed"] = states_daily[i][name];
+      temp["dailyrecovered"] = states_daily[i + 1][name];
+      temp["dailydeceased"] = states_daily[i + 2][name];
+      selectedData.push(JSON.parse(JSON.stringify(temp)));
+    }
   }
+  if (window.screen.availWidth <= 650)
+    plotGraph(name == "in" ? time_series_data : selectedData, 6, name);
+  else plotGraph(name == "in" ? time_series_data : selectedData, 14, name);
 }
