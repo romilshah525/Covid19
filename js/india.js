@@ -22,9 +22,7 @@ function readData() {
       entireData = res;
       statewise = res.statewise;
       time_series_data = res.cases_time_series;
-      console.log(statewise);
       statewise[0]["state"] = "India";
-      console.log(statewise);
       let elem = document.getElementById("my-select");
       let ret = "";
       statewise.forEach((a) => {
@@ -36,40 +34,45 @@ function readData() {
         $("select").formSelect();
       });
       printSummary();
-      if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6);
-      else plotGraph(time_series_data, 14);
+      if (window.screen.availWidth <= 650)
+        plotGraph(time_series_data, 6, "India");
+      else plotGraph(time_series_data, 14, "India");
     });
 }
 
-function plotGraph(data = entireData, size) {
+function plotGraph(data, size, ct) {
   let confirmed = [],
     deceased = [],
     active = [],
     recovered = [],
     date = [];
-  if (size < 12) {
-    for (let i = 0; i < data.length; i += 5) {
-      element = data[i];
-      date.push(element["date"].slice(0, 6));
-      confirmed.push(Number(element["dailyconfirmed"]));
-      deceased.push(Number(element["dailydeceased"]));
-      recovered.push(Number(element["dailyrecovered"]));
-      active.push(
-        Number(element["dailyconfirmed"]) -
-          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
-      );
+  if (ct == "India") {
+    if (size < 12) {
+      for (let i = 0; i < data.length; i += 5) {
+        element = data[i];
+        date.push(element["date"].slice(0, 6));
+        confirmed.push(Number(element["dailyconfirmed"]));
+        deceased.push(Number(element["dailydeceased"]));
+        recovered.push(Number(element["dailyrecovered"]));
+        active.push(
+          Number(element["dailyconfirmed"]) -
+            (Number(element["dailyrecovered"]) +
+              Number(element["dailydeceased"]))
+        );
+      }
+    } else {
+      data.forEach((element) => {
+        date.push(element["date"].slice(0, 6));
+        confirmed.push(Number(element["dailyconfirmed"]));
+        deceased.push(Number(element["dailydeceased"]));
+        recovered.push(Number(element["dailyrecovered"]));
+        active.push(
+          Number(element["dailyconfirmed"]) -
+            (Number(element["dailyrecovered"]) +
+              Number(element["dailydeceased"]))
+        );
+      });
     }
-  } else {
-    data.forEach((element) => {
-      date.push(element["date"].slice(0, 6));
-      confirmed.push(Number(element["dailyconfirmed"]));
-      deceased.push(Number(element["dailydeceased"]));
-      recovered.push(Number(element["dailyrecovered"]));
-      active.push(
-        Number(element["dailyconfirmed"]) -
-          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
-      );
-    });
   }
   let optionsConfirmed = {
     type: "line",
@@ -265,4 +268,15 @@ function printSummary() {
   document.getElementById("death-rate").innerText = `Death Rate: ${String(
     (totalDeathsCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;
+}
+
+function toggle() {
+  name = document.getElementById("my-select").value;
+  if (name == "India") {
+    if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, name);
+    else plotGraph(time_series_data, 14, name);
+  } else {
+    if (window.screen.availWidth <= 650) plotGraph(statewise, 6, name);
+    else plotGraph(statewise, 14, name);
+  }
 }

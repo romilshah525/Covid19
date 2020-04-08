@@ -329,10 +329,18 @@ function readData() {
 
 function toggle() {
   country = document.getElementById("my-select").value;
-  plotGraph(entiredata[country], !document.getElementById("mySwitch").checked);
-}
-
-function countryChanged() {
-  country = document.getElementById("my-select").value;
-  plotGraph(entiredata[country], !document.getElementById("mySwitch").checked);
+  if (window.screen.availWidth <= 650)
+    plotGraph(
+      entiredata[country],
+      !document.getElementById("mySwitch").checked,
+      null,
+      8
+    );
+  else
+    plotGraph(
+      entiredata[country],
+      !document.getElementById("mySwitch").checked,
+      null,
+      14
+    );
 }
