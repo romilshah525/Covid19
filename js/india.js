@@ -65,7 +65,6 @@ function readData() {
       entireData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
-      // printSummary();
     })
     .then((res) => fetch("https://api.covid19india.org/states_daily.json"))
     .catch((err) => fetch("Covid19/json/states_daily.json"))
@@ -93,6 +92,7 @@ function readData() {
       $(document).ready(function () {
         $("select").formSelect();
       });
+      fillStateDataTable();
     });
 }
 
@@ -113,7 +113,6 @@ function plotGraph(data, size, ct) {
   } else {
     name = mapper[ct];
   }
-  // name = ct == "in" ? "India" : mapper[ct];
   if (size < 12) {
     for (let i = 0; i < data.length; i += 3) {
       element = data[i];
@@ -348,4 +347,13 @@ function toggle() {
   if (window.screen.availWidth <= 650)
     plotGraph(name == "in" ? time_series_data : selectedData, 6, name);
   else plotGraph(name == "in" ? time_series_data : selectedData, 14, name);
+}
+
+function fillStateDataTable() {
+  let tbody = document.getElementById("state-data-table"),
+    res = "";
+  statewise.slice(1).forEach((data) => {
+    res += `<tr><td>${data["state"]}</td><td>${data["confirmed"]}</td><td>${data["active"]}</td><td>${data["recovered"]}</td><td>${data["deaths"]}</td></tr>`;
+  });
+  tbody.innerHTML = res;
 }
