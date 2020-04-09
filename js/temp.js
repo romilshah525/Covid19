@@ -6,7 +6,7 @@
 
 $(document).ready(function () {
   M.toast({
-    html: "View in Desktop mode for better visuals",
+    html: "View in Desktop for better visualisation",
     inDuration: 1000,
     outDuration: 1000,
     displayLength: 5000,
