@@ -83,16 +83,16 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
   totalActive = active.slice(-1);
   document.getElementById(
     "total-confirmed-cases"
-  ).innerText = `Positives: ${totalConfirmed}`;
+  ).innerText = `Positive Cases: ${totalConfirmed}`;
   document.getElementById(
     "total-recovered-cases"
-  ).innerText = `Recoveries: ${totalRecovered}`;
+  ).innerText = `Recovered Cases: ${totalRecovered}`;
   document.getElementById(
     "total-active-cases"
-  ).innerText = `Active: ${totalActive}`;
+  ).innerText = `Active Cases: ${totalActive}`;
   document.getElementById(
     "total-death-cases"
-  ).innerText = `Deaths: ${totalDeath}`;
+  ).innerText = `Death Cases: ${totalDeath}`;
   let optionsConfirmed = {
     type: "line",
     data: {

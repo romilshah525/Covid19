@@ -39,7 +39,8 @@
   </ul>
   <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="https://romilshah525.github.io/Covid19/index.html" class="brand-logo center-align">Covid19 Global Dashboard</a>
+      <a id="logo-container" href="https://romilshah525.github.io/Covid19/index.html"
+        class="brand-logo center-align">Covid19 Global Dashboard</a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a class="dropdown-trigger" href="#!" data-target="dropdownforlinks">Important Links<i
@@ -129,38 +130,42 @@
         </div>
       </div>
     </div>
-    <section class="container add-class">
+    <section class="container">
       <div class="row">
-        <div class="col s12 m3 center-align">
-          <div class="card-panel">
-            <span class="blue-text text-darken-4" id="total-confirmed-cases"></span>
-          </div>
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s3"><a class="bold-text truncate active blue-text text-darken-4"
+                href="#comfirmed-cases">Confirmed Count</a></li>
+            <li class="tab col s3"><a class="bold-text truncate grey-text text-darken-1" href="#death-cases">Deaths Count</a>
+            </li>
+            <li class="tab col s3"><a class="bold-text truncate my-red-text" href="#active-cases">Active Count</a></li>
+            <li class="tab col s3"><a class="bold-text truncate light-green-text text-accent-3"
+                href="#recovered-cases">Recovered Count</a>
+            </li>
+          </ul>
         </div>
-        <div class="col s12 m3 center-align">
-          <div class="card-panel">
-            <span class="grey-text text-darken-1" id="total-death-cases"></span>
-          </div>
+        <div id="comfirmed-cases" class="center-align col s12">
+          <h6 class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></h6>
         </div>
-        <div class="col s12 m3 center-align">
-          <div class="card-panel">
-            <span id="total-active-cases" style="color: #e82727;"></span>
-          </div>
+        <div id="death-cases" class="center-align col s12">
+          <h6 class="bold-text grey-text text-darken-1" id="total-death-cases"></h6>
         </div>
-        <div class="col s12 m3 center-align">
-          <div class="card-panel">
-            <span class="light-green-text text-accent-3" id="total-recovered-cases"></span>
-          </div>
+        <div id="active-cases" class="center-align col s12">
+          <h6 class="bold-text my-red-text" id="total-active-cases"></h6>
+        </div>
+        <div id="recovered-cases" class="center-align col s12">
+          <h6 class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></h6>
         </div>
       </div>
       <div class="row">
         <div class="col s12 m6">
           <div class="card-panel center-align">
-            <span class="light-green-text text-accent-3" id="recovery-rate"></span>
+            <span class="truncate bold-text light-green-text text-accent-3" id="recovery-rate"></span>
           </div>
         </div>
         <div class="col s12 m6">
           <div class="card-panel center-align">
-            <span class="grey-text text-darken-1" id="death-rate"></span>
+            <span class="truncate bold-text grey-text text-darken-1" id="death-rate"></span>
           </div>
         </div>
       </div>

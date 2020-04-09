@@ -115,7 +115,7 @@ function plotGraph(data, size, ct) {
   }
   // name = ct == "in" ? "India" : mapper[ct];
   if (size < 12) {
-    for (let i = 0; i < data.length; i += 5) {
+    for (let i = 0; i < data.length; i += 3) {
       element = data[i];
       date.push(element["date"].slice(0, 6));
       confirmed.push(Number(element["dailyconfirmed"]));
@@ -313,16 +313,17 @@ function plotGraph(data, size, ct) {
   totalReceoveredCovidOrg = element.recovered;
   document.getElementById(
     "total-confirmed-cases"
-  ).innerText = `Positives: ${totalConfirmedCovidOrg}`;
+  ).innerText = `Positive Cases: ${totalConfirmedCovidOrg}`;
   document.getElementById(
     "total-recovered-cases"
-  ).innerText = `Recoveries: ${totalReceoveredCovidOrg}`;
+  ).innerText = `Recovered Cases: ${totalReceoveredCovidOrg}`;
   document.getElementById(
     "total-active-cases"
-  ).innerText = `Active: ${totalActiveCovidOrg}`;
+  ).innerText = `Active Cases: ${totalActiveCovidOrg}`;
   document.getElementById(
     "total-death-cases"
-  ).innerText = `Deaths: ${totalDeathsCovidOrg}`;
+  ).innerText = `Death Cases: ${totalDeathsCovidOrg}`;
+
   document.getElementById("recovery-rate").innerText = `Recovery Rate: ${String(
     (totalReceoveredCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;

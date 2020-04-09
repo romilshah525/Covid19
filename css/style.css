@@ -24,3 +24,11 @@ canvas {
 .dropdown-content {
   max-height: 550px;
 }
+
+.bold-text {
+  font-weight: bolder;
+}
+
+.my-red-text {
+  color: #e82727;
+}
