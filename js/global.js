@@ -101,7 +101,7 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
         {
           label: "Confirmed ",
           data: confirmed,
-          fill: true,
+          fill: false,
           backgroundColor: "#223e80a0",
           hoverBorderColor: "#223e80ff",
           borderColor: "#223e80ff",
@@ -123,11 +123,10 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#223e8011" },
       scales: {
-        xAxes: [{}],
-        yAxes: [{}],
+        xAxes: [{ gridLines: { display: false } }],
+        yAxes: [{ gridLines: { display: false } }],
       },
     },
   };
@@ -139,7 +138,7 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
         {
           label: "Active ",
           data: active,
-          fill: true,
+          fill: false,
           backgroundColor: "#e82727a0",
           hoverBorderColor: "#e82727ff",
           borderColor: "#e82727ff",
@@ -161,11 +160,10 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#e8272711" },
       scales: {
-        xAxes: [{}],
-        yAxes: [{}],
+        xAxes: [{ gridLines: { display: false } }],
+        yAxes: [{ gridLines: { display: false } }],
       },
     },
   };
@@ -177,7 +175,7 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
         {
           label: "Recovered ",
           data: recovered,
-          fill: true,
+          fill: false,
           backgroundColor: "#2adb2aa0",
           hoverBorderColor: "#2adb2aff",
           borderColor: "#2adb2aff",
@@ -199,11 +197,10 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#2adb2a11" },
       scales: {
-        xAxes: [{}],
-        yAxes: [{}],
+        xAxes: [{ gridLines: { display: false } }],
+        yAxes: [{ gridLines: { display: false } }],
       },
     },
   };
@@ -215,7 +212,7 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
         {
           label: "Deaths ",
           data: death,
-          fill: true,
+          fill: false,
           backgroundColor: "#8f8c8ca0",
           hoverBorderColor: "#8f8c8cff",
           borderColor: "#8f8c8cf0",
@@ -237,11 +234,10 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#8f8c8c10" },
       scales: {
-        xAxes: [{}],
-        yAxes: [{}],
+        xAxes: [{ gridLines: { display: false } }],
+        yAxes: [{ gridLines: { display: false } }],
       },
     },
   };
@@ -257,12 +253,14 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
         {
           display: true,
           scaleLabel: { display: true, labelString: "Date" },
+          // gridLines: { display: false },
         },
       ];
       opt.options.scales.yAxes = [
         {
           display: true,
           scaleLabel: { display: true, labelString: "Count " },
+          // gridLines: { display: false },
         },
       ];
     });
