@@ -41,3 +41,17 @@ canvas {
 .my-red-text {
   color: #e82727;
 }
+/* 
+#div1 {
+  height: 500px;
+  position: relative;
+}
+
+#div2 {
+  max-height: 100%;
+  overflow: auto;
+}
+
+#div3 {
+  height: auto;
+} */

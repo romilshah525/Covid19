@@ -77,74 +77,77 @@
         </ul>
       </div>
       <div id="visualize" class="col s12">
-          <div>
-            <div class="section" style="padding-bottom: 0;">
-              <div class="row" style="margin-bottom: 0;">
-                <div class="input-field col s12">
-                  <select id="my-select" onchange="toggle()"></select>
-                  <label>Choose Region</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12">
-                <canvas id="myChart11" class="center hoverable"></canvas>
-              </div>
-              <div class="col s12">
-                <canvas id="myChart12" class="center hoverable"></canvas>
-              </div>
-              <div class="col s12">
-                <canvas id="myChart13" class="center hoverable"></canvas>
-              </div>
-              <div class="col s12">
-                <canvas id="myChart14" class="center hoverable"></canvas>
+        <div>
+          <div class="section" style="padding-bottom: 0;">
+            <div class="row" style="margin-bottom: 0;">
+              <div class="input-field col s12">
+                <select id="my-select" onchange="toggle()"></select>
+                <label>Choose Region</label>
               </div>
             </div>
           </div>
-          <section class="container">
-            <h5 class="brown-text text-darken-1 center-align"><u>Summarised Data</u></h5>
-            <div class="row">
-              <div class="col s12">
-                <ul class="tabs">
-                  <li class="tab col s3"><a class="bold-text truncate active blue-text text-darken-4"
-                      href="#comfirmed-cases">Confirmed</a></li>
-                  <li class="tab col s3"><a class="bold-text truncate grey-text text-darken-1"
-                      href="#death-cases">Deaths</a>
-                  </li>
-                  <li class="tab col s3"><a class="bold-text truncate my-red-text" href="#active-cases">Active</a></li>
-                  <li class="tab col s3"><a class="bold-text truncate light-green-text text-accent-3"
-                      href="#recovered-cases">Recovered</a>
-                  </li>
-                </ul>
-              </div>
-              <div id="comfirmed-cases" class="center-align col s12">
-                <h6 class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></h6>
-              </div>
-              <div id="death-cases" class="center-align col s12">
-                <h6 class="bold-text grey-text text-darken-1" id="total-death-cases"></h6>
-              </div>
-              <div id="active-cases" class="center-align col s12">
-                <h6 class="bold-text my-red-text" id="total-active-cases"></h6>
-              </div>
-              <div id="recovered-cases" class="center-align col s12">
-                <h6 class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></h6>
+          <div class="row">
+            <div class="col s12">
+              <canvas id="myChart11" class="center hoverable"></canvas>
+            </div>
+            <div class="col s12">
+              <canvas id="myChart12" class="center hoverable"></canvas>
+            </div>
+            <div class="col s12">
+              <canvas id="myChart13" class="center hoverable"></canvas>
+            </div>
+            <div class="col s12">
+              <canvas id="myChart14" class="center hoverable"></canvas>
+            </div>
+          </div>
+        </div>
+        <section class="container">
+          <h5 class="brown-text text-darken-1 center-align"><u>Summarised Data</u></h5>
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="bold-text truncate active blue-text text-darken-4"
+                    href="#comfirmed-cases">Confirmed</a></li>
+                <li class="tab col s3"><a class="bold-text truncate grey-text text-darken-1"
+                    href="#death-cases">Deaths</a>
+                </li>
+                <li class="tab col s3"><a class="bold-text truncate my-red-text" href="#active-cases">Active</a></li>
+                <li class="tab col s3"><a class="bold-text truncate light-green-text text-accent-3"
+                    href="#recovered-cases">Recovered</a>
+                </li>
+              </ul>
+            </div>
+            <div id="comfirmed-cases" class="center-align col s12">
+              <h6 class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></h6>
+            </div>
+            <div id="death-cases" class="center-align col s12">
+              <h6 class="bold-text grey-text text-darken-1" id="total-death-cases"></h6>
+            </div>
+            <div id="active-cases" class="center-align col s12">
+              <h6 class="bold-text my-red-text" id="total-active-cases"></h6>
+            </div>
+            <div id="recovered-cases" class="center-align col s12">
+              <h6 class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card-panel center-align">
+                <span class="bold-text light-green-text text-accent-3" id="recovery-rate"></span>
               </div>
             </div>
-            <div class="row">
-              <div class="col s12 m6">
-                <div class="card-panel center-align">
-                  <span class="bold-text light-green-text text-accent-3" id="recovery-rate"></span>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="card-panel center-align">
-                  <span class="bold-text grey-text text-darken-1" id="death-rate"></span>
-                </div>
+            <div class="col s12 m6">
+              <div class="card-panel center-align">
+                <span class="bold-text grey-text text-darken-1" id="death-rate"></span>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
       </div>
       <div id="tabulate" class="col s12">
+        <!-- <div id="div1">
+          <div id="div2">
+            <div id="div3"> -->
         <table class="responsive-table striped">
           <thead>
             <tr>
@@ -153,13 +156,34 @@
               <th>Active</th>
               <th>Recovered</th>
               <th>Dead</th>
-              <!-- <th class="blue-text text-darken-4">Confirmed</th>
-              <th class="my-red-text">Active</th>
-              <th class="light-green-text text-accent-3">Recovered</th>
-              <th class="grey-text text-darken-1">Dead</th> -->
             </tr>
           </thead>
           <tbody id="state-data-table"></tbody>
+        </table>
+        <!-- </div>
+          </div>
+        </div> -->
+        <hr>
+        <div class="section" style="padding-bottom: 0;">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="input-field col s12">
+              <select id="my-select-tabulate" onchange="tabulateToggle()"></select>
+              <label>Choose Region</label>
+            </div>
+          </div>
+        </div>
+        <table class="responsive-table striped">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th class="blue-text text-darken-4">Confirmed</th>
+              <th class="my-red-text">Active</th>
+              <th class="light-green-text text-accent-3">Recovered</th>
+              <th class="grey-text text-darken-1">Dead</th>
+              <th>Last Updated At</th>
+            </tr>
+          </thead>
+          <tbody id="dynamic-summary-tabulate"></tbody>
         </table>
       </div>
     </div>

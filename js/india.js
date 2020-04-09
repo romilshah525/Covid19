@@ -351,9 +351,50 @@ function toggle() {
 
 function fillStateDataTable() {
   let tbody = document.getElementById("state-data-table"),
-    res = "";
+    inputForm = document.getElementById("my-select-tabulate"),
+    tbodyData = "",
+    ipFormData = "";
   statewise.slice(1).forEach((data) => {
-    res += `<tr><td>${data["state"]}</td><td>${data["confirmed"]}</td><td>${data["active"]}</td><td>${data["recovered"]}</td><td>${data["deaths"]}</td></tr>`;
+    tbodyData += `<tr>
+                  <td>${data["state"]}</td>
+                  <td>${data["confirmed"]}</td>
+                  <td>${data["active"]}</td>
+                  <td>${data["recovered"]}</td>
+                  <td>${data["deaths"]}</td>
+                </tr>`;
+    ipFormData += `<option value="${data["statecode"]}">${data["state"]}</option>`;
   });
-  tbody.innerHTML = res;
+  tbody.innerHTML = tbodyData;
+  inputForm.innerHTML = ipFormData;
+  $(document).ready(function () {
+    $("select").formSelect();
+  });
+  document.getElementById("my-select-tabulate").value = "MH";
+  tabulateToggle();
+}
+
+function tabulateToggle() {
+  name = document.getElementById("my-select-tabulate").value;
+  let i = 0;
+  while (i < statewise.length && statewise[i]["statecode"] != name) i += 1;
+  let tbody = document.getElementById("dynamic-summary-tabulate");
+  l = Date(statewise[i]["lastupdatedtime"]).split(" ");
+  tbodyData = tbody.innerHTML = `<tr>
+                                  <td>${statewise[i]["state"]}</td>
+                                  <td class="blue-text text-darken-4">${
+                                    statewise[i]["confirmed"]
+                                  }</td>
+                                  <td class="my-red-text">${
+                                    statewise[i]["active"]
+                                  }</td>
+                                  <td class="light-green-text text-accent-3">${
+                                    statewise[i]["recovered"]
+                                  }</td>
+                                  <td class="grey-text text-darken-4">${
+                                    statewise[i]["deaths"]
+                                  }</td>
+                                  <td>${
+                                    "On " + l[1] + " " + l[2] + ", at " + l[4]
+                                  }</td
+                                tr>`;
 }
