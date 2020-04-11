@@ -1,19 +1,4 @@
-(function ($) {
-  $(function () {
-    $(".sidenav").sidenav();
-  });
-})(jQuery);
-
-$(document).ready(function () {
-  M.toast({
-    html: "View in Desktop for visualizing graphs",
-    inDuration: 1000,
-    outDuration: 1000,
-    displayLength: 50000,
-    classes: "hide-on-med-and-up",
-    activationPercent: 0.25,
-  });
-});
+(function ($) {})(jQuery);
 
 $(".dropdown-trigger").dropdown();
 $(".sidenav")
@@ -24,4 +9,16 @@ $(".sidenav")
 
 $(document).ready(function () {
   $(".tabs").tabs();
+  // M.toast({
+  //   html: "View in Desktop for visualizing graphs",
+  //   inDuration: 1000,
+  //   outDuration: 1000,
+  //   displayLength: 50000,
+  //   classes: "hide-on-med-and-up",
+  //   activationPercent: 0.25,
+  // });
+  $(".tap-target").tapTarget();
+  if ($(window).width() < 600) {
+    $(".tap-target").tapTarget("open");
+  }
 });

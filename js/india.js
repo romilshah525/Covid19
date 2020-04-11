@@ -291,10 +291,10 @@ function tabulateToggle() {
   let tbody = document.getElementById("dynamic-summary-tabulate");
   tbodyData = tbody.innerHTML = `<tr>
                                   <td class="truncate">${statewise[i]["state"]}</td>
-                                  <td class="blue-text text-darken-4">${statewise[i]["confirmed"]}</td>
+                                  <td class="blue-text text-darken-4">${statewise[i]["confirmed"]} (+${statewise[i]["deltaconfirmed"]})</td>
                                   <td class="my-red-text">${statewise[i]["active"]}</td>
-                                  <td class="light-green-text text-accent-3">${statewise[i]["recovered"]}</td>
-                                  <td class="grey-text text-darken-4">${statewise[i]["deaths"]}</td>
+                                  <td class="light-green-text text-accent-3">${statewise[i]["recovered"]} (+${statewise[i]["deltarecovered"]})</td>
+                                  <td class="grey-text text-darken-4">${statewise[i]["deaths"]} (+${statewise[i]["deltadeaths"]})</td>
                                 </tr>`;
   let optionsStateSummary = {
     type: "bar",
