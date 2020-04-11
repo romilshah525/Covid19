@@ -50,12 +50,14 @@ let entireData,
   myChart11,
   myChart12,
   myChart13,
-  myChart14;
+  myChart14,
+  myChart15;
 
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx12 = document.getElementById("myChart12").getContext("2d"),
   ctx13 = document.getElementById("myChart13").getContext("2d"),
-  ctx14 = document.getElementById("myChart14").getContext("2d");
+  ctx14 = document.getElementById("myChart14").getContext("2d"),
+  ctx15 = document.getElementById("myChart15").getContext("2d");
 
 function readData() {
   fetch("https://api.covid19india.org/data.json")
@@ -86,14 +88,13 @@ function readData() {
       });
       elem.innerHTML = ret;
       elem.value = name;
-      document.getElementById("my-select").value = "in";
       document.getElementById("to-be-updated").innerHTML = `<div class="col s6">
-                        <h6 class="black-text truncate right">Last Updated At</h6>
-                      </div>
-                      <div class="col s6 center-align bold-text left">
-                        <span>${statewise[0]["lastupdatedtime"]}</span>
-                    </div>`;
-
+                                                                <h6 class="black-text right">Last Updated At</h6>
+                                                              </div>
+                                                              <div class="col s6">
+                                                                <h6 class="black-text left">${statewise[0]["lastupdatedtime"]}</h6>
+                                                            </div>`;
+      document.getElementById("my-select").value = "in";
       if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
       else plotGraph(time_series_data, 14, "in");
       $(document).ready(function () {
@@ -171,7 +172,6 @@ function plotGraph(data, size, ct) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#223e8011" },
       scales: {
         xAxes: [{}],
@@ -206,7 +206,6 @@ function plotGraph(data, size, ct) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#e8272711" },
       scales: {
         xAxes: [{}],
@@ -241,7 +240,6 @@ function plotGraph(data, size, ct) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#2adb2a11" },
       scales: {
         xAxes: [{}],
@@ -277,7 +275,6 @@ function plotGraph(data, size, ct) {
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
-      responsive: true,
       chartArea: { backgroundColor: "#8f8c8c10" },
       scales: {
         xAxes: [{}],
@@ -383,6 +380,9 @@ function fillStateDataTable() {
 }
 
 function tabulateToggle() {
+  if (myChart15) {
+    myChart15.destroy();
+  }
   name = document.getElementById("my-select-tabulate").value;
   let i = 0;
   while (i < statewise.length && statewise[i]["statecode"] != name) i += 1;
@@ -394,4 +394,59 @@ function tabulateToggle() {
                                   <td class="light-green-text text-accent-3">${statewise[i]["recovered"]}</td>
                                   <td class="grey-text text-darken-4">${statewise[i]["deaths"]}</td>
                                 </tr>`;
+  let optionsStateSummary = {
+    type: "bar",
+    data: {
+      labels: ["Confirmed", "Active", "Deaths", "Recovered"],
+      datasets: [
+        {
+          label: `${mapper[name.toLowerCase()]}`,
+          data: [
+            statewise[i]["confirmed"],
+            statewise[i]["active"],
+            statewise[i]["recovered"],
+            statewise[i]["deaths"],
+          ],
+          backgroundColor: [
+            "#223e80a0",
+            "#e82727a0",
+            "#2adb2aa0",
+            "#8f8c8ca0 ",
+          ],
+          borderColor: ["#223e80ff", "#e82727ff", "#2adb2aff", "#8f8c8cff "],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      legend: {
+        position: "bottom",
+        labels: { fontColor: "#000", fontSize: 12 },
+      },
+      title: {
+        display: true,
+        text: `Covid19 Total Count - ${mapper[name.toLowerCase()]}`,
+        fontSize: 16,
+      },
+      tooltips: { mode: "index", intersect: false },
+      hover: { mode: "nearest", intersect: true },
+      scales: {
+        xAxes: [{}],
+        yAxes: [
+          {
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: Math.max(
+                statewise[i]["confirmed"],
+                statewise[i]["active"],
+                statewise[i]["recovered"],
+                statewise[i]["deaths"]
+              ),
+            },
+          },
+        ],
+      },
+    },
+  };
+  myChart15 = new Chart(ctx15, optionsStateSummary);
 }
