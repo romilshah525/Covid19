@@ -88,9 +88,9 @@ function readData() {
       elem.value = name;
       document.getElementById("my-select").value = "in";
       document.getElementById("to-be-updated").innerHTML = `<div class="col s6">
-                        <h6 class="black-text truncate center-align">Last Updated At</h6>
+                        <h6 class="black-text truncate right">Last Updated At</h6>
                       </div>
-                      <div class="col s6 center-align bold-text">
+                      <div class="col s6 center-align bold-text left">
                         <span>${statewise[0]["lastupdatedtime"]}</span>
                     </div>`;
 

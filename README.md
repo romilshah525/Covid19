@@ -1,6 +1,6 @@
 # Covid19 Dashboard
 
-Global and India-specific dashboard for Covid19 pandemic to help easily visualize the available data.
+Global and India-specific dashboard for Covid19 pandemic to help easily visualize, interpret and summarize the available data.
 
 ## View the Dashboard
 
@@ -9,7 +9,7 @@ Global and India-specific dashboard for Covid19 pandemic to help easily visualiz
 
 ## Getting Started
 
-Fork and clone the repository [Covid19](https://github.com/romilshah525/Covid19) to get started. Active internet connection is required for dynamic data fetching requests.
+[Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the repository [Covid19](https://github.com/romilshah525/Covid19) and clone it to your local machine to get started. Active internet connection is required for dynamic data fetching requests.
 
 ## Learnings:
 - Effectively visualize the data.

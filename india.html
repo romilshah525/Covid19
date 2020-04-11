@@ -42,7 +42,6 @@
               class="material-icons right">arrow_drop_down</i></a>
         </li>
       </ul>
-
       <ul id="nav-mobile" class="sidenav">
         <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
         <li>
@@ -76,22 +75,8 @@
         <div class="progress">
           <div class="indeterminate"></div>
         </div>
-        <!-- <div class="preloader-wrapper small active">
-          <div class="spinner-layer spinner-blue-only">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-              <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
-
     <div class="row">
       <div class="col s12">
         <ul class="tabs">
@@ -99,78 +84,63 @@
           <li class="tab col s6"><a class="grey-text text-darken-3 active" href="#tabulate">Tabulate</a></li>
         </ul>
       </div>
-    <!-- </div>
-    <div class="row"> -->
       <div id="visualize" class="col s12">
-        <div>
-          <div class="section" style="padding-bottom: 0;">
-            <div class="row" style="margin-bottom: 0;">
-              <div class="input-field col s12">
-                <select id="my-select" onchange="toggle()"></select>
-                <label>Choose Region</label>
-              </div>
+        <div class="section" style="padding-bottom: 0;">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="input-field col s12">
+              <select id="my-select" onchange="toggle()"></select>
+              <label>Choose Your Region</label>
             </div>
           </div>
-          <div class="row">
-            <div class="col s12">
-              <canvas id="myChart11" class="center hoverable"></canvas>
-            </div>
-            <div class="col s12">
-              <canvas id="myChart12" class="center hoverable"></canvas>
-            </div>
-            <div class="col s12">
-              <canvas id="myChart13" class="center hoverable"></canvas>
-            </div>
-            <div class="col s12">
-              <canvas id="myChart14" class="center hoverable"></canvas>
-            </div>
+          <div class="col s12">
+            <canvas id="myChart11" class="center hoverable"></canvas>
+          </div>
+          <div class="col s12">
+            <canvas id="myChart12" class="center hoverable"></canvas>
+          </div>
+          <div class="col s12">
+            <canvas id="myChart13" class="center hoverable"></canvas>
+          </div>
+          <div class="col s12">
+            <canvas id="myChart14" class="center hoverable"></canvas>
           </div>
         </div>
-        <section class="container">
-          <h5 class="brown-text text-darken-1 center-align"><u>Summarised Data</u></h5>
-          <div class="row">
-            <div class="col s12">
-              <ul class="tabs">
-                <li class="tab col s3"><a class="bold-text truncate active blue-text text-darken-4"
-                    href="#comfirmed-cases">Confirmed</a></li>
-                <li class="tab col s3"><a class="bold-text truncate grey-text text-darken-1"
-                    href="#death-cases">Deaths</a>
-                </li>
-                <li class="tab col s3"><a class="bold-text truncate my-red-text" href="#active-cases">Active</a></li>
-                <li class="tab col s3"><a class="bold-text truncate light-green-text text-accent-3"
-                    href="#recovered-cases">Recovered</a>
-                </li>
-              </ul>
-            </div>
-            <div id="comfirmed-cases" class="center-align col s12">
-              <h6 class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></h6>
-            </div>
-            <div id="death-cases" class="center-align col s12">
-              <h6 class="bold-text grey-text text-darken-1" id="total-death-cases"></h6>
-            </div>
-            <div id="active-cases" class="center-align col s12">
-              <h6 class="bold-text my-red-text" id="total-active-cases"></h6>
-            </div>
-            <div id="recovered-cases" class="center-align col s12">
-              <h6 class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></h6>
-            </div>
+        <h5 class="brown-text text-darken-3 center-align"><u>Summarised Data</u></h5>
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s3"><a class="bold-text truncate active blue-text text-darken-4"
+                href="#comfirmed-cases">Confirmed</a></li>
+            <li class="tab col s3"><a class="bold-text truncate grey-text text-darken-1" href="#death-cases">Deaths</a>
+            </li>
+            <li class="tab col s3"><a class="bold-text truncate my-red-text" href="#active-cases">Active</a></li>
+            <li class="tab col s3"><a class="bold-text truncate light-green-text text-accent-3"
+                href="#recovered-cases">Recovered</a>
+            </li>
+          </ul>
+        </div>
+        <div id="comfirmed-cases" class="center-align col s12">
+          <h6 class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></h6>
+        </div>
+        <div id="death-cases" class="center-align col s12">
+          <h6 class="bold-text grey-text text-darken-1" id="total-death-cases"></h6>
+        </div>
+        <div id="active-cases" class="center-align col s12">
+          <h6 class="bold-text my-red-text" id="total-active-cases"></h6>
+        </div>
+        <div id="recovered-cases" class="center-align col s12">
+          <h6 class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></h6>
+        </div>
+        <div class="col s12 m6">
+          <div class="card-panel center-align">
+            <span class="bold-text light-green-text text-accent-3" id="recovery-rate"></span>
           </div>
-          <div class="row">
-            <div class="col s12 m6">
-              <div class="card-panel center-align">
-                <span class="bold-text light-green-text text-accent-3" id="recovery-rate"></span>
-              </div>
-            </div>
-            <div class="col s12 m6">
-              <div class="card-panel center-align">
-                <span class="bold-text grey-text text-darken-1" id="death-rate"></span>
-              </div>
-            </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card-panel center-align">
+            <span class="bold-text grey-text text-darken-1" id="death-rate"></span>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
-    <div class="row">
       <div id="tabulate" class="col s12">
         <div class="col s12 m6 center-align">
           <h5 class="black-text bold-text"><u>Top 5 States with Maximum cases</u></h5>
