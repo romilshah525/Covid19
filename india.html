@@ -69,7 +69,9 @@
   </nav>
   <main class="container section" style="padding-top: 1rem;">
     <div class="row valign-wrapper" id="to-be-updated">
-      <div class="col s6"><h6 class="black-text truncate center-align">Fetching Data</h6></div>
+      <div class="col s6">
+        <h6 class="black-text truncate center-align">Fetching Data</h6>
+      </div>
       <div class="col s6">
         <div class="progress">
           <div class="indeterminate"></div>
@@ -97,6 +99,8 @@
           <li class="tab col s6"><a class="grey-text text-darken-3 active" href="#tabulate">Tabulate</a></li>
         </ul>
       </div>
+    <!-- </div>
+    <div class="row"> -->
       <div id="visualize" class="col s12">
         <div>
           <div class="section" style="padding-bottom: 0;">
@@ -165,47 +169,46 @@
           </div>
         </section>
       </div>
+    </div>
+    <div class="row">
       <div id="tabulate" class="col s12">
-        <!-- <div id="div1">
-          <div id="div2">
-            <div id="div3"> -->
-        <table class="responsive-table striped">
-          <thead>
-            <tr>
-              <th>State</th>
-              <th>Confirmed</th>
-              <th>Active</th>
-              <th>Recovered</th>
-              <th>Dead</th>
-            </tr>
-          </thead>
-          <tbody id="state-data-table"></tbody>
-        </table>
-        <!-- </div>
-          </div>
-        </div> -->
-        <hr>
-        <div class="section" style="padding-bottom: 0;">
-          <div class="row" style="margin-bottom: 0;">
-            <div class="input-field col s12">
-              <select id="my-select-tabulate" onchange="tabulateToggle()"></select>
-              <label>Choose Region</label>
+        <div class="col s12 m6 center-align">
+          <h5 class="black-text bold-text"><u>Top 5 States with Maximum cases</u></h5>
+          <table class="responsive-table striped ">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Confirmed</th>
+                <th>Active</th>
+                <th>Recovered</th>
+                <th>Dead</th>
+              </tr>
+            </thead>
+            <tbody id="state-data-table"></tbody>
+          </table>
+        </div>
+        <div class="col s12 m6">
+          <div class="section" style="padding-bottom: 0;">
+            <div class="row" style="margin-bottom: 0;">
+              <div class="input-field col s12">
+                <select id="my-select-tabulate" onchange="tabulateToggle()"></select>
+                <label class="black-text">Choose Your State</label>
+              </div>
             </div>
           </div>
+          <table class="responsive-table striped">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th class="blue-text text-darken-4">Confirmed</th>
+                <th class="my-red-text">Active</th>
+                <th class="light-green-text text-accent-3">Recovered</th>
+                <th class="grey-text text-darken-1">Dead</th>
+              </tr>
+            </thead>
+            <tbody id="dynamic-summary-tabulate"></tbody>
+          </table>
         </div>
-        <table class="responsive-table striped">
-          <thead>
-            <tr>
-              <th>State</th>
-              <th class="blue-text text-darken-4">Confirmed</th>
-              <th class="my-red-text">Active</th>
-              <th class="light-green-text text-accent-3">Recovered</th>
-              <th class="grey-text text-darken-1">Dead</th>
-              <th>Last Updated At</th>
-            </tr>
-          </thead>
-          <tbody id="dynamic-summary-tabulate"></tbody>
-        </table>
       </div>
     </div>
   </main>
