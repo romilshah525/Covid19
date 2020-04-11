@@ -31,10 +31,7 @@ Chart.pluginService.register({
   },
 });
 
-function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
-  if (id) {
-    data = entiredata[id];
-  }
+function plotGraph(data = entiredata, daily = false, size = 16) {
   if (myChart11) {
     myChart11.destroy();
     myChart12.destroy();
@@ -54,6 +51,7 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
     totalRecovered = 0,
     totalConfirmed = 0,
     totalActive = 0;
+  temp = "";
   data.forEach((element) => {
     labels.push(element["date"].split("-").reverse().join("-").slice(0, 4));
     if (daily) {
@@ -76,11 +74,12 @@ function plotGraph(data = entiredata, daily = false, id = null, size = 16) {
         element["confirmed"] - (element["deaths"] + element["recovered"])
       );
     }
+    temp = element;
   });
-  totalDeath = death.slice(-1);
-  totalRecovered = recovered.slice(-1);
-  totalConfirmed = confirmed.slice(-1);
-  totalActive = active.slice(-1);
+  totalDeath = temp["deaths"];
+  totalRecovered = temp["recovered"];
+  totalConfirmed = temp["confirmed"];
+  totalActive = temp["active"];
   document.getElementById(
     "total-confirmed-cases"
   ).innerText = `Positive Cases: ${totalConfirmed}`;
@@ -304,22 +303,20 @@ function readData() {
       $(document).ready(function () {
         $("select").formSelect();
       });
-      return data[country];
+      return data;
     })
     .then((data) => {
       jsondata = data;
       if (window.screen.availWidth <= 650)
         plotGraph(
-          jsondata,
+          jsondata[country],
           !document.getElementById("mySwitch").checked,
-          null,
-          8
+          6
         );
       else
         plotGraph(
-          jsondata,
+          jsondata[country],
           !document.getElementById("mySwitch").checked,
-          null,
           14
         );
     });
@@ -331,14 +328,12 @@ function toggle() {
     plotGraph(
       entiredata[country],
       !document.getElementById("mySwitch").checked,
-      null,
       8
     );
   else
     plotGraph(
       entiredata[country],
       !document.getElementById("mySwitch").checked,
-      null,
       14
     );
 }
