@@ -64,8 +64,12 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       confirmed.push(element["confirmed"]);
       death.push(element["deaths"]);
       recovered.push(element["recovered"]);
-      let t = element["confirmed"] - element["deaths"] + element["recovered"];
-      active.push(t < 0 ? 0 : t);
+      active.push(
+        Math.max(
+          element["confirmed"] - element["deaths"] + element["recovered"],
+          0
+        )
+      );
     }
     temp = element;
   });
@@ -148,14 +152,12 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
         {
           display: true,
           scaleLabel: { display: true, labelString: "Date" },
-          // gridLines: { display: false },
         },
       ];
       opt.options.scales.yAxes = [
         {
           display: true,
           scaleLabel: { display: true, labelString: "Count " },
-          // gridLines: { display: false },
         },
       ];
     });

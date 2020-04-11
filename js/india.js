@@ -115,8 +115,12 @@ function plotGraph(data, size, ct) {
       deceased.push(Number(element["dailydeceased"]));
       recovered.push(Number(element["dailyrecovered"]));
       active.push(
-        Number(element["dailyconfirmed"]) -
-          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
+        Math.max(
+          Number(element["dailyconfirmed"]) -
+            (Number(element["dailyrecovered"]) +
+              Number(element["dailydeceased"])),
+          0
+        )
       );
     }
   } else {
@@ -125,10 +129,14 @@ function plotGraph(data, size, ct) {
       confirmed.push(Number(element["dailyconfirmed"]));
       deceased.push(Number(element["dailydeceased"]));
       recovered.push(Number(element["dailyrecovered"]));
-      let t =
-        Number(element["dailyconfirmed"]) -
-        (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]));
-      active.push(t < 0 ? 0 : t);
+      active.push(
+        Math.max(
+          Number(element["dailyconfirmed"]) -
+            (Number(element["dailyrecovered"]) +
+              Number(element["dailydeceased"])),
+          0
+        )
+      );
     });
   }
   let optionsIndiaData = {
@@ -175,7 +183,7 @@ function plotGraph(data, size, ct) {
       },
       title: {
         display: true,
-        text: `Covid19 Confirmed Daily Count - ${name}`,
+        text: `Covid19 Daily Count - ${name}`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
@@ -187,6 +195,20 @@ function plotGraph(data, size, ct) {
       },
     },
   };
+  if (size > 12) {
+    optionsIndiaData.options.scales.xAxes = [
+      {
+        display: true,
+        scaleLabel: { display: true, labelString: "Date" },
+      },
+    ];
+    optionsIndiaData.options.scales.yAxes = [
+      {
+        display: true,
+        scaleLabel: { display: true, labelString: "Count " },
+      },
+    ];
+  }
   myChart11 = new Chart(ctx11, optionsIndiaData);
   element = statewise.filter((el) => el["statecode"] == ct.toUpperCase())[0];
   total = element.confirmed;
