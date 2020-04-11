@@ -48,15 +48,9 @@ let entireData,
   totalReceoveredCovidOrg,
   name = "India",
   myChart11,
-  myChart12,
-  myChart13,
-  myChart14,
   myChart15;
 
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
-  ctx12 = document.getElementById("myChart12").getContext("2d"),
-  ctx13 = document.getElementById("myChart13").getContext("2d"),
-  ctx14 = document.getElementById("myChart14").getContext("2d"),
   ctx15 = document.getElementById("myChart15").getContext("2d");
 
 function readData() {
@@ -77,11 +71,6 @@ function readData() {
       let ret = "";
       statewise[0]["state"] = "India";
       statewise[0]["statecode"] = "IN";
-      // statewise.forEach((a) => {
-      //   ret += `<option value="${a["statecode"].toLowerCase()}">${
-      //     a["state"]
-      //   }</option>`;
-      // });
       let keys = Object.keys(mapper);
       keys.forEach((a) => {
         ret += `<option value="${a}">${mapper[a]}</option>`;
@@ -107,9 +96,6 @@ function readData() {
 function plotGraph(data, size, ct) {
   if (myChart11) {
     myChart11.destroy();
-    myChart12.destroy();
-    myChart13.destroy();
-    myChart14.destroy();
   }
   let confirmed = [],
     deceased = [],
@@ -139,14 +125,13 @@ function plotGraph(data, size, ct) {
       confirmed.push(Number(element["dailyconfirmed"]));
       deceased.push(Number(element["dailydeceased"]));
       recovered.push(Number(element["dailyrecovered"]));
-      active.push(
+      let t =
         Number(element["dailyconfirmed"]) -
-          (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]))
-      );
+        (Number(element["dailyrecovered"]) + Number(element["dailydeceased"]));
+      active.push(t < 0 ? 0 : t);
     });
   }
-  let optionsConfirmed = {
-    type: "line",
+  let optionsIndiaData = {
     data: {
       labels: date,
       datasets: [
@@ -157,8 +142,31 @@ function plotGraph(data, size, ct) {
           backgroundColor: "#223e80ff",
           borderColor: "#223e80ff",
         },
+        {
+          label: "Active ",
+          data: active,
+          fill: false,
+          backgroundColor: "#e82727a0",
+          borderColor: "#e82727ff",
+        },
+        {
+          label: "Recovered ",
+          data: recovered,
+          fill: false,
+          backgroundColor: "#2adb2aa0",
+          borderColor: "#2adb2aff",
+        },
+        {
+          label: "Deaths ",
+          data: deceased,
+          fill: false,
+          backgroundColor: "#8f8c8ca0",
+          hoverBorderColor: "#8f8c8cff",
+          borderColor: "#8f8c8cf0",
+        },
       ],
     },
+    type: "line",
     options: {
       responsive: true,
       legend: {
@@ -179,135 +187,7 @@ function plotGraph(data, size, ct) {
       },
     },
   };
-  let optionsActive = {
-    type: "line",
-    data: {
-      labels: date,
-      datasets: [
-        {
-          label: "Active ",
-          data: active,
-          fill: false,
-          backgroundColor: "#e82727a0",
-          borderColor: "#e82727ff",
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: "bottom",
-        labels: { fontColor: "#e82727ff", fontSize: size },
-      },
-      title: {
-        display: true,
-        text: `Covid19 Active Daily Count - ${name}`,
-        fontSize: size + 4,
-      },
-      tooltips: { mode: "index", intersect: false },
-      hover: { mode: "nearest", intersect: true },
-      chartArea: { backgroundColor: "#e8272711" },
-      scales: {
-        xAxes: [{}],
-        yAxes: [{}],
-      },
-    },
-  };
-  let optionsRecovered = {
-    type: "line",
-    data: {
-      labels: date,
-      datasets: [
-        {
-          label: "Recovered ",
-          data: recovered,
-          fill: false,
-          backgroundColor: "#2adb2aa0",
-          borderColor: "#2adb2aff",
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: "bottom",
-        labels: { fontColor: "#34bf34ff", fontSize: size },
-      },
-      title: {
-        display: true,
-        text: `Covid19 Recovered Daily Count - ${name}`,
-        fontSize: size + 4,
-      },
-      tooltips: { mode: "index", intersect: false },
-      hover: { mode: "nearest", intersect: true },
-      chartArea: { backgroundColor: "#2adb2a11" },
-      scales: {
-        xAxes: [{}],
-        yAxes: [{}],
-      },
-    },
-  };
-  let optionsDeath = {
-    type: "line",
-    data: {
-      labels: date,
-      datasets: [
-        {
-          label: "Deaths ",
-          data: deceased,
-          fill: false,
-          backgroundColor: "#8f8c8ca0",
-          hoverBorderColor: "#8f8c8cff",
-          borderColor: "#8f8c8cf0",
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: "bottom",
-        labels: { fontColor: "#8f8c8cff", fontSize: size },
-      },
-      title: {
-        display: true,
-        text: `Covid19 Death Daily Count - ${name}`,
-        fontSize: size + 4,
-      },
-      tooltips: { mode: "index", intersect: false },
-      hover: { mode: "nearest", intersect: true },
-      chartArea: { backgroundColor: "#8f8c8c10" },
-      scales: {
-        xAxes: [{}],
-        yAxes: [{}],
-      },
-    },
-  };
-  if (size > 12) {
-    let allOptions = [
-      optionsConfirmed,
-      optionsDeath,
-      optionsRecovered,
-      optionsActive,
-    ];
-    allOptions.forEach((opt) => {
-      opt.options.scales.xAxes = [
-        {
-          display: true,
-          scaleLabel: { display: true, labelString: "Date" },
-        },
-      ];
-      opt.options.scales.yAxes = [
-        {
-          display: true,
-          scaleLabel: { display: true, labelString: "Count " },
-        },
-      ];
-    });
-  }
-  myChart11 = new Chart(ctx11, optionsConfirmed);
-  myChart12 = new Chart(ctx12, optionsActive);
-  myChart13 = new Chart(ctx13, optionsRecovered);
-  myChart14 = new Chart(ctx14, optionsDeath);
+  myChart11 = new Chart(ctx11, optionsIndiaData);
   element = statewise.filter((el) => el["statecode"] == ct.toUpperCase())[0];
   total = element.confirmed;
   totalActiveCovidOrg = element.active;
@@ -436,12 +316,13 @@ function tabulateToggle() {
           {
             ticks: {
               suggestedMin: 0,
-              suggestedMax: Math.max(
-                statewise[i]["confirmed"],
-                statewise[i]["active"],
-                statewise[i]["recovered"],
-                statewise[i]["deaths"]
-              ),
+              suggestedMax:
+                Math.max(
+                  statewise[i]["confirmed"],
+                  statewise[i]["active"],
+                  statewise[i]["recovered"],
+                  statewise[i]["deaths"]
+                ) + 5,
             },
           },
         ],
