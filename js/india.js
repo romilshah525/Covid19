@@ -87,6 +87,14 @@ function readData() {
       elem.innerHTML = ret;
       elem.value = name;
       document.getElementById("my-select").value = "in";
+      let l = Date(statewise[0]["lastupdatedtime"]).split(" ");
+      document.getElementById("to-be-updated").innerHTML = `<div class="col s6">
+                        <h6 class="black-text truncate center-align">Last Updated At</h6>
+                      </div>
+                      <div class="col s6 center-align bold-text">
+                        <span>${l[1] + " " + l[2] + ", at " + l[4]}</span>
+                    </div>`;
+
       if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
       else plotGraph(time_series_data, 14, "in");
       $(document).ready(function () {

@@ -20,6 +20,9 @@ canvas {
     padding: 0;
     margin: 0;
   }
+  .res-text {
+    font-size: 7vw !important;
+  }
 }
 
 .select-dropdown {
