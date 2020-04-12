@@ -179,7 +179,7 @@ function plotGraph(data, size, ct) {
       responsive: true,
       legend: {
         position: "bottom",
-        labels: { fontColor: "#223e80ff", fontSize: size },
+        labels: { fontColor: "#222", fontSize: size },
       },
       title: {
         display: true,
@@ -218,18 +218,18 @@ function plotGraph(data, size, ct) {
   totalReceoveredCovidOrg = element.recovered;
   document.getElementById(
     "total-confirmed-cases"
-  ).innerText = `Positive Cases: ${totalConfirmedCovidOrg}`;
+  ).innerText = `${totalConfirmedCovidOrg}`;
   document.getElementById(
     "total-recovered-cases"
-  ).innerText = `Recovered Cases: ${totalReceoveredCovidOrg}`;
+  ).innerText = `${totalReceoveredCovidOrg}`;
   document.getElementById(
     "total-active-cases"
-  ).innerText = `Active Cases: ${totalActiveCovidOrg}`;
+  ).innerText = `${totalActiveCovidOrg}`;
   document.getElementById(
     "total-death-cases"
-  ).innerText = `Death Cases: ${totalDeathsCovidOrg}`;
+  ).innerText = `${totalDeathsCovidOrg}`;
 
-  document.getElementById("recovery-rate").innerText = `Recovery Rate: ${String(
+  document.getElementById("recovery-rate").innerText = `Recovery Rt: ${String(
     (totalReceoveredCovidOrg / totalConfirmedCovidOrg) * 100
   ).slice(0, 5)}%`;
   document.getElementById("death-rate").innerText = `Death Rate: ${String(

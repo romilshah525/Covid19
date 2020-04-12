@@ -66,7 +66,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       recovered.push(element["recovered"]);
       active.push(
         Math.max(
-          element["confirmed"] - element["deaths"] + element["recovered"],
+          element["confirmed"] - (element["deaths"] + element["recovered"]),
           0
         )
       );
@@ -76,19 +76,15 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   totalDeath = temp["deaths"];
   totalRecovered = temp["recovered"];
   totalConfirmed = temp["confirmed"];
-  totalActive = temp["active"];
+  totalActive = totalConfirmed - (totalDeath + totalRecovered);
   document.getElementById(
     "total-confirmed-cases"
-  ).innerText = `Positive Cases: ${totalConfirmed}`;
+  ).innerText = `${totalConfirmed}`;
   document.getElementById(
     "total-recovered-cases"
-  ).innerText = `Recovered Cases: ${totalRecovered}`;
-  document.getElementById(
-    "total-active-cases"
-  ).innerText = `Active Cases: ${totalActive}`;
-  document.getElementById(
-    "total-death-cases"
-  ).innerText = `Death Cases: ${totalDeath}`;
+  ).innerText = `${totalRecovered}`;
+  document.getElementById("total-active-cases").innerText = `${totalActive}`;
+  document.getElementById("total-death-cases").innerText = `${totalDeath}`;
   let optionsConfirmed = {
     type: "line",
     data: {
@@ -129,7 +125,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       responsive: true,
       legend: {
         position: "bottom",
-        labels: { fontColor: "#223e80ff", fontSize: size },
+        labels: { fontColor: "#222", fontSize: size },
       },
       title: {
         display: true,
@@ -146,29 +142,26 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
     },
   };
   if (size > 12) {
-    let allOptions = [optionsConfirmed];
-    allOptions.forEach((opt) => {
-      opt.options.scales.xAxes = [
-        {
-          display: true,
-          scaleLabel: { display: true, labelString: "Date" },
-        },
-      ];
-      opt.options.scales.yAxes = [
-        {
-          display: true,
-          scaleLabel: { display: true, labelString: "Count " },
-        },
-      ];
-    });
+    optionsConfirmed.options.scales.xAxes = [
+      {
+        display: true,
+        scaleLabel: { display: true, labelString: "Date" },
+      },
+    ];
+    optionsConfirmed.options.scales.yAxes = [
+      {
+        display: true,
+        scaleLabel: { display: true, labelString: "Count " },
+      },
+    ];
   }
   if (daily) {
     document.getElementById(
       "recovery-rate"
-    ).innerText = `Recovery Rate: NA (Choose Cumulative Type)`;
+    ).innerText = `Recovery Rate: NA (Select Cumulative)`;
     document.getElementById(
       "death-rate"
-    ).innerText = `Death Rate: NA (Choose Cumulative Type)`;
+    ).innerText = `Death Rate: NA (Select Cumulative)`;
   } else {
     document.getElementById(
       "recovery-rate"

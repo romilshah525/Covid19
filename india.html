@@ -92,7 +92,7 @@
             <canvas id="myChart11" class="center hide-on-small-and-down"></canvas>
           </div>
         </div>
-        <h5 class="brown-text text-darken-3 center-align"><u>Summarised Data</u></h5>
+        <!-- <h5 class="brown-text text-darken-3 center-align"><u>Summarised Data</u></h5>
         <div class="col s12">
           <ul class="tabs">
             <li class="tab col s3"><a class="bold-text truncate active blue-text text-darken-4"
@@ -126,7 +126,29 @@
           <div class="card-panel center-align">
             <span class="bold-text grey-text text-darken-1" id="death-rate"></span>
           </div>
-        </div>
+        </div> -->
+        <table class="centered">
+          <thead>
+            <tr>
+              <th>Confirmed Cases</th>
+              <th>Death Cases</th>
+              <th>Active Cases</th>
+              <th>Recovered Cases</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></td>
+              <td class="bold-text grey-text text-darken-1" id="total-death-cases"></td>
+              <td class="bold-text my-red-text" id="total-active-cases"></td>
+              <td class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="bold-text light-green-text text-accent-3 text-small" id="recovery-rate"></td>
+              <td colspan="2" class="bold-text grey-text text-darken-1 text-small" id="death-rate"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div id="tabulate" class="col s12">
         <div class="col s12 m6 center-align">
