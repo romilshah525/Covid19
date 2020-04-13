@@ -6,7 +6,7 @@ let jsondata,
   myChart14,
   country = "India";
 const ctx11 = document.getElementById("myChart11");
-
+let confirmed, active, recovered, death;
 Chart.pluginService.register({
   beforeDraw: function (chart, easing) {
     if (
@@ -32,11 +32,11 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   if (myChart11) {
     myChart11.destroy();
   }
+  confirmed = [];
+  death = [];
+  recovered = [];
+  active = [];
   let labels = [],
-    confirmed = [],
-    death = [],
-    recovered = [],
-    active = [],
     prevC = 0,
     prevD = 0,
     prevR = 0,
@@ -44,38 +44,84 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
     totalDeath = 0,
     totalRecovered = 0,
     totalConfirmed = 0,
-    totalActive = 0;
-  temp = "";
-  data.forEach((element) => {
-    labels.push(element["date"].split("-").reverse().join("-").slice(0, 4));
-    if (daily) {
-      confirmed.push(Math.max(element["confirmed"] - prevC, 0));
-      death.push(Math.max(element["deaths"] - prevD, 0));
-      recovered.push(element["recovered"] - prevR);
-      temp =
-        element["confirmed"] -
-        (element["deaths"] + element["recovered"] + prevA);
-      active.push(temp < 0 ? 0 : temp);
-      prevC = Math.max(element["confirmed"], 0);
-      prevD = Math.max(element["deaths"] - prevD, 0);
-      prevR = element["recovered"];
-      prevA = temp < 0 ? 0 : temp;
-    } else {
-      confirmed.push(element["confirmed"]);
-      death.push(element["deaths"]);
-      recovered.push(element["recovered"]);
+    totalActive = 0,
+    temp = "",
+    currElement,
+    prevElement = {
+      confirmed: 0,
+      deaths: 0,
+      recovered: 0,
+    };
+  if (daily) {
+    for (let i = 0; i < data.length; i++) {
+      currElement = data[i];
+      labels.push(
+        currElement["date"].split("-").reverse().join("-").slice(0, 4)
+      );
+      confirmed.push(currElement["confirmed"] - prevElement["confirmed"]);
+      death.push(Math.max(currElement["deaths"] - prevElement["deaths"], 0));
+      recovered.push(currElement["recovered"] - prevElement["recovered"]);
       active.push(
         Math.max(
-          element["confirmed"] - (element["deaths"] + element["recovered"]),
+          currElement["confirmed"] -
+            prevElement["confirmed"] -
+            (currElement["deaths"] -
+              prevElement["deaths"] +
+              (currElement["recovered"] - prevElement["recovered"])),
           0
         )
       );
+      prevElement = currElement;
     }
-    temp = element;
-  });
-  totalDeath = temp["deaths"];
-  totalRecovered = temp["recovered"];
-  totalConfirmed = temp["confirmed"];
+  } else {
+    for (let i = 0; i < data.length; i++) {
+      currElement = data[i];
+      labels.push(
+        currElement["date"].split("-").reverse().join("-").slice(0, 4)
+      );
+      confirmed.push(currElement["confirmed"]);
+      death.push(currElement["deaths"]);
+      recovered.push(currElement["recovered"]);
+      active.push(
+        Math.max(
+          currElement["confirmed"] -
+            (currElement["deaths"] + currElement["recovered"])
+        )
+      );
+      prevElement = currElement;
+    }
+  }
+
+  // data.forEach((element) => {
+  //   labels.push(element["date"].split("-").reverse().join("-").slice(0, 4));
+  //   if (daily) {
+  //     confirmed.push(Math.max(element["confirmed"] - prevC, 0));
+  //     death.push(Math.max(element["deaths"] - prevD, 0));
+  //     recovered.push(element["recovered"] - prevR);
+  //     temp =
+  //       element["confirmed"] -
+  //       (element["deaths"] + element["recovered"] + prevA);
+  //     active.push(temp < 0 ? 0 : temp);
+  //     prevC = Math.max(element["confirmed"], 0);
+  //     prevD = Math.max(element["deaths"] - prevD, 0);
+  //     prevR = element["recovered"];
+  //     prevA = temp < 0 ? 0 : temp;
+  //   } else {
+  //     confirmed.push(element["confirmed"]);
+  //     death.push(element["deaths"]);
+  //     recovered.push(element["recovered"]);
+  //     active.push(
+  //       Math.max(
+  //         element["confirmed"] - (element["deaths"] + element["recovered"]),
+  //         0
+  //       )
+  //     );
+  //   }
+  //   temp = element;
+  // });
+  totalDeath = prevElement["deaths"];
+  totalRecovered = prevElement["recovered"];
+  totalConfirmed = prevElement["confirmed"];
   totalActive = totalConfirmed - (totalDeath + totalRecovered);
   document.getElementById(
     "total-confirmed-cases"
