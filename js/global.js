@@ -125,12 +125,16 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   totalActive = totalConfirmed - (totalDeath + totalRecovered);
   document.getElementById(
     "total-confirmed-cases"
-  ).innerText = `${totalConfirmed}`;
+  ).innerText = `${totalConfirmed.toLocaleString()}`;
   document.getElementById(
     "total-recovered-cases"
-  ).innerText = `${totalRecovered}`;
-  document.getElementById("total-active-cases").innerText = `${totalActive}`;
-  document.getElementById("total-death-cases").innerText = `${totalDeath}`;
+  ).innerText = `${totalRecovered.toLocaleString()}`;
+  document.getElementById(
+    "total-active-cases"
+  ).innerText = `${totalActive.toLocaleString()}`;
+  document.getElementById(
+    "total-death-cases"
+  ).innerText = `${totalDeath.toLocaleString()}`;
   let optionsConfirmed = {
     type: "line",
     data: {
@@ -201,23 +205,12 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       },
     ];
   }
-  if (daily) {
-    document.getElementById(
-      "recovery-rate"
-    ).innerText = `Recovery Rate: NA (Select Cumulative)`;
-    document.getElementById(
-      "death-rate"
-    ).innerText = `Death Rate: NA (Select Cumulative)`;
-  } else {
-    document.getElementById(
-      "recovery-rate"
-    ).innerText = `Recovery Rate: ${String(
-      (totalRecovered / totalConfirmed) * 100
-    ).slice(0, 5)}%`;
-    document.getElementById("death-rate").innerText = `Death Rate: ${String(
-      (totalDeath / totalConfirmed) * 100
-    ).slice(0, 5)}%`;
-  }
+  document.getElementById("recovery-rate").innerText = `Recovery Rate: ${String(
+    (totalRecovered / totalConfirmed) * 100
+  ).slice(0, 5)}%`;
+  document.getElementById("death-rate").innerText = `Death Rate: ${String(
+    (totalDeath / totalConfirmed) * 100
+  ).slice(0, 5)}%`;
   myChart11 = new Chart(ctx11.getContext("2d"), optionsConfirmed);
 }
 
@@ -240,6 +233,7 @@ function readData() {
       return data;
     })
     .then((data) => {
+      document.getElementById("to-be-updated").innerHTML = ``;
       jsondata = data;
       if (window.screen.availWidth <= 650)
         plotGraph(
