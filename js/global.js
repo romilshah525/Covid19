@@ -177,7 +177,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
 
 function readData() {
   fetch("https://pomber.github.io/covid19/timeseries.json")
-    .catch((err) => fetch("Covid19/json/data.json"))
+    .catch((err) => fetch("Covid19/json/global.json"))
     .then((response) => response.json())
     .then((data) => {
       let elem = document.getElementById("my-select");
