@@ -149,6 +149,7 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#223e80ff",
           borderColor: "#223e80ff",
+          pointRadius: 1,
         },
         {
           label: "Active ",
@@ -156,6 +157,7 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#e82727a0",
           borderColor: "#e82727ff",
+          pointRadius: 1,
         },
         {
           label: "Recovered ",
@@ -163,14 +165,15 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#2adb2aa0",
           borderColor: "#2adb2aff",
+          pointRadius: 1,
         },
         {
           label: "Deaths ",
           data: deceased,
           fill: false,
           backgroundColor: "#8f8c8ca0",
-          hoverBorderColor: "#8f8c8cff",
           borderColor: "#8f8c8cf0",
+          pointRadius: 1,
         },
       ],
     },
@@ -178,6 +181,7 @@ function plotGraph(data, size, ct) {
     options: {
       responsive: true,
       legend: {
+        display: false,
         position: "bottom",
         labels: { fontColor: "#222", fontSize: size },
       },
@@ -190,12 +194,22 @@ function plotGraph(data, size, ct) {
       hover: { mode: "nearest", intersect: true },
       chartArea: { backgroundColor: "#223e8011" },
       scales: {
-        xAxes: [{}],
-        yAxes: [{}],
+        xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
+        yAxes: [
+          {
+            gridLines: { display: false },
+            ticks: {
+              fontSize: 9,
+              callback: (value) =>
+                value > 800 ? String(value / 1000) + "k" : value,
+            },
+          },
+        ],
       },
     },
   };
   if (size > 12) {
+    optionsIndiaData.options.legend.display = true;
     optionsIndiaData.options.scales.xAxes = [
       {
         display: true,
@@ -206,6 +220,11 @@ function plotGraph(data, size, ct) {
       {
         display: true,
         scaleLabel: { display: true, labelString: "Count " },
+        ticks: {
+          fontSize: 12,
+          callback: (value) =>
+            value > 800 ? String(value / 1000) + "k" : value,
+        },
       },
     ];
   }
@@ -218,16 +237,16 @@ function plotGraph(data, size, ct) {
   totalReceoveredCovidOrg = element.recovered;
   document.getElementById(
     "total-confirmed-cases"
-  ).innerText = `${totalConfirmedCovidOrg}`;
+  ).innerText = `${Number(totalConfirmedCovidOrg).toLocaleString()}`;
   document.getElementById(
     "total-recovered-cases"
-  ).innerText = `${totalReceoveredCovidOrg}`;
+  ).innerText = `${Number(totalReceoveredCovidOrg).toLocaleString()}`;
   document.getElementById(
     "total-active-cases"
-  ).innerText = `${totalActiveCovidOrg}`;
+  ).innerText = `${Number(totalActiveCovidOrg).toLocaleString()}`;
   document.getElementById(
     "total-death-cases"
-  ).innerText = `${totalDeathsCovidOrg}`;
+  ).innerText = `${Number(totalDeathsCovidOrg).toLocaleString()}`;
 
   document.getElementById("recovery-rate").innerText = `Recovery Rt: ${String(
     (totalReceoveredCovidOrg / totalConfirmedCovidOrg) * 100

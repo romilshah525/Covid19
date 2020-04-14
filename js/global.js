@@ -37,15 +37,10 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   recovered = [];
   active = [];
   let labels = [],
-    prevC = 0,
-    prevD = 0,
-    prevR = 0,
-    prevA = 0,
     totalDeath = 0,
     totalRecovered = 0,
     totalConfirmed = 0,
     totalActive = 0,
-    temp = "",
     currElement,
     prevElement = {
       confirmed: 0,
@@ -91,34 +86,6 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       prevElement = currElement;
     }
   }
-
-  // data.forEach((element) => {
-  //   labels.push(element["date"].split("-").reverse().join("-").slice(0, 4));
-  //   if (daily) {
-  //     confirmed.push(Math.max(element["confirmed"] - prevC, 0));
-  //     death.push(Math.max(element["deaths"] - prevD, 0));
-  //     recovered.push(element["recovered"] - prevR);
-  //     temp =
-  //       element["confirmed"] -
-  //       (element["deaths"] + element["recovered"] + prevA);
-  //     active.push(temp < 0 ? 0 : temp);
-  //     prevC = Math.max(element["confirmed"], 0);
-  //     prevD = Math.max(element["deaths"] - prevD, 0);
-  //     prevR = element["recovered"];
-  //     prevA = temp < 0 ? 0 : temp;
-  //   } else {
-  //     confirmed.push(element["confirmed"]);
-  //     death.push(element["deaths"]);
-  //     recovered.push(element["recovered"]);
-  //     active.push(
-  //       Math.max(
-  //         element["confirmed"] - (element["deaths"] + element["recovered"]),
-  //         0
-  //       )
-  //     );
-  //   }
-  //   temp = element;
-  // });
   totalDeath = prevElement["deaths"];
   totalRecovered = prevElement["recovered"];
   totalConfirmed = prevElement["confirmed"];
@@ -146,6 +113,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           fill: false,
           backgroundColor: "#223e80ff",
           borderColor: "#223e80ff",
+          pointRadius: 0,
         },
         {
           label: "Active ",
@@ -153,6 +121,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           fill: false,
           backgroundColor: "#e82727a0",
           borderColor: "#e82727ff",
+          pointRadius: 0,
         },
         {
           label: "Recovered ",
@@ -160,6 +129,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           fill: false,
           backgroundColor: "#2adb2aa0",
           borderColor: "#2adb2aff",
+          pointRadius: 0,
         },
         {
           label: "Deaths ",
@@ -168,12 +138,14 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           backgroundColor: "#8f8c8ca0",
           hoverBorderColor: "#8f8c8cff",
           borderColor: "#8f8c8cf0",
+          pointRadius: 0,
         },
       ],
     },
     options: {
       responsive: true,
       legend: {
+        display: false,
         position: "bottom",
         labels: { fontColor: "#222", fontSize: size },
       },
@@ -186,12 +158,22 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       hover: { mode: "nearest", intersect: true },
       chartArea: { backgroundColor: "#223e8011" },
       scales: {
-        xAxes: [{ gridLines: { display: false } }],
-        yAxes: [{ gridLines: { display: false } }],
+        xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
+        yAxes: [
+          {
+            gridLines: { display: false },
+            ticks: {
+              fontSize: 9,
+              callback: (value) =>
+                value > 800 ? String(value / 1000) + "k" : value,
+            },
+          },
+        ],
       },
     },
   };
   if (size > 12) {
+    optionsConfirmed.options.legend.display = true;
     optionsConfirmed.options.scales.xAxes = [
       {
         display: true,
@@ -202,6 +184,11 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       {
         display: true,
         scaleLabel: { display: true, labelString: "Count " },
+        ticks: {
+          fontSize: 12,
+          callback: (value) =>
+            value > 800 ? String(value / 1000) + "k" : value,
+        },
       },
     ];
   }
