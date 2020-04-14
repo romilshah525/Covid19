@@ -48,7 +48,8 @@ let entireData,
   totalReceoveredCovidOrg,
   name = "India",
   myChart11,
-  myChart15;
+  myChart15,
+  state_district_data;
 
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx15 = document.getElementById("myChart15").getContext("2d");
@@ -89,6 +90,14 @@ function readData() {
       $(document).ready(function () {
         $("select").formSelect();
       });
+    })
+    .then((res) =>
+      fetch("https://api.covid19india.org/state_district_wise.json")
+    )
+    .catch((err) => fetch("Covid19/json/state_district_wise.json"))
+    .then((res) => res.json())
+    .then((res) => {
+      state_district_data = res;
       fillStateDataTable();
     });
 }
@@ -235,18 +244,18 @@ function plotGraph(data, size, ct) {
   totalConfirmedCovidOrg = element.confirmed;
   totalDeathsCovidOrg = element.deaths;
   totalReceoveredCovidOrg = element.recovered;
-  document.getElementById(
-    "total-confirmed-cases"
-  ).innerText = `${Number(totalConfirmedCovidOrg).toLocaleString()}`;
-  document.getElementById(
-    "total-recovered-cases"
-  ).innerText = `${Number(totalReceoveredCovidOrg).toLocaleString()}`;
-  document.getElementById(
-    "total-active-cases"
-  ).innerText = `${Number(totalActiveCovidOrg).toLocaleString()}`;
-  document.getElementById(
-    "total-death-cases"
-  ).innerText = `${Number(totalDeathsCovidOrg).toLocaleString()}`;
+  document.getElementById("total-confirmed-cases").innerText = `${Number(
+    totalConfirmedCovidOrg
+  ).toLocaleString()}`;
+  document.getElementById("total-recovered-cases").innerText = `${Number(
+    totalReceoveredCovidOrg
+  ).toLocaleString()}`;
+  document.getElementById("total-active-cases").innerText = `${Number(
+    totalActiveCovidOrg
+  ).toLocaleString()}`;
+  document.getElementById("total-death-cases").innerText = `${Number(
+    totalDeathsCovidOrg
+  ).toLocaleString()}`;
 
   document.getElementById("recovery-rate").innerText = `Recovery Rt: ${String(
     (totalReceoveredCovidOrg / totalConfirmedCovidOrg) * 100
@@ -304,6 +313,11 @@ function tabulateToggle() {
   if (myChart15) {
     myChart15.destroy();
   }
+  console.log(
+    state_district_data[
+      mapper[document.getElementById("my-select-tabulate").value.toLowerCase()]
+    ].districtData
+  );
   name = document.getElementById("my-select-tabulate").value;
   let i = 0;
   while (i < statewise.length && statewise[i]["statecode"] != name) i += 1;
@@ -340,10 +354,7 @@ function tabulateToggle() {
     },
     options: {
       responsive: true,
-      legend: {
-        position: "bottom",
-        labels: { fontColor: "#000", fontSize: 12 },
-      },
+      legend: { display: false },
       title: {
         display: true,
         text: `Covid19 Total Count - ${mapper[name.toLowerCase()]}`,
@@ -352,7 +363,7 @@ function tabulateToggle() {
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
       scales: {
-        xAxes: [{}],
+        xAxes: [{ ticks: { fontSize: 12 } }],
         yAxes: [
           {
             ticks: {
@@ -364,11 +375,19 @@ function tabulateToggle() {
                   statewise[i]["recovered"],
                   statewise[i]["deaths"]
                 ) + 5,
+              fontSize: 12,
+              callback: (value) =>
+                value > 800 ? String(value / 1000) + "k" : value,
             },
           },
         ],
       },
     },
   };
+  if (window.screen.availWidth <= 650) {
+    optionsStateSummary.options.title.fontSize = 10;
+    optionsStateSummary.options.scales.xAxes[0].ticks.fontSize = 8;
+    optionsStateSummary.options.scales.yAxes[0].ticks.fontSize = 8;
+  }
   myChart15 = new Chart(ctx15, optionsStateSummary);
 }
