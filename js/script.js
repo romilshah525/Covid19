@@ -9,6 +9,7 @@ $(".sidenav")
 
 $(document).ready(function () {
   $(".tabs").tabs();
+  $(".collapsible").collapsible();
   // M.toast({
   //   html: "View in Desktop for visualizing graphs",
   //   inDuration: 1000,

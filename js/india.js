@@ -313,14 +313,19 @@ function tabulateToggle() {
   if (myChart15) {
     myChart15.destroy();
   }
-  console.log(
-    state_district_data[
-      mapper[document.getElementById("my-select-tabulate").value.toLowerCase()]
-    ].districtData
-  );
   name = document.getElementById("my-select-tabulate").value;
   let i = 0;
   while (i < statewise.length && statewise[i]["statecode"] != name) i += 1;
+  let dataForCollapsible =
+    state_district_data[
+      mapper[document.getElementById("my-select-tabulate").value.toLowerCase()]
+    ].districtData;
+  let htmlForCollapsible = `<li><div class="collapsible-header">Click here for more details</div><div class="collapsible-body">`;
+  Object.keys(dataForCollapsible).forEach((el) => {
+    htmlForCollapsible += `<h6>${el}-${dataForCollapsible[el]["confirmed"]}</h6>`;
+  });
+  htmlForCollapsible += `</div></li>`;
+  document.getElementById("collapsible").innerHTML = htmlForCollapsible;
   let tbody = document.getElementById("dynamic-summary-tabulate");
   tbodyData = tbody.innerHTML = `<tr>
                                   <td class="truncate">${statewise[i]["state"]}</td>

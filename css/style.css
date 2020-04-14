@@ -26,9 +26,9 @@ canvas {
   h6 {
     font-size: 4.5vw !important;
   }
-  .text-small{
-    font-size: small;
-  }
+}
+.text-small {
+  font-size: small;
 }
 
 .select-dropdown {
