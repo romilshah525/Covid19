@@ -115,32 +115,10 @@
           </tbody>
         </table>
       </div>
-      <div id="tabulate" class="col s12">
+      <div id="tabulate">
         <div class="col s12 m6 center-align">
-          <h5 class="black-text bold-text"><u>Top 5 States with Maximum cases</u></h5>
+          <h6 class="black-text bold-text"><u>Top 5 States with Maximum cases</u></h6>
           <table class="responsive-table striped ">
-            <thead>
-              <tr>
-                <th>State</th>
-                <th>Confirmed</th>
-                <th>Active</th>
-                <th>Recovered</th>
-                <th>Dead</th>
-              </tr>
-            </thead>
-            <tbody id="state-data-table"></tbody>
-          </table>
-        </div>
-        <div class="col s12 m6">
-          <div class="section" style="padding-bottom: 0;">
-            <div class="row" style="margin-bottom: 0;">
-              <div class="input-field col s12">
-                <select id="my-select-tabulate" onchange="tabulateToggle()"></select>
-                <label class="black-text">Choose Your State</label>
-              </div>
-            </div>
-          </div>
-          <table class="responsive-table striped">
             <thead>
               <tr>
                 <th>State</th>
@@ -150,12 +128,18 @@
                 <th class="grey-text text-darken-1">Dead</th>
               </tr>
             </thead>
-            <tbody id="dynamic-summary-tabulate"></tbody>
+            <tbody id="state-data-table"></tbody>
           </table>
-          <ul class="collapsible" id="collapsible"></ul>
-          <div class="col s12 ">
+        </div>
+        <div class="col s12 m6">
+          <div class="input-field col s12">
+            <select id="my-select-tabulate" onchange="tabulateToggle()"></select>
+            <label class="black-text">Choose Your State</label>
+          </div>
+          <div class="col s12">
             <canvas id="myChart15" class="center"></canvas>
           </div>
+          <ul class="col s12 collapsible" id="collapsible"></ul>
         </div>
       </div>
     </div>

@@ -320,20 +320,12 @@ function tabulateToggle() {
     state_district_data[
       mapper[document.getElementById("my-select-tabulate").value.toLowerCase()]
     ].districtData;
-  let htmlForCollapsible = `<li><div class="collapsible-header">Click here for more details</div><div class="collapsible-body">`;
+  let htmlForCollapsible = `<li><div class="collapsible-header">Click here for city specific details</div><div class="collapsible-body">`;
   Object.keys(dataForCollapsible).forEach((el) => {
-    htmlForCollapsible += `<h6>${el}-${dataForCollapsible[el]["confirmed"]}</h6>`;
+    htmlForCollapsible += `<div class="row" style="border-bottom: 1px solid #97999877;"><div class="col s6">${el}</div><div class="col s6">${dataForCollapsible[el]["confirmed"]}</div></div>`;
   });
   htmlForCollapsible += `</div></li>`;
   document.getElementById("collapsible").innerHTML = htmlForCollapsible;
-  let tbody = document.getElementById("dynamic-summary-tabulate");
-  tbodyData = tbody.innerHTML = `<tr>
-                                  <td class="truncate">${statewise[i]["state"]}</td>
-                                  <td class="blue-text text-darken-4">${statewise[i]["confirmed"]} (+${statewise[i]["deltaconfirmed"]})</td>
-                                  <td class="my-red-text">${statewise[i]["active"]}</td>
-                                  <td class="light-green-text text-accent-3">${statewise[i]["recovered"]} (+${statewise[i]["deltarecovered"]})</td>
-                                  <td class="grey-text text-darken-4">${statewise[i]["deaths"]} (+${statewise[i]["deltadeaths"]})</td>
-                                </tr>`;
   let optionsStateSummary = {
     type: "bar",
     data: {
@@ -363,7 +355,7 @@ function tabulateToggle() {
       title: {
         display: true,
         text: `Covid19 Total Count - ${mapper[name.toLowerCase()]}`,
-        fontSize: 16,
+        fontSize: 14,
       },
       tooltips: { mode: "index", intersect: false },
       hover: { mode: "nearest", intersect: true },
@@ -389,7 +381,11 @@ function tabulateToggle() {
       },
     },
   };
-  if (window.screen.availWidth <= 650) {
+  if (window.screen.availWidth <= 820) {
+    optionsStateSummary.options.title.fontSize = 12;
+    optionsStateSummary.options.scales.xAxes[0].ticks.fontSize = 10;
+    optionsStateSummary.options.scales.yAxes[0].ticks.fontSize = 10;
+  } else if (window.screen.availWidth <= 650) {
     optionsStateSummary.options.title.fontSize = 10;
     optionsStateSummary.options.scales.xAxes[0].ticks.fontSize = 8;
     optionsStateSummary.options.scales.yAxes[0].ticks.fontSize = 8;

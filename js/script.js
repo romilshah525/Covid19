@@ -18,8 +18,8 @@ $(document).ready(function () {
   //   classes: "hide-on-med-and-up",
   //   activationPercent: 0.25,
   // });
-  $(".tap-target").tapTarget();
-  if ($(window).width() < 600) {
-    $(".tap-target").tapTarget("open");
-  }
+  // $(".tap-target").tapTarget();
+  // if ($(window).width() < 600) {
+  //   $(".tap-target").tapTarget("open");
+  // }
 });
