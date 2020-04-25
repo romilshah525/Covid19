@@ -85,10 +85,19 @@
                 <label>Select Category</label>
             </div>
         </div>
-        <div class="row">
-            <h6 class="black-text center-align">Click on the state name to view more details.</h6>
-            <ul class="collapsible expandable col s12" id="list-data"></ul>
-        </div>
+        <table class="responsive-table striped ">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Contact</th>
+                    <th>City</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody id="list-data">
+            </tbody>
+        </table>
     </main>
     <footer class="page-footer grey darken-3">
         <div class="container valign-wrapper">
@@ -118,15 +127,6 @@
             </div>
         </div>
     </footer>
-    <!-- <div class="fixed-action-btn direction-top">
-        <a id="menu" class="waves-effect waves-light btn btn-floating" style="background-color: transparent;"><i
-                class="material-icons">menu</i></a>
-    </div>
-    <div class="tap-target grey darken-1" data-target="menu">
-        <div class="tap-target-content">
-            <p>View in larger screen <br> for graphical visuals.</p>
-        </div>
-    </div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./js/jQuery.js"></script>
     <script src="js/materialize.min.js"></script>
