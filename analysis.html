@@ -10,38 +10,39 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body onload="readData()">
+<body>
     <ul id="dropdownforlinks" class="dropdown-content">
-        <li><a href="">Important Links</a></li>
-        <li class="divider"></li>
         <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
         <li><a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a></li>
         <li>
             <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a>
         </li>
+        <li class="divider"></li>
         <li>
             <a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a>
-            <li><a href="./india.html">India Dashboard</a></li>
-        </li>
+        <li><a href="./index.html">Global Dashboard</a></li>
         <li class="divider"></li>
         <li>
             <a href="https://github.com/romilshah525/" target="_blank">Find Me On Github</a>
         </li>
         <li>
-            <a href="https://api.covid19india.org/" target="_blank">Data Source</a>
+            <a href="https://github.com/pomber/covid19/" target="_blank">Data Source</a>
         </li>
+        <li class="divider"></li>
     </ul>
     <nav class="grey darken-3" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="/Covid19/index.html" class="brand-logo center-align res-text">Covid19 India</a>
+            <a id="logo-container" href="/Covid19/index.html" class="brand-logo center-align res-text">Covid19
+                Analysis</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="./index.html">Global Dashboard</a></li>
-                <li><a href="./analysis.html">Analysis (India)</a></li>
+                <li><a href="./india.html">India Dashboard</a></li>
+                <li><a href="./resources.html">Resources (India) </a></li>
                 <li>
-                    <a class="dropdown-trigger" href="#!" data-target="dropdownforlinks">Important Links<i
+                    <a class="dropdown-trigger" href="" data-target="dropdownforlinks">Important Links<i
                             class="material-icons right">arrow_drop_down</i></a>
                 </li>
             </ul>
+
             <ul id="nav-mobile" class="sidenav">
                 <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
                 <li><a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a></li>
@@ -52,54 +53,22 @@
                     <a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a>
                 </li>
                 <li class="divider"></li>
+                <li><a href="./index.html">Global Dashboard</a></li>
+                <li><a href="./india.html">India Dashboard</a></li>
+                <li><a href="./resources.html">Resources(India)</a></li>
+                <li class="divider"></li>
                 <li>
                     <a href="https://github.com/romilshah525/" target="_blank">Find Me On Github</a>
                 </li>
-                <li><a href="./index.html">Global Dashboard</a></li>
-                <li><a href="./india.html">India Dashboard</a></li>
-                <li><a href="./analysis.html">Analysis (India)</a></li>
                 <li>
-                    <a href="https://api.covid19india.org/" target="_blank">Data Source</a>
+                    <a href="https://github.com/pomber/covid19/" target="_blank">Data Source</a>
                 </li>
                 <li class="divider"></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <main class="container" style="padding-top: 1rem;">
-        <div class="row valign-wrapper" id="to-be-updated">
-            <div class="col s6">
-                <h6 class="black-text truncate center-align"> Fetching Latest Data</h6>
-            </div>
-            <div class="col s6">
-                <div class="progress">
-                    <div class="indeterminate"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 m6">
-                <select id="state" onchange="update()"></select>
-                <label>Select State</label>
-            </div>
-            <div class="input-field col s12 m6">
-                <select id="category" onchange="update()"></select>
-                <label>Select Category</label>
-            </div>
-        </div>
-        <table class="responsive-table striped ">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Contact</th>
-                    <th>City</th>
-                    <th>State</th>
-                </tr>
-            </thead>
-            <tbody id="list-data">
-            </tbody>
-        </table>
+    <main class="container section" style="padding-top: 1rem;">
     </main>
     <footer class="page-footer grey darken-3">
         <div class="container valign-wrapper">
@@ -132,8 +101,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./js/jQuery.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="./js/resources.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/analysis.js"></script>
 </body>
 
 </html>
