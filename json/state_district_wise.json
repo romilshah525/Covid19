@@ -1,3110 +1,6162 @@
 
-{
-  "Kerala": {
-    "districtData": {
-      "Thrissur": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
+[
+  {
+    "state": "Andaman and Nicobar Islands",
+    "statecode": "AN",
+    "districtData": [
+      {
+        "district": "North and Middle Andaman",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Alappuzha": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
+      {
+        "district": "South Andaman",
+        "notes": "",
+        "active": 22,
+        "confirmed": 32,
+        "deceased": 0,
+        "recovered": 10,
         "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kasaragod": {
-        "confirmed": 169,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Pathanamthitta": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kannur": {
-        "confirmed": 86,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Ernakulam": {
-        "confirmed": 24,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kottayam": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Thiruvananthapuram": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Idukki": {
-        "confirmed": 10,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Malappuram": {
-        "confirmed": 20,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kozhikode": {
-        "confirmed": 20,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Palakkad": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Wayanad": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kollam": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
         }
       }
-    }
+    ]
   },
-  "Delhi": {
-    "districtData": {
-      "East Delhi": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
+  {
+    "state": "Andhra Pradesh",
+    "statecode": "AP",
+    "districtData": [
+      {
+        "district": "Anantapur",
+        "notes": "",
+        "active": 34,
+        "confirmed": 51,
+        "deceased": 4,
+        "recovered": 13,
         "delta": {
-          "confirmed": 0
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 2
         }
       },
-      "South West Delhi": {
+      {
+        "district": "Chittoor",
+        "notes": "",
+        "active": 62,
+        "confirmed": 73,
+        "deceased": 0,
+        "recovered": 11,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "East Godavari",
+        "notes": "",
+        "active": 25,
+        "confirmed": 37,
+        "deceased": 0,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 4
+        }
+      },
+      {
+        "district": "Guntur",
+        "notes": "",
+        "active": 178,
+        "confirmed": 209,
+        "deceased": 8,
+        "recovered": 23,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Krishna",
+        "notes": "",
+        "active": 90,
+        "confirmed": 127,
+        "deceased": 8,
+        "recovered": 29,
+        "delta": {
+          "confirmed": 25,
+          "deceased": 1,
+          "recovered": 4
+        }
+      },
+      {
+        "district": "Kurnool",
+        "notes": "",
+        "active": 259,
+        "confirmed": 275,
+        "deceased": 9,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 14,
+          "deceased": 1,
+          "recovered": 3
+        }
+      },
+      {
+        "district": "Prakasam",
+        "notes": "",
+        "active": 41,
+        "confirmed": 53,
+        "deceased": 0,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 11
+        }
+      },
+      {
+        "district": "S.P.S. Nellore",
+        "notes": "",
+        "active": 62,
+        "confirmed": 72,
+        "deceased": 2,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Srikakulam",
+        "notes": "",
+        "active": 3,
         "confirmed": 3,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "West Delhi": {
+      {
+        "district": "Visakhapatnam",
+        "notes": "",
+        "active": 3,
+        "confirmed": 22,
+        "deceased": 0,
+        "recovered": 19,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "West Godavari",
+        "notes": "",
+        "active": 30,
+        "confirmed": 39,
+        "deceased": 0,
+        "recovered": 9,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Y.S.R.",
+        "notes": "",
+        "active": 27,
+        "confirmed": 55,
+        "deceased": 0,
+        "recovered": 28,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Arunachal Pradesh",
+    "statecode": "AR",
+    "districtData": [
+      {
+        "district": "Lohit",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Assam",
+    "statecode": "AS",
+    "districtData": [
+      {
+        "district": "Cachar",
+        "notes": "",
+        "active": 2,
         "confirmed": 2,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "North Delhi": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
+      {
+        "district": "Dhubri",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "New Delhi": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
+      {
+        "district": "Goalpara",
+        "notes": "",
+        "active": 1,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 3,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "South Delhi": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "North East Delhi": {
+      {
+        "district": "Golaghat",
+        "notes": "",
+        "active": 1,
         "confirmed": 1,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "North West Delhi": {
+      {
+        "district": "Hailakandi",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jorhat",
+        "notes": "",
+        "active": 8,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kamrup",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kamrup Metropolitan",
+        "notes": "",
+        "active": 6,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Lakhimpur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Morigaon",
+        "notes": "",
+        "active": 3,
         "confirmed": 3,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Unknown": {
-        "confirmed": 1849,
-        "lastupdatedtime": "",
+      {
+        "district": "Nalbari",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "South Salmara Mancachar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": -12,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 13,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       }
-    }
+    ]
   },
-  "Telangana": {
-    "districtData": {
-      "Hyderabad": {
-        "confirmed": 448,
-        "lastupdatedtime": "",
+  {
+    "state": "Bihar",
+    "statecode": "BR",
+    "districtData": [
+      {
+        "district": "Arwal",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Karimnagar": {
-        "confirmed": 19,
-        "lastupdatedtime": "",
+      {
+        "district": "Aurangabad",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Bhadradri Kothagudem": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
+      {
+        "district": "Banka",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Ranga Reddy": {
+      {
+        "district": "Begusarai",
+        "notes": "",
+        "active": 8,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhagalpur",
+        "notes": "",
+        "active": 4,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhojpur",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Buxar",
+        "notes": "",
+        "active": 25,
         "confirmed": 25,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Medchal Malkajgiri": {
+      {
+        "district": "East Champaran",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gaya",
+        "notes": "",
+        "active": 2,
         "confirmed": 6,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 4,
         "delta": {
-          "confirmed": 0
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Rajanna Sircilla": {
+      {
+        "district": "Gopalganj",
+        "notes": "",
+        "active": 0,
         "confirmed": 3,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 3,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Khammam": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Warangal Urban": {
-        "confirmed": 21,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 22,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Vikarabad": {
-        "confirmed": 33,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Suryapet": {
-        "confirmed": 43,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Siddipet": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sangareddy": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nizamabad": {
-        "confirmed": 58,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Medak": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mahabubnagar": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mahabubabad": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Adilabad": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nirmal": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Peddapalli": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jagitial": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jogulamba Gadwal": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nalgonda": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nagarkurnool": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mulugu": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kamareddy": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jayashankar": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jangoan": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kumuram Bheem Asifabad": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Rajasthan": {
-    "districtData": {
-      "Italians*": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jaipur": {
-        "confirmed": 526,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 7
-        }
-      },
-      "Jhunjhunu": {
-        "confirmed": 37,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Bhilwara": {
-        "confirmed": 29,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Jodhpur": {
-        "confirmed": 210,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 30
-        }
-      },
-      "Pali": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sikar": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Pratapgarh": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dungarpur": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Churu": {
+      {
+        "district": "Kaimur Bhabua",
+        "notes": "",
+        "active": 14,
         "confirmed": 14,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Ajmer": {
-        "confirmed": 18,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Evacuees*": {
-        "confirmed": 60,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Alwar": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tonk": {
-        "confirmed": 95,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dhaulpur": {
+      {
+        "district": "Lakhisarai",
+        "notes": "",
+        "active": 0,
         "confirmed": 1,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Udaipur": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bharatpur": {
-        "confirmed": 102,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 17
-        }
-      },
-      "Bikaner": {
-        "confirmed": 37,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Dausa": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Banswara": {
-        "confirmed": 60,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Karauli": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nagaur": {
-        "confirmed": 43,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 12
-        }
-      },
-      "Jaisalmer": {
-        "confirmed": 32,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Kota": {
-        "confirmed": 99,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Jhalawar": {
-        "confirmed": 20,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Barmer": {
+      {
+        "district": "Madhepura",
+        "notes": "",
+        "active": 1,
         "confirmed": 1,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Hanumangarh": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
+      {
+        "district": "Munger",
+        "notes": "",
+        "active": 58,
+        "confirmed": 65,
+        "deceased": 1,
+        "recovered": 6,
         "delta": {
-          "confirmed": 1
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Sawai Madhopur": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 4
-        }
-      }
-    }
-  },
-  "Haryana": {
-    "districtData": {
-      "Italians*": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gurugram": {
-        "confirmed": 36,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 4
-        }
-      },
-      "Faridabad": {
-        "confirmed": 42,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 9
-        }
-      },
-      "Panipat": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Panchkula": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sonipat": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Palwal": {
+      {
+        "district": "Nalanda",
+        "notes": "",
+        "active": 32,
         "confirmed": 34,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 2,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Ambala": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Sirsa": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hisar": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Rohtak": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nuh": {
-        "confirmed": 57,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Karnal": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bhiwani": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kaithal": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Charki Dadri": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jind": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Fatehabad": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kurukshetra": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Yamunanagar": {
+      {
+        "district": "Nawada",
+        "notes": "",
+        "active": 2,
         "confirmed": 3,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Unknown": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 4
-        }
-      }
-    }
-  },
-  "Uttar Pradesh": {
-    "districtData": {
-      "Agra": {
-        "confirmed": 199,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ghaziabad": {
-        "confirmed": 30,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Lucknow": {
-        "confirmed": 160,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gautam Buddha Nagar": {
-        "confirmed": 95,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kheri": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Moradabad": {
-        "confirmed": 39,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Varanasi": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kanpur Nagar": {
-        "confirmed": 30,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Pilibhit": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jaunpur": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Baghpat": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Shamli": {
-        "confirmed": 23,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Meerut": {
-        "confirmed": 70,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bareilly": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bulandshahr": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Basti": {
-        "confirmed": 16,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hardoi": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Shahjahanpur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Firozabad": {
-        "confirmed": 38,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Azamgarh": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Saharanpur": {
-        "confirmed": 53,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Pratapgarh": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hapur": {
-        "confirmed": 16,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ghazipur": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Banda": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mahrajganj": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hathras": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mirzapur": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Rae Bareli": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bara Banki": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Auraiya": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mathura": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Budaun": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kaushambi": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bijnor": {
-        "confirmed": 22,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Prayagraj": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sitapur": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Muzaffarnagar": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Amroha": {
-        "confirmed": 10,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Rampur": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bhadohi": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kasganj": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Etawah": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sambhal": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unnao": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kannauj": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sant Kabir Nagar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mainpuri": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gonda": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Ladakh": {
-    "districtData": {
-      "Leh": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kargil": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Tamil Nadu": {
-    "districtData": {
-      "Kancheepuram": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Chennai": {
-        "confirmed": 290,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 50
-        }
-      },
-      "Erode": {
-        "confirmed": 70,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Coimbatore": {
-        "confirmed": 133,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 5
-        }
-      },
-      "Tirunelveli": {
-        "confirmed": 64,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Tiruppur": {
-        "confirmed": 108,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Madurai": {
-        "confirmed": 46,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Chengalpattu": {
-        "confirmed": 50,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 3
-        }
-      },
-      "Salem": {
-        "confirmed": 24,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ranipet": {
-        "confirmed": 38,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Thanjavur": {
-        "confirmed": 45,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 10
-        }
-      },
-      "Vellore": {
-        "confirmed": 23,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Virudhunagar": {
-        "confirmed": 19,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Karur": {
-        "confirmed": 41,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tiruvannamalai": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Viluppuram": {
-        "confirmed": 37,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 7
-        }
-      },
-      "Namakkal": {
-        "confirmed": 50,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kanniyakumari": {
-        "confirmed": 16,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Thoothukkudi": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Theni": {
-        "confirmed": 44,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dindigul": {
-        "confirmed": 74,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 5
-        }
-      },
-      "Sivaganga": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tirupathur": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Thiruvarur": {
-        "confirmed": 27,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 5
-        }
-      },
-      "Ramanathapuram": {
-        "confirmed": 10,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Thiruvallur": {
-        "confirmed": 47,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nagapattinam": {
-        "confirmed": 43,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 3
-        }
-      },
-      "Cuddalore": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 6
-        }
-      },
-      "Kallakurichi": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Perambalur": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tiruchirappalli": {
-        "confirmed": 46,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "The Nilgiris": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ariyalur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tenkasi": {
-        "confirmed": 19,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 4
-        }
-      }
-    }
-  },
-  "Jammu and Kashmir": {
-    "districtData": {
-      "Jammu": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Srinagar": {
-        "confirmed": 78,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bandipore": {
-        "confirmed": 80,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Rajouri": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Badgam": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Baramula": {
-        "confirmed": 42,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Shupiyan": {
-        "confirmed": 22,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Udhampur": {
-        "confirmed": 20,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Pulwama": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kupwara": {
-        "confirmed": 27,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ganderbal": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kulgam": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kishtwar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Samba": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Budaun": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Anantnag": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 9
-        }
-      }
-    }
-  },
-  "Karnataka": {
-    "districtData": {
-      "Bengaluru": {
-        "confirmed": 100,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kalaburagi": {
-        "confirmed": 22,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kodagu": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mysuru": {
-        "confirmed": 84,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 4
-        }
-      },
-      "Dharwad": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Uttara Kannada": {
-        "confirmed": 10,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dakshina Kannada": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Chikkaballapura": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Udupi": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Davanagere": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tumakuru": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ballari": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bidar": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bagalkote": {
-        "confirmed": 21,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Belagavi": {
-        "confirmed": 42,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bengaluru Rural": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gadag": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mandya": {
-        "confirmed": 12,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Vijayapura": {
-        "confirmed": 21,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Maharashtra": {
-    "districtData": {
-      "Pune": {
-        "confirmed": 591,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mumbai": {
-        "confirmed": 2268,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nagpur": {
-        "confirmed": 60,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ahmadnagar": {
-        "confirmed": 29,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Thane": {
-        "confirmed": 341,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Raigarh": {
-        "confirmed": 42,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Yavatmal": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Aurangabad": {
-        "confirmed": 28,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ratnagiri": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Palghar": {
-        "confirmed": 83,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sangli": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Satara": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sindhudurg": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gondiya": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kolhapur": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Other States*": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jalgaon": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Buldana": {
-        "confirmed": 21,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nashik": {
-        "confirmed": 53,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Osmanabad": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Washim": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hingoli": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Amravati": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Latur": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jalna": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Parbhani": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Akola": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bid": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Solapur": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dhule": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Chandrapur": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nandurbar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Punjab": {
-    "districtData": {
-      "Amritsar": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Shahid Bhagat Singh Nagar": {
-        "confirmed": 19,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "S.A.S. Nagar": {
-        "confirmed": 61,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 4
-        }
-      },
-      "Hoshiarpur": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jalandhar": {
-        "confirmed": 41,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ludhiana": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Patiala": {
-        "confirmed": 26,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Rupnagar": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mansa": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Pathankot": {
-        "confirmed": 24,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Faridkot": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Barnala": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Fatehgarh Sahib": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kapurthala": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Moga": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sri Muktsar Sahib": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sangrur": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gurdaspur": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Firozpur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Andhra Pradesh": {
-    "districtData": {
-      "S.P.S. Nellore": {
-        "confirmed": 68,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Prakasam": {
-        "confirmed": 44,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Visakhapatnam": {
-        "confirmed": 21,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "East Godavari": {
-        "confirmed": 24,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 5
-        }
-      },
-      "Krishna": {
-        "confirmed": 75,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 6
-        }
-      },
-      "Chittoor": {
-        "confirmed": 28,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Guntur": {
-        "confirmed": 128,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 3
-        }
-      },
-      "Kurnool": {
-        "confirmed": 158,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 26
-        }
-      },
-      "Anantapur": {
-        "confirmed": 29,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 3
-        }
-      },
-      "West Godavari": {
-        "confirmed": 35,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Y.S.R.": {
-        "confirmed": 37,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Uttarakhand": {
-    "districtData": {
-      "Dehradun": {
-        "confirmed": 20,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Pauri Garhwal": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Udham Singh Nagar": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nainital": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Haridwar": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Almora": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Odisha": {
-    "districtData": {
-      "Khordha": {
-        "confirmed": 46,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bhadrak": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Cuttack": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Puri": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jajapur": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kalahandi": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kendrapara": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dhenkanal": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sundargarh": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Baleshwar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Puducherry": {
-    "districtData": {
-      "Mahe": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Puducherry": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "West Bengal": {
-    "districtData": {
-      "Kolkata": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "North 24 Parganas": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nadia": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Medinipur East": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kalimpong": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hooghly": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Howrah": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "South 24 Parganas": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 283,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 23
-        }
-      }
-    }
-  },
-  "Chandigarh": {
-    "districtData": {
-      "Chandigarh": {
-        "confirmed": 23,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 3
-        }
-      }
-    }
-  },
-  "Chhattisgarh": {
-    "districtData": {
-      "Raipur": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Rajnandgaon": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bilaspur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Durg": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Korba": {
-        "confirmed": 28,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Gujarat": {
-    "districtData": {
-      "Rajkot": {
-        "confirmed": 35,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 5
-        }
-      },
-      "Surat": {
-        "confirmed": 223,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 67
-        }
-      },
-      "Ahmadabad": {
-        "confirmed": 1001,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 140
-        }
-      },
-      "Vadodara": {
-        "confirmed": 161,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 8
-        }
-      },
-      "Gandhinagar": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kachchh": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mahesana": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Bhavnagar": {
-        "confirmed": 32,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Porbandar": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gir Somnath": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Panch Mahals": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Patan": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Chota Udaipur": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Jamnagar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Morbi": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Anand": {
-        "confirmed": 28,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Sabar Kantha": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dahod": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bharuch": {
-        "confirmed": 22,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Banas Kantha": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Botad": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Kheda": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Narmada": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Aravalli": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mahisagar": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 139,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 139
-        }
-      }
-    }
-  },
-  "Himachal Pradesh": {
-    "districtData": {
-      "Kangra": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Una": {
-        "confirmed": 15,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Solan": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Chamba": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sirmaur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Madhya Pradesh": {
-    "districtData": {
-      "Jabalpur": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bhopal": {
-        "confirmed": 197,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Indore": {
-        "confirmed": 841,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ujjain": {
-        "confirmed": 31,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Gwalior": {
-        "confirmed": 6,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Shivpuri": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Chhindwara": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Morena": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Khargone": {
-        "confirmed": 39,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Barwani": {
-        "confirmed": 22,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Betul": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Vidisha": {
-        "confirmed": 13,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Other Region*": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Sheopur": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Khandwa": {
+      {
+        "district": "Patna",
+        "notes": "",
+        "active": 28,
         "confirmed": 33,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 5,
         "delta": {
-          "confirmed": 0
+          "confirmed": 7,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Dhar": {
-        "confirmed": 10,
-        "lastupdatedtime": "",
+      {
+        "district": "Rohtas",
+        "notes": "",
+        "active": 9,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Hoshangabad": {
-        "confirmed": 19,
-        "lastupdatedtime": "",
+      {
+        "district": "Saran",
+        "notes": "",
+        "active": 2,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Raisen": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
+      {
+        "district": "Siwan",
+        "notes": "",
+        "active": 13,
+        "confirmed": 30,
+        "deceased": 0,
+        "recovered": 17,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Dewas": {
+      {
+        "district": "Vaishali",
+        "notes": "",
+        "active": 1,
+        "confirmed": 2,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Chandigarh",
+    "statecode": "CH",
+    "districtData": [
+      {
+        "district": "Chandigarh",
+        "notes": "",
+        "active": 13,
+        "confirmed": 28,
+        "deceased": 0,
+        "recovered": 15,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 1
+        }
+      }
+    ]
+  },
+  {
+    "state": "Chhattisgarh",
+    "statecode": "CT",
+    "districtData": [
+      {
+        "district": "Bilaspur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Durg",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Korba",
+        "notes": "",
+        "active": 11,
+        "confirmed": 28,
+        "deceased": 0,
+        "recovered": 17,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Raipur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rajnandgaon",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": -6,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Delhi",
+    "statecode": "DL",
+    "districtData": [
+      {
+        "district": "Central Delhi",
+        "notes": "",
+        "active": 184,
+        "confirmed": 184,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "East Delhi",
+        "notes": "",
+        "active": 38,
+        "confirmed": 38,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "New Delhi",
+        "notes": "",
+        "active": 37,
+        "confirmed": 37,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "North Delhi",
+        "notes": "",
+        "active": 60,
+        "confirmed": 60,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "North East Delhi",
+        "notes": "",
+        "active": 25,
+        "confirmed": 25,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "North West Delhi",
+        "notes": "",
+        "active": 32,
+        "confirmed": 32,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shahdara",
+        "notes": "",
+        "active": 48,
+        "confirmed": 48,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "South Delhi",
+        "notes": "",
+        "active": 70,
+        "confirmed": 70,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "South East Delhi",
+        "notes": "",
+        "active": 130,
+        "confirmed": 130,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "South West Delhi",
+        "notes": "",
+        "active": 42,
+        "confirmed": 42,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "West Delhi",
+        "notes": "",
+        "active": 122,
+        "confirmed": 122,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": 914,
+        "confirmed": 1837,
+        "deceased": 54,
+        "recovered": 869,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Goa",
+    "statecode": "GA",
+    "districtData": [
+      {
+        "district": "North Goa",
+        "notes": "",
+        "active": 0,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "South Goa",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Gujarat",
+    "statecode": "GJ",
+    "districtData": [
+      {
+        "district": "Ahmadabad",
+        "notes": "",
+        "active": 1802,
+        "confirmed": 2003,
+        "deceased": 86,
+        "recovered": 115,
+        "delta": {
+          "confirmed": 182,
+          "deceased": 3,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Anand",
+        "notes": "",
+        "active": 24,
+        "confirmed": 41,
+        "deceased": 3,
+        "recovered": 14,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 1,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Aravalli",
+        "notes": "",
+        "active": 17,
         "confirmed": 18,
-        "lastupdatedtime": "",
+        "deceased": 1,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Sagar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
+      {
+        "district": "Banas Kantha",
+        "notes": "",
+        "active": 26,
+        "confirmed": 27,
+        "deceased": 0,
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 11,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Shajapur": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Ratlam": {
-        "confirmed": 12,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Mandsaur": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Satna": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Tikamgarh": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Alirajpur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Agar Malwa": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 97,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 5
-        }
-      }
-    }
-  },
-  "Bihar": {
-    "districtData": {
-      "Munger": {
-        "confirmed": 17,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Patna": {
-        "confirmed": 7,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Siwan": {
+      {
+        "district": "Bharuch",
+        "notes": "",
+        "active": 17,
         "confirmed": 29,
-        "lastupdatedtime": "",
+        "deceased": 2,
+        "recovered": 10,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 7
         }
       },
-      "Nalanda": {
-        "confirmed": 11,
-        "lastupdatedtime": "",
+      {
+        "district": "Bhavnagar",
+        "notes": "",
+        "active": 17,
+        "confirmed": 40,
+        "deceased": 5,
+        "recovered": 18,
         "delta": {
-          "confirmed": 4
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Lakhisarai": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
+      {
+        "district": "Botad",
+        "notes": "",
+        "active": 11,
+        "confirmed": 12,
+        "deceased": 1,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Gopalganj": {
+      {
+        "district": "Chota Udaipur",
+        "notes": "",
+        "active": 10,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dahod",
+        "notes": "",
+        "active": 3,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gandhinagar",
+        "notes": "",
+        "active": 9,
+        "confirmed": 23,
+        "deceased": 2,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Gir Somnath",
+        "notes": "",
+        "active": 1,
         "confirmed": 3,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 2,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Gaya": {
+      {
+        "district": "Jamnagar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kachchh",
+        "notes": "",
+        "active": 4,
+        "confirmed": 6,
+        "deceased": 1,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kheda",
+        "notes": "",
+        "active": 4,
         "confirmed": 5,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Begusarai": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Saran": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bhagalpur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nawada": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Vaishali": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Buxar": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 2
-        }
-      },
-      "Bhojpur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      }
-    }
-  },
-  "Manipur": {
-    "districtData": {
-      "Imphal West": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Imphal East": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Mizoram": {
-    "districtData": {
-      "Aizawl": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Goa": {
-    "districtData": {
-      "North Goa": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Andaman and Nicobar Islands": {
-    "districtData": {
-      "South Andaman": {
-        "confirmed": 14,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "North and Middle Andaman": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Jharkhand": {
-    "districtData": {
-      "Ranchi": {
-        "confirmed": 21,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 3
-        }
-      },
-      "Hazaribagh": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Bokaro": {
-        "confirmed": 9,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kodarma": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Giridih": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Simdega": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      },
-      "Dhanbad": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Unknown": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 1
-        }
-      }
-    }
-  },
-  "Assam": {
-    "districtData": {
-      "Cachar": {
-        "confirmed": 2,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kamrup Metropolitan": {
-        "confirmed": 5,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Jorhat": {
-        "confirmed": 8,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Goalpara": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Nalbari": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "South Salmara Mancachar": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Kamrup": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Morigaon": {
-        "confirmed": 3,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Golaghat": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Lakhimpur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Dhubri": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "Hailakandi": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Arunachal Pradesh": {
-    "districtData": {
-      "Lohit": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Tripura": {
-    "districtData": {
-      "Gomati": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      },
-      "North Tripura": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Nagaland": {
-    "districtData": {
-      "Dimapur": {
-        "confirmed": 1,
-        "lastupdatedtime": "",
-        "delta": {
-          "confirmed": 0
-        }
-      }
-    }
-  },
-  "Meghalaya": {
-    "districtData": {
-      "East Khasi Hills": {
+      {
+        "district": "Mahesana",
+        "notes": "",
+        "active": 5,
         "confirmed": 7,
-        "lastupdatedtime": "",
+        "deceased": 0,
+        "recovered": 2,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       },
-      "Unknown": {
-        "confirmed": 4,
-        "lastupdatedtime": "",
+      {
+        "district": "Mahisagar",
+        "notes": "",
+        "active": 10,
+        "confirmed": 10,
+        "deceased": 0,
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Morbi",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Narmada",
+        "notes": "",
+        "active": 12,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Navsari",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Panch Mahals",
+        "notes": "",
+        "active": 15,
+        "confirmed": 17,
+        "deceased": 2,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Patan",
+        "notes": "",
+        "active": 4,
+        "confirmed": 16,
+        "deceased": 1,
+        "recovered": 11,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Porbandar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rajkot",
+        "notes": "",
+        "active": 27,
+        "confirmed": 41,
+        "deceased": 0,
+        "recovered": 14,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Sabar Kantha",
+        "notes": "",
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Surat",
+        "notes": "",
+        "active": 465,
+        "confirmed": 496,
+        "deceased": 15,
+        "recovered": 16,
+        "delta": {
+          "confirmed": 34,
+          "deceased": 1,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Surendranagar",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tapi",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dang",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Vadodara",
+        "notes": "",
+        "active": 162,
+        "confirmed": 230,
+        "deceased": 12,
+        "recovered": 56,
+        "delta": {
+          "confirmed": 7,
+          "deceased": 1,
+          "recovered": 3
+        }
+      },
+      {
+        "district": "Valsad",
+        "notes": "",
+        "active": 4,
+        "confirmed": 5,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
         }
       }
-    }
+    ]
+  },
+  {
+    "state": "Haryana",
+    "statecode": "HR",
+    "districtData": [
+      {
+        "district": "Ambala",
+        "notes": "",
+        "active": 2,
+        "confirmed": 13,
+        "deceased": 1,
+        "recovered": 10,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhiwani",
+        "notes": "",
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Charki Dadri",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Faridabad",
+        "notes": "",
+        "active": 14,
+        "confirmed": 43,
+        "deceased": 0,
+        "recovered": 29,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Fatehabad",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gurugram",
+        "notes": "",
+        "active": 16,
+        "confirmed": 51,
+        "deceased": 0,
+        "recovered": 35,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hisar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jind",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kaithal",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Karnal",
+        "notes": "",
+        "active": 0,
+        "confirmed": 6,
+        "deceased": 1,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kurukshetra",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nuh",
+        "notes": "",
+        "active": 19,
+        "confirmed": 57,
+        "deceased": 0,
+        "recovered": 38,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 3
+        }
+      },
+      {
+        "district": "Palwal",
+        "notes": "",
+        "active": 5,
+        "confirmed": 34,
+        "deceased": 0,
+        "recovered": 29,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Panchkula",
+        "notes": "",
+        "active": 15,
+        "confirmed": 18,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Panipat",
+        "notes": "",
+        "active": 3,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rohtak",
+        "notes": "",
+        "active": 3,
+        "confirmed": 4,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sirsa",
+        "notes": "",
+        "active": 0,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sonipat",
+        "notes": "",
+        "active": 15,
+        "confirmed": 19,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Yamunanagar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Italians",
+        "notes": "Italian tourists who were treated in Haryana",
+        "active": 0,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 14,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Himachal Pradesh",
+    "statecode": "HP",
+    "districtData": [
+      {
+        "district": "Chamba",
+        "notes": "",
+        "active": 3,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hamirpur",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kangra",
+        "notes": "",
+        "active": 1,
+        "confirmed": 5,
+        "deceased": 1,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sirmaur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Solan",
+        "notes": "",
+        "active": 6,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Una",
+        "notes": "",
+        "active": 8,
+        "confirmed": 16,
+        "deceased": 0,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": -5,
+        "confirmed": 1,
+        "deceased": 1,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Jammu and Kashmir",
+    "statecode": "JK",
+    "districtData": [
+      {
+        "district": "Anantnag",
+        "notes": "",
+        "active": 37,
+        "confirmed": 37,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 21,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Badgam",
+        "notes": "",
+        "active": 5,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 9,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bandipore",
+        "notes": "",
+        "active": 93,
+        "confirmed": 116,
+        "deceased": 1,
+        "recovered": 22,
+        "delta": {
+          "confirmed": 8,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Baramula",
+        "notes": "",
+        "active": 41,
+        "confirmed": 55,
+        "deceased": 2,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ganderbal",
+        "notes": "",
+        "active": 12,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jammu",
+        "notes": "",
+        "active": 19,
+        "confirmed": 26,
+        "deceased": 0,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Kathua",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kishtwar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kulgam",
+        "notes": "",
+        "active": 6,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kupwara",
+        "notes": "",
+        "active": 40,
+        "confirmed": 46,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pulwama",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rajouri",
+        "notes": "",
+        "active": 1,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ramban",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Samba",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shupiyan",
+        "notes": "",
+        "active": 52,
+        "confirmed": 63,
+        "deceased": 0,
+        "recovered": 11,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Srinagar",
+        "notes": "",
+        "active": 54,
+        "confirmed": 83,
+        "deceased": 1,
+        "recovered": 28,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Udhampur",
+        "notes": "",
+        "active": 11,
+        "confirmed": 20,
+        "deceased": 1,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Jharkhand",
+    "statecode": "JH",
+    "districtData": [
+      {
+        "district": "Bokaro",
+        "notes": "",
+        "active": 11,
+        "confirmed": 11,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Deoghar",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dhanbad",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Giridih",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hazaribagh",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kodarma",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Palamu",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ranchi",
+        "notes": "",
+        "active": 30,
+        "confirmed": 30,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Simdega",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": 2,
+        "confirmed": 13,
+        "deceased": 3,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Karnataka",
+    "statecode": "KA",
+    "districtData": [
+      {
+        "district": "Bagalkote",
+        "notes": "",
+        "active": 21,
+        "confirmed": 24,
+        "deceased": 1,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ballari",
+        "notes": "",
+        "active": 10,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Belagavi",
+        "notes": "",
+        "active": 50,
+        "confirmed": 54,
+        "deceased": 1,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 9,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bengaluru",
+        "notes": "",
+        "active": 80,
+        "confirmed": 133,
+        "deceased": 4,
+        "recovered": 49,
+        "delta": {
+          "confirmed": 13,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bengaluru Rural",
+        "notes": "",
+        "active": 6,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bidar",
+        "notes": "",
+        "active": 6,
+        "confirmed": 15,
+        "deceased": 0,
+        "recovered": 9,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Chikkaballapura",
+        "notes": "",
+        "active": 6,
+        "confirmed": 18,
+        "deceased": 2,
+        "recovered": 10,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Chitradurga",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dakshina Kannada",
+        "notes": "",
+        "active": 4,
+        "confirmed": 17,
+        "deceased": 2,
+        "recovered": 11,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Davanagere",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dharwad",
+        "notes": "",
+        "active": 7,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gadag",
+        "notes": "",
+        "active": 3,
+        "confirmed": 4,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kalaburagi",
+        "notes": "",
+        "active": 26,
+        "confirmed": 36,
+        "deceased": 4,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kodagu",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mandya",
+        "notes": "",
+        "active": 16,
+        "confirmed": 16,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mysuru",
+        "notes": "",
+        "active": 56,
+        "confirmed": 89,
+        "deceased": 0,
+        "recovered": 33,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tumakuru",
+        "notes": "",
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 1,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Udupi",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Uttara Kannada",
+        "notes": "",
+        "active": 1,
+        "confirmed": 11,
+        "deceased": 0,
+        "recovered": 10,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Vijayapura",
+        "notes": "",
+        "active": 37,
+        "confirmed": 39,
+        "deceased": 2,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Kerala",
+    "statecode": "KL",
+    "districtData": [
+      {
+        "district": "Alappuzha",
+        "notes": "",
+        "active": 0,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ernakulam",
+        "notes": "",
+        "active": 3,
+        "confirmed": 24,
+        "deceased": 1,
+        "recovered": 20,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Idukki",
+        "notes": "",
+        "active": 4,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 10,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kannur",
+        "notes": "",
+        "active": 56,
+        "confirmed": 111,
+        "deceased": 1,
+        "recovered": 54,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Kasaragod",
+        "notes": "",
+        "active": 16,
+        "confirmed": 175,
+        "deceased": 0,
+        "recovered": 159,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Kollam",
+        "notes": "",
+        "active": 6,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kottayam",
+        "notes": "",
+        "active": 6,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kozhikode",
+        "notes": "",
+        "active": 9,
+        "confirmed": 24,
+        "deceased": 0,
+        "recovered": 15,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Malappuram",
+        "notes": "",
+        "active": 7,
+        "confirmed": 22,
+        "deceased": 0,
+        "recovered": 15,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Palakkad",
+        "notes": "",
+        "active": 5,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pathanamthitta",
+        "notes": "",
+        "active": 3,
+        "confirmed": 17,
+        "deceased": 0,
+        "recovered": 14,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thiruvananthapuram",
+        "notes": "",
+        "active": 2,
+        "confirmed": 15,
+        "deceased": 1,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thrissur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 13,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Wayanad",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      }
+    ]
+  },
+  {
+    "state": "Ladakh",
+    "statecode": "LA",
+    "districtData": [
+      {
+        "district": "Kargil",
+        "notes": "",
+        "active": 1,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Leh",
+        "notes": "",
+        "active": 3,
+        "confirmed": 15,
+        "deceased": 0,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Madhya Pradesh",
+    "statecode": "MP",
+    "districtData": [
+      {
+        "district": "Agar Malwa",
+        "notes": "",
+        "active": 10,
+        "confirmed": 11,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Alirajpur",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Barwani",
+        "notes": "",
+        "active": 24,
+        "confirmed": 24,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Betul",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhopal",
+        "notes": "",
+        "active": 275,
+        "confirmed": 388,
+        "deceased": 9,
+        "recovered": 104,
+        "delta": {
+          "confirmed": 28,
+          "deceased": 0,
+          "recovered": 31
+        }
+      },
+      {
+        "district": "Chhindwara",
+        "notes": "",
+        "active": 4,
+        "confirmed": 5,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dewas",
+        "notes": "",
+        "active": 12,
+        "confirmed": 22,
+        "deceased": 6,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 4
+        }
+      },
+      {
+        "district": "Dhar",
+        "notes": "State bulletin on 20th Apr reported 5 extra cases in Dhar distrct. This has been reconciled - MP Health Dept Bulletin, 22 Apr",
+        "active": 35,
+        "confirmed": 36,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gwalior",
+        "notes": "",
+        "active": 2,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hoshangabad",
+        "notes": "",
+        "active": 28,
+        "confirmed": 30,
+        "deceased": 1,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 1,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Indore",
+        "notes": "",
+        "active": 921,
+        "confirmed": 1085,
+        "deceased": 57,
+        "recovered": 107,
+        "delta": {
+          "confirmed": 56,
+          "deceased": 2,
+          "recovered": 25
+        }
+      },
+      {
+        "district": "Jabalpur",
+        "notes": "",
+        "active": 35,
+        "confirmed": 43,
+        "deceased": 1,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 12,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Khandwa",
+        "notes": "",
+        "active": 24,
+        "confirmed": 36,
+        "deceased": 0,
+        "recovered": 12,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Khargone",
+        "notes": "MP Bulletin dated 25/04 reduced one case in Khargone as there was a repetition",
+        "active": 47,
+        "confirmed": 60,
+        "deceased": 6,
+        "recovered": 7,
+        "delta": {
+          "confirmed": -1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mandsaur",
+        "notes": "",
+        "active": 7,
+        "confirmed": 8,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Morena",
+        "notes": "MP Bulletin dated 25/04 reduced one case in Morena as there were repetitions",
+        "active": 0,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 13,
+        "delta": {
+          "confirmed": -3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Raisen",
+        "notes": "",
+        "active": 25,
+        "confirmed": 26,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ratlam",
+        "notes": "",
+        "active": 12,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sagar",
+        "notes": "",
+        "active": 5,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shajapur",
+        "notes": "",
+        "active": 5,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sheopur",
+        "notes": "",
+        "active": 2,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shivpuri",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tikamgarh",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ujjain",
+        "notes": "",
+        "active": 83,
+        "confirmed": 103,
+        "deceased": 15,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 4,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Vidisha",
+        "notes": "",
+        "active": 0,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 13,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 12
+        }
+      },
+      {
+        "district": "Other Region",
+        "notes": "Cases from other states",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Maharashtra",
+    "statecode": "MH",
+    "districtData": [
+      {
+        "district": "Ahmadnagar",
+        "notes": "",
+        "active": 11,
+        "confirmed": 35,
+        "deceased": 2,
+        "recovered": 22,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 6
+        }
+      },
+      {
+        "district": "Akola",
+        "notes": "",
+        "active": 15,
+        "confirmed": 23,
+        "deceased": 1,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Amravati",
+        "notes": "",
+        "active": 14,
+        "confirmed": 19,
+        "deceased": 1,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 4
+        }
+      },
+      {
+        "district": "Aurangabad",
+        "notes": "",
+        "active": 23,
+        "confirmed": 50,
+        "deceased": 5,
+        "recovered": 22,
+        "delta": {
+          "confirmed": 8,
+          "deceased": 0,
+          "recovered": 7
+        }
+      },
+      {
+        "district": "Bid",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Buldana",
+        "notes": "Reconciled as per MH bulleting 24/04",
+        "active": 9,
+        "confirmed": 21,
+        "deceased": 1,
+        "recovered": 11,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Chandrapur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Dhule",
+        "notes": "",
+        "active": 22,
+        "confirmed": 25,
+        "deceased": 3,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 1,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gondiya",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hingoli",
+        "notes": "",
+        "active": 7,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jalgaon",
+        "notes": "",
+        "active": 10,
+        "confirmed": 13,
+        "deceased": 2,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jalna",
+        "notes": "Reconciled as per MH bulleting 24/04",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kolhapur",
+        "notes": "",
+        "active": 7,
+        "confirmed": 10,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Latur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mumbai",
+        "notes": "",
+        "active": 4388,
+        "confirmed": 5049,
+        "deceased": 191,
+        "recovered": 470,
+        "delta": {
+          "confirmed": 602,
+          "deceased": 13,
+          "recovered": 57
+        }
+      },
+      {
+        "district": "Nagpur",
+        "notes": "",
+        "active": 91,
+        "confirmed": 107,
+        "deceased": 1,
+        "recovered": 15,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Nanded",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nandurbar",
+        "notes": "",
+        "active": 10,
+        "confirmed": 11,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nashik",
+        "notes": "",
+        "active": 117,
+        "confirmed": 131,
+        "deceased": 12,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 1,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Osmanabad",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Palghar",
+        "notes": "",
+        "active": 109,
+        "confirmed": 139,
+        "deceased": 4,
+        "recovered": 26,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 6
+        }
+      },
+      {
+        "district": "Parbhani",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pune",
+        "notes": "",
+        "active": 772,
+        "confirmed": 1030,
+        "deceased": 73,
+        "recovered": 185,
+        "delta": {
+          "confirmed": 69,
+          "deceased": 6,
+          "recovered": 8
+        }
+      },
+      {
+        "district": "Raigarh",
+        "notes": "",
+        "active": 37,
+        "confirmed": 56,
+        "deceased": 1,
+        "recovered": 18,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Ratnagiri",
+        "notes": "",
+        "active": 5,
+        "confirmed": 8,
+        "deceased": 1,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sangli",
+        "notes": "",
+        "active": 0,
+        "confirmed": 26,
+        "deceased": 1,
+        "recovered": 25,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Satara",
+        "notes": "",
+        "active": 24,
+        "confirmed": 29,
+        "deceased": 2,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 9,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sindhudurg",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Solapur",
+        "notes": "",
+        "active": 42,
+        "confirmed": 46,
+        "deceased": 4,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 7,
+          "deceased": 1,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thane",
+        "notes": "",
+        "active": 588,
+        "confirmed": 717,
+        "deceased": 15,
+        "recovered": 114,
+        "delta": {
+          "confirmed": 74,
+          "deceased": 0,
+          "recovered": 25
+        }
+      },
+      {
+        "district": "Washim",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Yavatmal",
+        "notes": "",
+        "active": 18,
+        "confirmed": 28,
+        "deceased": 0,
+        "recovered": 10,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Other States",
+        "notes": "Cases from other States/UTs",
+        "active": 23,
+        "confirmed": 25,
+        "deceased": 2,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Manipur",
+    "statecode": "MN",
+    "districtData": [
+      {
+        "district": "Imphal East",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Imphal West",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Meghalaya",
+    "statecode": "ML",
+    "districtData": [
+      {
+        "district": "East Khasi Hills",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": 4,
+        "confirmed": 5,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Mizoram",
+    "statecode": "MZ",
+    "districtData": [
+      {
+        "district": "Aizawl",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Odisha",
+    "statecode": "OR",
+    "districtData": [
+      {
+        "district": "Baleshwar",
+        "notes": "",
+        "active": 10,
+        "confirmed": 10,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhadrak",
+        "notes": "",
+        "active": 14,
+        "confirmed": 16,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Cuttack",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dhenkanal",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jajapur",
+        "notes": "",
+        "active": 17,
+        "confirmed": 18,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kalahandi",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kendrapara",
+        "notes": "",
+        "active": 1,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Khordha",
+        "notes": "",
+        "active": 23,
+        "confirmed": 46,
+        "deceased": 1,
+        "recovered": 22,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Puri",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sundargarh",
+        "notes": "",
+        "active": 0,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      }
+    ]
+  },
+  {
+    "state": "Puducherry",
+    "statecode": "PY",
+    "districtData": [
+      {
+        "district": "Mahe",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Puducherry",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Punjab",
+    "statecode": "PB",
+    "districtData": [
+      {
+        "district": "Amritsar",
+        "notes": "",
+        "active": 11,
+        "confirmed": 14,
+        "deceased": 2,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Barnala",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 1,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Faridkot",
+        "notes": "",
+        "active": 2,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Fatehgarh Sahib",
+        "notes": "",
+        "active": 1,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Firozpur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gurdaspur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hoshiarpur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 7,
+        "deceased": 1,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jalandhar",
+        "notes": "",
+        "active": 57,
+        "confirmed": 66,
+        "deceased": 2,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kapurthala",
+        "notes": "",
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Ludhiana",
+        "notes": "",
+        "active": 10,
+        "confirmed": 17,
+        "deceased": 4,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mansa",
+        "notes": "",
+        "active": 11,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Moga",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pathankot",
+        "notes": "",
+        "active": 24,
+        "confirmed": 25,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Patiala",
+        "notes": "",
+        "active": 60,
+        "confirmed": 61,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rupnagar",
+        "notes": "",
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 1,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "S.A.S. Nagar",
+        "notes": "",
+        "active": 47,
+        "confirmed": 63,
+        "deceased": 2,
+        "recovered": 14,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sangrur",
+        "notes": "",
+        "active": 2,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shahid Bhagat Singh Nagar",
+        "notes": "",
+        "active": 0,
+        "confirmed": 19,
+        "deceased": 1,
+        "recovered": 18,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sri Muktsar Sahib",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Rajasthan",
+    "statecode": "RJ",
+    "districtData": [
+      {
+        "district": "Ajmer",
+        "notes": "",
+        "active": 107,
+        "confirmed": 112,
+        "deceased": 0,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Alwar",
+        "notes": "",
+        "active": 2,
+        "confirmed": 7,
+        "deceased": 1,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Banswara",
+        "notes": "",
+        "active": 40,
+        "confirmed": 61,
+        "deceased": 0,
+        "recovered": 21,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 5
+        }
+      },
+      {
+        "district": "Barmer",
+        "notes": "",
+        "active": 1,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bharatpur",
+        "notes": "",
+        "active": 103,
+        "confirmed": 109,
+        "deceased": 1,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhilwara",
+        "notes": "",
+        "active": 6,
+        "confirmed": 33,
+        "deceased": 2,
+        "recovered": 25,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bikaner",
+        "notes": "",
+        "active": 4,
+        "confirmed": 37,
+        "deceased": 1,
+        "recovered": 32,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Chittaurgarh",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Churu",
+        "notes": "",
+        "active": 3,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 11,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dausa",
+        "notes": "",
+        "active": 15,
+        "confirmed": 21,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dhaulpur",
+        "notes": "",
+        "active": 2,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dungarpur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hanumangarh",
+        "notes": "",
+        "active": 8,
+        "confirmed": 10,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jaipur",
+        "notes": "",
+        "active": 640,
+        "confirmed": 792,
+        "deceased": 19,
+        "recovered": 133,
+        "delta": {
+          "confirmed": 15,
+          "deceased": 1,
+          "recovered": 1
+        }
+      },
+      {
+        "district": "Jaisalmer",
+        "notes": "",
+        "active": 8,
+        "confirmed": 34,
+        "deceased": 0,
+        "recovered": 26,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 3
+        }
+      },
+      {
+        "district": "Jhalawar",
+        "notes": "",
+        "active": 13,
+        "confirmed": 29,
+        "deceased": 0,
+        "recovered": 16,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 2
+        }
+      },
+      {
+        "district": "Jhunjhunu",
+        "notes": "",
+        "active": 14,
+        "confirmed": 42,
+        "deceased": 0,
+        "recovered": 28,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jodhpur",
+        "notes": "",
+        "active": 274,
+        "confirmed": 326,
+        "deceased": 2,
+        "recovered": 50,
+        "delta": {
+          "confirmed": 10,
+          "deceased": 0,
+          "recovered": 9
+        }
+      },
+      {
+        "district": "Karauli",
+        "notes": "",
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kota",
+        "notes": "",
+        "active": 65,
+        "confirmed": 149,
+        "deceased": 4,
+        "recovered": 80,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 1,
+          "recovered": 20
+        }
+      },
+      {
+        "district": "Nagaur",
+        "notes": "",
+        "active": 89,
+        "confirmed": 93,
+        "deceased": 1,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pali",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pratapgarh",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rajsamand",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sawai Madhopur",
+        "notes": "",
+        "active": 8,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sikar",
+        "notes": "",
+        "active": 2,
+        "confirmed": 4,
+        "deceased": 1,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tonk",
+        "notes": "",
+        "active": 95,
+        "confirmed": 115,
+        "deceased": 1,
+        "recovered": 19,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Udaipur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Italians",
+        "notes": "Italian tourists who were tested positive in Rajasthan",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Evacuees",
+        "notes": "Evacuees from other countries; They have been counted separatly by the state",
+        "active": 36,
+        "confirmed": 61,
+        "deceased": 0,
+        "recovered": 25,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Tamil Nadu",
+    "statecode": "TN",
+    "districtData": [
+      {
+        "district": "Ariyalur",
+        "notes": "",
+        "active": 5,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Chengalpattu",
+        "notes": "",
+        "active": 55,
+        "confirmed": 55,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Chennai",
+        "notes": "",
+        "active": 401,
+        "confirmed": 500,
+        "deceased": 0,
+        "recovered": 99,
+        "delta": {
+          "confirmed": 43,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Coimbatore",
+        "notes": "",
+        "active": 66,
+        "confirmed": 141,
+        "deceased": 0,
+        "recovered": 75,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Cuddalore",
+        "notes": "",
+        "active": 26,
+        "confirmed": 26,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dharmapuri",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dindigul",
+        "notes": "",
+        "active": 80,
+        "confirmed": 80,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Erode",
+        "notes": "",
+        "active": 70,
+        "confirmed": 70,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kallakurichi",
+        "notes": "",
+        "active": 5,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kancheepuram",
+        "notes": "",
+        "active": 18,
+        "confirmed": 18,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 7,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kanniyakumari",
+        "notes": "",
+        "active": 16,
+        "confirmed": 16,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Karur",
+        "notes": "",
+        "active": 41,
+        "confirmed": 41,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Madurai",
+        "notes": "",
+        "active": 32,
+        "confirmed": 60,
+        "deceased": 0,
+        "recovered": 28,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nagapattinam",
+        "notes": "",
+        "active": 44,
+        "confirmed": 44,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Namakkal",
+        "notes": "",
+        "active": 55,
+        "confirmed": 55,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Perambalur",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pudukkottai",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ramanathapuram",
+        "notes": "",
+        "active": 14,
+        "confirmed": 14,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ranipet",
+        "notes": "",
+        "active": 38,
+        "confirmed": 38,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Salem",
+        "notes": "",
+        "active": 20,
+        "confirmed": 30,
+        "deceased": 0,
+        "recovered": 10,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sivaganga",
+        "notes": "",
+        "active": 6,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tenkasi",
+        "notes": "",
+        "active": 35,
+        "confirmed": 35,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thanjavur",
+        "notes": "",
+        "active": 53,
+        "confirmed": 54,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "The Nilgiris",
+        "notes": "",
+        "active": 9,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Theni",
+        "notes": "",
+        "active": 26,
+        "confirmed": 44,
+        "deceased": 0,
+        "recovered": 18,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thiruvallur",
+        "notes": "",
+        "active": 53,
+        "confirmed": 53,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thiruvarur",
+        "notes": "",
+        "active": 14,
+        "confirmed": 30,
+        "deceased": 0,
+        "recovered": 16,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Thoothukkudi",
+        "notes": "",
+        "active": 20,
+        "confirmed": 27,
+        "deceased": 0,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tiruchirappalli",
+        "notes": "",
+        "active": 18,
+        "confirmed": 51,
+        "deceased": 0,
+        "recovered": 33,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tirunelveli",
+        "notes": "",
+        "active": 35,
+        "confirmed": 65,
+        "deceased": 0,
+        "recovered": 30,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tirupathur",
+        "notes": "",
+        "active": 18,
+        "confirmed": 18,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tiruppur",
+        "notes": "",
+        "active": 110,
+        "confirmed": 110,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Tiruvannamalai",
+        "notes": "",
+        "active": 11,
+        "confirmed": 11,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Vellore",
+        "notes": "",
+        "active": 23,
+        "confirmed": 23,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Viluppuram",
+        "notes": "",
+        "active": 29,
+        "confirmed": 47,
+        "deceased": 0,
+        "recovered": 18,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Virudhunagar",
+        "notes": "",
+        "active": 25,
+        "confirmed": 25,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Telangana",
+    "statecode": "TG",
+    "districtData": [
+      {
+        "district": "Adilabad",
+        "notes": "",
+        "active": 16,
+        "confirmed": 16,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhadradri Kothagudem",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hyderabad",
+        "notes": "",
+        "active": 532,
+        "confirmed": 532,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 6,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jagitial",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jangoan",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jayashankar",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jogulamba Gadwal",
+        "notes": "",
+        "active": 38,
+        "confirmed": 38,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kamareddy",
+        "notes": "",
+        "active": 11,
+        "confirmed": 11,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Karimnagar",
+        "notes": "",
+        "active": 19,
+        "confirmed": 19,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Khammam",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kumuram Bheem Asifabad",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mahabubabad",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mahabubnagar",
+        "notes": "",
+        "active": 11,
+        "confirmed": 11,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Medak",
+        "notes": "",
+        "active": 5,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Medchal Malkajgiri",
+        "notes": "",
+        "active": 8,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mulugu",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nagarkurnool",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nalgonda",
+        "notes": "",
+        "active": 15,
+        "confirmed": 15,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nirmal",
+        "notes": "",
+        "active": 17,
+        "confirmed": 17,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nizamabad",
+        "notes": "",
+        "active": 59,
+        "confirmed": 59,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Peddapalli",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rajanna Sircilla",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ranga Reddy",
+        "notes": "",
+        "active": 26,
+        "confirmed": 26,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sangareddy",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Siddipet",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Suryapet",
+        "notes": "",
+        "active": 46,
+        "confirmed": 46,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Vikarabad",
+        "notes": "",
+        "active": 37,
+        "confirmed": 37,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Warangal Urban",
+        "notes": "",
+        "active": 22,
+        "confirmed": 22,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": -246,
+        "confirmed": 86,
+        "deceased": 25,
+        "recovered": 307,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Tripura",
+    "statecode": "TR",
+    "districtData": [
+      {
+        "district": "Gomati",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "North Tripura",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Uttar Pradesh",
+    "statecode": "UP",
+    "districtData": [
+      {
+        "district": "Agra",
+        "notes": "",
+        "active": 345,
+        "confirmed": 371,
+        "deceased": 8,
+        "recovered": 18,
+        "delta": {
+          "confirmed": 25,
+          "deceased": 1,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Aligarh",
+        "notes": "",
+        "active": 10,
+        "confirmed": 11,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Amroha",
+        "notes": "",
+        "active": 25,
+        "confirmed": 25,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 2,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Auraiya",
+        "notes": "",
+        "active": 10,
+        "confirmed": 10,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Azamgarh",
+        "notes": "",
+        "active": 5,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Baghpat",
+        "notes": "",
+        "active": 14,
+        "confirmed": 15,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bahraich",
+        "notes": "",
+        "active": 8,
+        "confirmed": 8,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Balrampur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Banda",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bara Banki",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bareilly",
+        "notes": "",
+        "active": 0,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Basti",
+        "notes": "",
+        "active": 22,
+        "confirmed": 23,
+        "deceased": 1,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bhadohi",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bijnor",
+        "notes": "",
+        "active": 29,
+        "confirmed": 29,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Budaun",
+        "notes": "",
+        "active": 13,
+        "confirmed": 13,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Bulandshahr",
+        "notes": "",
+        "active": 35,
+        "confirmed": 38,
+        "deceased": 1,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 11,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Etah",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Etawah",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Firozabad",
+        "notes": "",
+        "active": 79,
+        "confirmed": 83,
+        "deceased": 1,
+        "recovered": 3,
+        "delta": {
+          "confirmed": 8,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gautam Buddha Nagar",
+        "notes": "",
+        "active": 54,
+        "confirmed": 113,
+        "deceased": 0,
+        "recovered": 59,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 3
+        }
+      },
+      {
+        "district": "Ghaziabad",
+        "notes": "",
+        "active": 37,
+        "confirmed": 53,
+        "deceased": 0,
+        "recovered": 16,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ghazipur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 5,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Gonda",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hapur",
+        "notes": "",
+        "active": 18,
+        "confirmed": 18,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hardoi",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hathras",
+        "notes": "",
+        "active": 0,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jaunpur",
+        "notes": "",
+        "active": 1,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kannauj",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kanpur Nagar",
+        "notes": "",
+        "active": 139,
+        "confirmed": 149,
+        "deceased": 3,
+        "recovered": 7,
+        "delta": {
+          "confirmed": 24,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kasganj",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kaushambi",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kheri",
+        "notes": "",
+        "active": 0,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Lucknow",
+        "notes": "",
+        "active": 163,
+        "confirmed": 193,
+        "deceased": 1,
+        "recovered": 29,
+        "delta": {
+          "confirmed": 19,
+          "deceased": 0,
+          "recovered": 20
+        }
+      },
+      {
+        "district": "Mahrajganj",
+        "notes": "",
+        "active": 0,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mainpuri",
+        "notes": "",
+        "active": 5,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mathura",
+        "notes": "",
+        "active": 9,
+        "confirmed": 9,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Mau",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Meerut",
+        "notes": "",
+        "active": 49,
+        "confirmed": 89,
+        "deceased": 4,
+        "recovered": 36,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 3
+        }
+      },
+      {
+        "district": "Mirzapur",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Moradabad",
+        "notes": "",
+        "active": 94,
+        "confirmed": 101,
+        "deceased": 6,
+        "recovered": 1,
+        "delta": {
+          "confirmed": -3,
+          "deceased": 1,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Muzaffarnagar",
+        "notes": "",
+        "active": 17,
+        "confirmed": 17,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 5,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pilibhit",
+        "notes": "",
+        "active": 0,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pratapgarh",
+        "notes": "",
+        "active": 0,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Prayagraj",
+        "notes": "",
+        "active": 3,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rae Bareli",
+        "notes": "",
+        "active": 43,
+        "confirmed": 43,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Rampur",
+        "notes": "",
+        "active": 16,
+        "confirmed": 20,
+        "deceased": 0,
+        "recovered": 4,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Saharanpur",
+        "notes": "",
+        "active": 151,
+        "confirmed": 160,
+        "deceased": 0,
+        "recovered": 9,
+        "delta": {
+          "confirmed": 37,
+          "deceased": 0,
+          "recovered": 9
+        }
+      },
+      {
+        "district": "Sambhal",
+        "notes": "",
+        "active": 12,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 4,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sant Kabir Nagar",
+        "notes": "",
+        "active": 21,
+        "confirmed": 21,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 19,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shahjahanpur",
+        "notes": "",
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shamli",
+        "notes": "",
+        "active": 12,
+        "confirmed": 27,
+        "deceased": 0,
+        "recovered": 15,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Shrawasti",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sitapur",
+        "notes": "",
+        "active": 12,
+        "confirmed": 20,
+        "deceased": 0,
+        "recovered": 8,
+        "delta": {
+          "confirmed": 3,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Sultanpur",
+        "notes": "",
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 1,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unnao",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Varanasi",
+        "notes": "",
+        "active": 19,
+        "confirmed": 26,
+        "deceased": 1,
+        "recovered": 6,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Ayodhya",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "Uttarakhand",
+    "statecode": "UT",
+    "districtData": [
+      {
+        "district": "Almora",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Dehradun",
+        "notes": "",
+        "active": 25,
+        "confirmed": 25,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Haridwar",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nainital",
+        "notes": "",
+        "active": 10,
+        "confirmed": 10,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Pauri Garhwal",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Udham Singh Nagar",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
+  },
+  {
+    "state": "West Bengal",
+    "statecode": "WB",
+    "districtData": [
+      {
+        "district": "Darjeeling",
+        "notes": "",
+        "active": 4,
+        "confirmed": 4,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Hooghly",
+        "notes": "",
+        "active": 12,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Howrah",
+        "notes": "",
+        "active": 79,
+        "confirmed": 79,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Jalpaiguri",
+        "notes": "",
+        "active": 5,
+        "confirmed": 5,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kalimpong",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Kolkata",
+        "notes": "",
+        "active": 184,
+        "confirmed": 184,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Medinipur East",
+        "notes": "",
+        "active": 22,
+        "confirmed": 22,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Murshidabad",
+        "notes": "",
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Nadia",
+        "notes": "",
+        "active": 6,
+        "confirmed": 6,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "North 24 Parganas",
+        "notes": "",
+        "active": 47,
+        "confirmed": 47,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Paschim Bardhaman",
+        "notes": "",
+        "active": 7,
+        "confirmed": 7,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Purba Bardhaman",
+        "notes": "",
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "South 24 Parganas",
+        "notes": "",
+        "active": 12,
+        "confirmed": 12,
+        "deceased": 0,
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      },
+      {
+        "district": "Unknown",
+        "notes": "",
+        "active": 62,
+        "confirmed": 183,
+        "deceased": 18,
+        "recovered": 103,
+        "delta": {
+          "confirmed": 0,
+          "deceased": 0,
+          "recovered": 0
+        }
+      }
+    ]
   }
-}
+]
