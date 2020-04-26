@@ -7,13 +7,11 @@
   <title>Covid19 India</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body onload="readData()">
   <ul id="dropdownforlinks" class="dropdown-content">
-    <li><a href="">Important Links</a></li>
-    <li class="divider"></li>
     <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
     <li><a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a></li>
     <li>
@@ -23,9 +21,10 @@
       <a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a>
     </li>
     <li class="divider"></li>
+    <li><a href="./resources.html">Resources(India)</a></li>
+    <li class="divider"></li>
     <li>
       <a href="https://github.com/romilshah525/" target="_blank">Find Me On Github</a>
-      <li><a href="./resources.html">Resources(India)</a></li>
     </li>
     <li>
       <a href="https://api.covid19india.org/" target="_blank">Data Source</a>
@@ -44,7 +43,9 @@
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
-        <li><a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a></li>
+        <li>
+          <a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a>
+        </li>
         <li>
           <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a>
         </li>
@@ -52,12 +53,13 @@
           <a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a>
         </li>
         <li class="divider"></li>
+        <li><a href="./index.html">Global Dashboard</a></li>
+        <li><a href="./analysis.html">Analysis (India)</a></li>
+        <li><a href="./resources.html">Resources (India)</a></li>
+        <li class="divider"></li>
         <li>
           <a href="https://github.com/romilshah525/" target="_blank">Find Me On Github</a>
         </li>
-        <li><a href="./index.html">Global Dashboard</a></li>
-        <li><a href="./analysis.html">Analysis (India)</a></li>
-        <li><a href="./resources.html">Resources(India)</a></li>
         <li>
           <a href="https://api.covid19india.org/" target="_blank">Data Source</a>
         </li>
@@ -69,7 +71,7 @@
   <main class="container section" style="padding-top: 1rem;">
     <div class="row valign-wrapper" id="to-be-updated">
       <div class="col s6">
-        <h6 class="black-text truncate center-align"> Fetching Latest Data</h6>
+        <h6 class="black-text truncate center-align">Fetching Latest Data</h6>
       </div>
       <div class="col s6">
         <div class="progress">
@@ -80,8 +82,12 @@
     <div class="row">
       <div class="col s12">
         <ul class="tabs">
-          <li class="tab col s6"><a href="#visualize" class="grey-text text-darken-3">Visualize</a></li>
-          <li class="tab col s6"><a class="grey-text text-darken-3 active" href="#tabulate">Tabulate</a></li>
+          <li class="tab col s6">
+            <a href="#visualize" class="grey-text text-darken-3">Visualize</a>
+          </li>
+          <li class="tab col s6">
+            <a class="grey-text text-darken-3 active" href="#tabulate">Tabulate</a>
+          </li>
         </ul>
       </div>
       <div id="visualize" class="col s12">
@@ -121,8 +127,10 @@
       </div>
       <div id="tabulate">
         <div class="col s12 m6 center-align">
-          <h6 class="black-text bold-text"><u>Top 5 States with Maximum cases</u></h6>
-          <table class="responsive-table striped ">
+          <h6 class="black-text bold-text">
+            <u>Top 5 States with Maximum cases</u>
+          </h6>
+          <table class="responsive-table striped">
             <thead>
               <tr>
                 <th>State</th>
@@ -134,7 +142,11 @@
             </thead>
             <tbody id="state-data-table"></tbody>
           </table>
-          <div class="row section"><div class="col s12 "><a class="waves-effect waves-light btn grey darken-3" href="./resources.html">Essentials and resources</a></div></div>
+          <div class="row section">
+            <div class="col s12">
+              <a class="waves-effect waves-light btn grey darken-3" href="./resources.html">Essentials and resources</a>
+            </div>
+          </div>
         </div>
         <div class="col s12 m6">
           <div class="input-field col s12" style="margin-top: 2rem;">
