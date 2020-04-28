@@ -1,3 +1,15 @@
+const colors = [
+  "#fc3903",
+  "#f2b438",
+  "#87c93a",
+  "#3ac96e",
+  "#3a60c9",
+  "#633ac9",
+  "#9c3ac9",
+  "#c93abf",
+];
+const limit = colors.length;
+const opt = ["confirmed", "recovered", "deaths"];
 let genderCount = {
     M: 0,
     F: 0,
@@ -7,11 +19,10 @@ let genderCount = {
   globalEntireData,
   rawEntireData,
   selectedCountryList,
-  ageCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   chart1,
   chart2,
   chart3;
-const colors = ["#fc3903", "#f2b438", "#87c93a", "#3ac96e", "#3ac9b6"];
+ageCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let canvas1 = document.getElementById("canvas1").getContext("2d"),
   canvas2 = document.getElementById("canvas2").getContext("2d"),
   canvas3 = document.getElementById("canvas3").getContext("2d");
@@ -23,22 +34,29 @@ let instance = M.Chips.init(elems, {
     { tag: "China" },
     { tag: "Spain" },
     { tag: "Italy" },
+    { tag: "US" },
   ],
   autocompleteOptions: {
     data: countryList,
-    limit: 5,
-    minLength: 1,
+    limit: limit,
+    minLength: 2,
   },
   onChipAdd: function () {
-    plotCountryWiseChart(instance[0].chipsData);
+    if (instance[0].chipsData.length > limit) instance[0].deleteChip(0);
+    plotCountryWiseChart(
+      instance[0].chipsData,
+      document.getElementById("my-select").value
+    );
   },
   onChipDelete: function () {
-    plotCountryWiseChart(instance[0].chipsData);
+    plotCountryWiseChart(
+      instance[0].chipsData,
+      document.getElementById("my-select").value
+    );
   },
 });
 
 function readData() {
-  // fetch("https://api.covid19india.org/raw_data.json")
   fetch("https://api.covid19india.org/raw_data.json")
     .then((res) => res.json())
     .then(({ raw_data }) => {
@@ -157,16 +175,34 @@ function readData() {
     .catch((err) => fetch("Covid19/json/global.json"))
     .then((response) => response.json())
     .then((data) => {
+      document.getElementById("to-be-updated").innerHTML = "";
       Object.keys(data).forEach((element) => (countryList[element] = null));
+      opt.forEach(
+        (element) =>
+          (document.getElementById(
+            "my-select"
+          ).innerHTML += `<option value="${element}">${
+            element[0].toUpperCase() + element.slice(1)
+          }</option>`)
+      );
       globalEntireData = data;
-      plotCountryWiseChart(instance[0].chipsData);
+      document.getElementById("my-select").value = "confirmed";
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
+      plotCountryWiseChart(
+        instance[0].chipsData,
+        document.getElementById("my-select").value
+      );
     });
 }
 
-function plotCountryWiseChart(countries) {
-  console.log(countries);
+function plotCountryWiseChart(countries, cat) {
   if (!countries.length) {
-    chart3="";
+    chart3 = "";
+  }
+  if (chart3) {
+    chart3.destroy();
   }
   if (window.screen.availWidth <= 650) size = 6;
   else size = 14;
@@ -178,7 +214,7 @@ function plotCountryWiseChart(countries) {
   let i = 0;
   countries.forEach((country) => {
     let data = [];
-    globalEntireData[country.tag].forEach((el) => data.push(el.confirmed));
+    globalEntireData[country.tag].forEach((el) => data.push(el[cat]));
     datasets.push({
       label: country.tag,
       data: data,
@@ -189,7 +225,7 @@ function plotCountryWiseChart(countries) {
     });
     i += 1;
   });
-  let options = {
+  let optionsLineChart = {
     type: "line",
     data: { labels, datasets: datasets },
     options: {
@@ -215,7 +251,7 @@ function plotCountryWiseChart(countries) {
             ticks: {
               fontSize: 9,
               callback: (value) =>
-                value > 800 ? String(value / 1000) + "k" : value,
+                value > 999 ? String(value / 1000) + "k" : value,
             },
           },
         ],
@@ -223,14 +259,14 @@ function plotCountryWiseChart(countries) {
     },
   };
   if (size > 12) {
-    options.options.legend.display = true;
-    options.options.scales.xAxes = [
+    optionsLineChart.options.legend.display = true;
+    optionsLineChart.options.scales.xAxes = [
       {
         display: true,
         scaleLabel: { display: true, labelString: "Date" },
       },
     ];
-    options.options.scales.yAxes = [
+    optionsLineChart.options.scales.yAxes = [
       {
         display: true,
         scaleLabel: { display: true, labelString: "Count " },
@@ -242,5 +278,12 @@ function plotCountryWiseChart(countries) {
       },
     ];
   }
-  chart3 = new Chart(canvas3, options);
+  chart3 = new Chart(canvas3, optionsLineChart);
+}
+
+function toggleCategory() {
+  plotCountryWiseChart(
+    instance[0].chipsData,
+    document.getElementById("my-select").value
+  );
 }
