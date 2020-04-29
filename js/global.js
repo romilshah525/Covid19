@@ -220,13 +220,12 @@ function readData() {
       return data;
     })
     .then((data) => {
-      document.getElementById("to-be-updated").innerHTML = ``;
       jsondata = data;
       if (window.screen.availWidth <= 650)
         plotGraph(
           jsondata[country],
           !document.getElementById("mySwitch").checked,
-          6
+          8
         );
       else
         plotGraph(
@@ -234,7 +233,36 @@ function readData() {
           !document.getElementById("mySwitch").checked,
           14
         );
-    });
+    })
+    .then((res) => fetch("https://covid19.mathdro.id/api/"))
+    .then((res) => res.json())
+    .then((res) => {
+      document.getElementById("to-be-updated").innerHTML = ``;
+      document.getElementById(
+        "global-total-confirmed-cases"
+      ).innerText = `${res.confirmed.value.toLocaleString()}`;
+      document.getElementById(
+        "global-total-recovered-cases"
+      ).innerText = `${res.recovered.value.toLocaleString()}`;
+      document.getElementById("global-total-active-cases").innerText = `${(
+        res.confirmed.value -
+        (res.recovered.value + res.deaths.value)
+      ).toLocaleString()}`;
+      document.getElementById(
+        "global-total-death-cases"
+      ).innerText = `${res.deaths.value.toLocaleString()}`;
+      document.getElementById(
+        "global-recovery-rate"
+      ).innerText = `Recovery Rate: ${String(
+        (res.recovered.value / res.confirmed.value) * 100
+      ).slice(0, 5)}%`;
+      document.getElementById(
+        "global-death-rate"
+      ).innerText = `Death Rate: ${String(
+        (res.deaths.value / res.confirmed.value) * 100
+      ).slice(0, 5)}%`;
+    })
+    .catch((err) => console.log(err));
 }
 
 function toggle() {

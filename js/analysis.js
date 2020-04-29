@@ -66,31 +66,18 @@ function readData() {
       raw_data.forEach((element) => {
         genderCount[element.gender] += 1;
         age = Number(element.agebracket);
-        if (element.agebracket == "") {
-          ageNotDisclosed += 1;
-        } else if (age > 100) {
-          ageCount[10] += 1;
-        } else if (age > 90) {
-          ageCount[9] += 1;
-        } else if (age > 80) {
-          ageCount[8] += 1;
-        } else if (age > 70) {
-          ageCount[7] += 1;
-        } else if (age > 60) {
-          ageCount[6] += 1;
-        } else if (age > 50) {
-          ageCount[5] += 1;
-        } else if (age > 40) {
-          ageCount[4] += 1;
-        } else if (age > 30) {
-          ageCount[3] += 1;
-        } else if (age > 20) {
-          ageCount[2] += 1;
-        } else if (age > 10) {
-          ageCount[1] += 1;
-        } else {
-          ageCount[0] += 1;
-        }
+        if (element.agebracket == "") ageNotDisclosed += 1;
+        else if (age > 100) ageCount[10] += 1;
+        else if (age > 90) ageCount[9] += 1;
+        else if (age > 80) ageCount[8] += 1;
+        else if (age > 70) ageCount[7] += 1;
+        else if (age > 60) ageCount[6] += 1;
+        else if (age > 50) ageCount[5] += 1;
+        else if (age > 40) ageCount[4] += 1;
+        else if (age > 30) ageCount[3] += 1;
+        else if (age > 20) ageCount[2] += 1;
+        else if (age > 10) ageCount[1] += 1;
+        else ageCount[0] += 1;
       });
       var config1 = {
         type: "doughnut",

@@ -1,31 +1,28 @@
 # Covid19 Dashboard
-
 Global and India-specific dashboard for Covid19 pandemic to help visualize, interpret and summarize the available data effectively.
 
-## View the Dashboard
-
+## View the Dashboards
 - [Global Dashboard](https://romilshah525.github.io/Covid19/index.html)
 - [India Dashboard](https://romilshah525.github.io/Covid19/india.html)
+- [Analysis (India)](https://romilshah525.github.io/Covid19/analysis.html)
 
 ## Getting Started
-
 [Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the repository [Covid19](https://github.com/romilshah525/Covid19) and [clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) it to your local machine to get started. Active internet connection is required for dynamic data fetching API requests.
 
 ## Learnings:
-
 - Effectively visualize the data.
 - Effectively interprating the data.
 - Handling large data effectively.
 - Using live data/API.
 - Dealing with github merge conflicts.
+- How to study pandemic data.
 
 ## API's used:
-
 - Global data: [Rodrigo Pombo](https://github.com/pomber/covid19)
-- India specific data: [Covid 19-India API](https://api.covid19india.org/)
+- India related data: [Covid 19-India API](https://api.covid19india.org/)
+- World Cases Count: [Mathdro.id](https://covid19.mathdro.id/api/)
 
 ## Built With
-
 - Web framework used : [Materialize CSS](https://materializecss.com/)
 - Charts made using : [Charts.JS](https://www.chartjs.org/docs/latest/)
 
@@ -36,10 +33,12 @@ Global and India-specific dashboard for Covid19 pandemic to help visualize, inte
 - Graphs/Plots for effectively interpreting the data.
 - Backup static data (regularly updated) incase of slow internet connections.
 - Summaraized data at a quick glance.
+- Analysis and comparable data feature.
 
 ## References
 - [Materialize CSS Documentation](https://materializecss.com/)
 - [Charts.JS Documentation](https://www.chartjs.org/docs/latest/)
+- [Covid19.org API](https://api.covid19india.org/)
 
 ## Future Scope
 - Making predictions using the past available data.
@@ -47,6 +46,10 @@ Global and India-specific dashboard for Covid19 pandemic to help visualize, inte
 - Having more plots to aid effective visualizations.
 - Makinfg more analytical data available.
 
-## Contributing
 
+## Project Inspiration
+- [Coivd19India](https://covid19india.org/)
+
+
+## Contributing
 For any queries, suggesstions or contributions, feel free to contact me at [Romil Shah](mailto:romilshah525@gmail.com) or raise an [issue](https://help.github.com/en/enterprise/2.15/user/articles/creating-an-issue).
