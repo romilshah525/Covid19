@@ -19,13 +19,19 @@ let genderCount = {
   globalEntireData,
   rawEntireData,
   selectedCountryList,
+  entireIndiaData,
+  time_series_data,
+  statewise,
   chart1,
   chart2,
-  chart3;
-ageCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  chart3,
+  chart4,
+  size = 16,
+  ageCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let canvas1 = document.getElementById("canvas1").getContext("2d"),
   canvas2 = document.getElementById("canvas2").getContext("2d"),
-  canvas3 = document.getElementById("canvas3").getContext("2d");
+  canvas3 = document.getElementById("canvas3").getContext("2d"),
+  canvas4 = document.getElementById("canvas4").getContext("2d");
 
 let elems = document.querySelectorAll(".chips-autocomplete");
 let instance = M.Chips.init(elems, {
@@ -99,7 +105,7 @@ function readData() {
           animation: { animateScale: true, animateRotate: true },
         },
       };
-      let chart1 = new Chart(canvas1, config1);
+      chart1 = new Chart(canvas1, config1);
       let config2 = {
         type: "bar",
         data: {
@@ -150,7 +156,7 @@ function readData() {
           },
         },
       };
-      let chart2 = new Chart(canvas2, config2);
+      chart2 = new Chart(canvas2, config2);
       document.getElementById(
         "canvas1note"
       ).innerText = `Gender values unavailable for ${genderCount[""]} patients.`;
@@ -162,7 +168,6 @@ function readData() {
     .catch((err) => fetch("Covid19/json/global.json"))
     .then((response) => response.json())
     .then((data) => {
-      document.getElementById("to-be-updated").innerHTML = "";
       Object.keys(data).forEach((element) => (countryList[element] = null));
       opt.forEach(
         (element) =>
@@ -182,14 +187,24 @@ function readData() {
         document.getElementById("my-select").value
       );
     });
+  // .then((res) => fetch("https://api.covid19india.org/data.json"))
+  // .catch((err) => fetch("Covid19/json/india.json"))
+  // .then((res) => res.json())
+  // .then((res) => {
+  //   document.getElementById("to-be-updated").innerHTML = "";
+  //   entireIndiaData = res;
+  //   time_series_data = res.cases_time_series;
+  //   statewise = res.statewise;
+  //   dailyVSTotalCountPlot();
+  // });
 }
 
 function plotCountryWiseChart(countries, cat) {
-  if (!countries.length) {
-    chart3 = "";
-  }
   if (chart3) {
     chart3.destroy();
+  }
+  if (!countries.length) {
+    chart3 = "";
   }
   if (window.screen.availWidth <= 650) size = 6;
   else size = 14;
@@ -224,7 +239,7 @@ function plotCountryWiseChart(countries, cat) {
       },
       title: {
         display: true,
-        text: `Covid19 Cases Count`,
+        text: `Covid19 ${cat[0].toUpperCase() + cat.slice(1)} Cases Count`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
@@ -274,3 +289,127 @@ function toggleCategory() {
     document.getElementById("my-select").value
   );
 }
+
+// function dailyVSTotalCountPlot() {
+//   let confirmedDaily = [],
+//     deceasedDaily = [],
+//     activeDaily = [],
+//     recoveredDaily = [],
+//     confirmedTotal = [],
+//     deceasedTotal = [],
+//     activeTotal = [],
+//     recoveredTotal = [];
+//   time_series_data.forEach((element) => {
+//     confirmedDaily.push(Number(element["dailyconfirmed"]));
+//     deceasedDaily.push(Number(element["dailydeceased"]));
+//     recoveredDaily.push(Number(element["dailyrecovered"]));
+//     activeDaily.push(
+//       Math.max(
+//         Number(element["dailyconfirmed"]) -
+//           (Number(element["dailyrecovered"]) +
+//             Number(element["dailydeceased"])),
+//         0
+//       )
+//     );
+//     confirmedTotal.push(Number(element["totalconfirmed"]));
+//     deceasedTotal.push(Number(element["totaldeceased"]));
+//     recoveredTotal.push(Number(element["totalrecovered"]));
+//     activeTotal.push(
+//       Math.max(
+//         Number(element["totalconfirmed"]) -
+//           (Number(element["totaldeceased"]) +
+//             Number(element["totalrecovered"])),
+//         0
+//       )
+//     );
+//   });
+//   let config4 = {
+//     data: {
+//       labels: confirmedTotal,
+//       datasets: [
+//         {
+//           label: "Confirmed ",
+//           data: confirmedDaily,
+//           fill: false,
+//           backgroundColor: "#223e80ff",
+//           borderColor: "#223e80ff",
+//           pointRadius: 1,
+//         },
+//         // {
+//         //   label: "Active ",
+//         //   data: activeDaily,
+//         //   fill: false,
+//         //   backgroundColor: "#e82727a0",
+//         //   borderColor: "#e82727ff",
+//         //   pointRadius: 1,
+//         // },
+//         // {
+//         //   label: "Recovered ",
+//         //   data: recoveredDaily,
+//         //   fill: false,
+//         //   backgroundColor: "#2adb2aa0",
+//         //   borderColor: "#2adb2aff",
+//         //   pointRadius: 1,
+//         // },
+//         // {
+//         //   label: "Deaths ",
+//         //   data: deceasedDaily,
+//         //   fill: false,
+//         //   backgroundColor: "#8f8c8ca0",
+//         //   borderColor: "#8f8c8cf0",
+//         //   pointRadius: 1,
+//         // },
+//       ],
+//     },
+//     type: "line",
+//     options: {
+//       responsive: true,
+//       legend: {
+//         display: false,
+//         position: "bottom",
+//         labels: { fontColor: "#222", fontSize: size },
+//       },
+//       title: {
+//         display: true,
+//         text: `Covid19 Daily Count - ${name}`,
+//         fontSize: size + 4,
+//       },
+//       tooltips: { mode: "index", intersect: false },
+//       hover: { mode: "nearest", intersect: true },
+//       chartArea: { backgroundColor: "#223e8011" },
+//       scales: {
+//         xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
+//         yAxes: [
+//           {
+//             gridLines: { display: false },
+//             ticks: { fontSize: 9 },
+//           },
+//         ],
+//       },
+//     },
+//   };
+//   if (size > 12) {
+//     config4.options.legend.display = true;
+//     config4.options.scales.xAxes = [
+//       {
+//         display: true,
+//         scaleLabel: { display: true, labelString: "Date" },
+//       },
+//     ];
+//     config4.options.scales.yAxes = [
+//       {
+//         display: true,
+//         scaleLabel: { display: true, labelString: "Count " },
+//         ticks: { fontSize: 12 },
+//       },
+//     ];
+//   }
+//   chart4 = new Chart(canvas4, config4);
+// }
+
+// growth factor-no of new cases today / no of new cases previoud day
+//  try out log scale
+// no.of cases per day delayed by 15 days
+// mortality rate
+// infection to day count
+//  SIR Model
