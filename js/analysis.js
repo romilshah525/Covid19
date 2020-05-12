@@ -1,5 +1,16 @@
-let total = 0,
+let chart1,
+  chart2,
+  chart3,
+  chart4,
+  total = 0,
+  size = 16,
   growthFactor = 0,
+  statewise,
+  rawEntireData,
+  entireIndiaData,
+  time_series_data,
+  globalEntireData,
+  selectedCountryList,
   temp = [],
   dates = [],
   dateLabel = [],
@@ -7,44 +18,35 @@ let total = 0,
   indiaWeeklyData = [],
   growthFactorArray = [],
   totalDataLogScale = [],
-  weeklyDataLogScale = [];
-const colors = [
-  "#fc3903",
-  "#f2b438",
-  "#87c93a",
-  "#3ac96e",
-  "#3a60c9",
-  "#633ac9",
-  "#9c3ac9",
-  "#c93abf",
-];
-const limit = colors.length;
-const opt = ["confirmed", "recovered", "deaths"];
-let genderCount = {
+  weeklyDataLogScale = [],
+  genderCount = {
     M: 0,
     F: 0,
     "": 0,
   },
   countryList = {},
-  globalEntireData,
-  rawEntireData,
-  selectedCountryList,
-  entireIndiaData,
-  time_series_data,
-  statewise,
-  chart1,
-  chart2,
-  chart3,
-  chart4,
-  size = 16,
   ageCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+const colors = [
+    "#fc3903",
+    "#f2b438",
+    "#87c93a",
+    "#3ac96e",
+    "#3a60c9",
+    "#633ac9",
+    "#9c3ac9",
+    "#c93abf",
+  ],
+  limit = colors.length,
+  opt = ["confirmed", "recovered", "deaths"];
+
 let canvas1 = document.getElementById("canvas1").getContext("2d"),
   canvas2 = document.getElementById("canvas2").getContext("2d"),
   canvas3 = document.getElementById("canvas3").getContext("2d"),
   canvas4 = document.getElementById("canvas4").getContext("2d");
 
-let elems = document.querySelectorAll(".chips-autocomplete");
-let instance = M.Chips.init(elems, {
+let chipsElems = document.querySelectorAll(".chips-autocomplete");
+let instance = M.Chips.init(chipsElems, {
   data: [
     { tag: "India" },
     { tag: "China" },
@@ -204,7 +206,6 @@ function readData() {
     .catch((err) => fetch("Covid19/json/india.json"))
     .then((res) => res.json())
     .then((res) => {
-      // document.getElementById("to-be-updated").innerHTML = "";
       entireIndiaData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
@@ -214,16 +215,22 @@ function readData() {
         dates.push(a["date"]);
       });
       for (let index = 0; index < indiaWeeklyData.length; index += 7) {
-        dateLabel.push(dates[Math.min(index + 7, indiaWeeklyData.length - 1)]);
+        dateLabel.push(
+          dates[Math.min(index + 7, indiaWeeklyData.length - 1)].slice(0, 6)
+        );
         total = 0;
         temp = indiaWeeklyData.slice(index, index + 7);
         temp.forEach((t) => (total += t));
-        weeklyDataLogScale.push(Math.log(total == 0 ? 1 : total));
+        weeklyDataLogScale.push(
+          Math.log(total == 0 ? 1 : total).toLocaleString()
+        );
 
         total = 0;
         temp = indiaTotalData.slice(index, index + 7);
         temp.forEach((t) => (total += t));
-        totalDataLogScale.push(Math.log(total == 0 ? 1 : total));
+        totalDataLogScale.push(
+          Math.log(total == 0 ? 1 : total).toLocaleString()
+        );
       }
       let tempData = [];
       for (let index = 1; index < indiaWeeklyData.length - 1; index++) {
@@ -240,14 +247,11 @@ function readData() {
       }
       let tempTotal = 0;
       tempData.forEach((el) => {
-        if (el != "Infinity") {
-          tempTotal += el;
-        } else {
-          console.log(el);
-        }
+        if (el != "Infinity") tempTotal += el;
       });
-      document.getElementById("growth-factor").innerText =
-        (tempTotal / tempData.length).toLocaleString();
+      document.getElementById("growth-factor").innerText = (
+        tempTotal / tempData.length
+      ).toLocaleString();
       weeklyLogScaleCountPlot();
     });
 }
@@ -377,7 +381,7 @@ function weeklyLogScaleCountPlot() {
       },
       title: {
         display: true,
-        text: `Covid19 Daily Count - ${name}`,
+        text: `Covid19 Weekly Count vs Total Count (Log Scale)`,
         fontSize: size + 4,
       },
       tooltips: { mode: "index", intersect: false },
