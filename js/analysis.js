@@ -182,21 +182,74 @@ function readData() {
       $(document).ready(function () {
         $("select").formSelect();
       });
+      document.getElementById(
+        "last-updated"
+      ).innerHTML = `<h6 class="black-text truncate center-align text-small"> Last updated 25th April </h6>`;
+      // const india = data[" India"];
+      // let updatedData = [];
+      // let total = 0;
+      // for (let index = 0; index < india.length; index += 7) {
+        // console.log(india.slice(index, Math.min(index + 7, india.length)));
+        // console.log(
+      //     [india
+      //       .slice(index, Math.min(index + 7, india.length))
+            // .forEach((a) => console.log(a["confirmed"]))]
+      //   );
+      //   updatedData.push(
+      //     Math.log(india.slice(index, Math.min(index + 7, india.length)))
+      //   );
+      // }
+      // console.log(updatedData);
       plotCountryWiseChart(
         instance[0].chipsData,
         document.getElementById("my-select").value
       );
+    })
+    .then((res) => fetch("https://api.covid19india.org/data.json"))
+    .catch((err) => fetch("Covid19/json/india.json"))
+    .then((res) => res.json())
+    .then((res) => {
+      document.getElementById("to-be-updated").innerHTML = "";
+      entireIndiaData = res;
+      time_series_data = res.cases_time_series;
+      statewise = res.statewise;
+      // dailyVSTotalCountPlot();
+      // console.log(time_series_data);
+
+      let indiaWeeklyData = [],
+        indiaTotalData = [];
+      time_series_data.forEach((a) => {
+        indiaTotalData.push(Number(a["totalconfirmed"]));
+        indiaWeeklyData.push(Number(a["dailyconfirmed"]));
+      });
+      // console.log(indiaTotalData);
+
+      let weeklyDataLogScale = [],
+        totalDataLogScale = [],
+        total = 0,
+        temp = [];
+      for (let index = 0; index < indiaWeeklyData.length; index += 7) {
+        total = 0;
+        temp = indiaWeeklyData.slice(
+          index,
+          Math.min(index + 7, indiaWeeklyData.length)
+        );
+        temp.forEach((t) => (total += t));
+        // console.log(total);
+        weeklyDataLogScale.push(Math.log(total == 0 ? 1 : total));
+
+        total = 0;
+        temp = indiaTotalData.slice(
+          index,
+          Math.min(index + 7, indiaTotalData.length)
+        );
+        temp.forEach((t) => (total += t));
+        // console.log(total);
+        totalDataLogScale.push(Math.log(total == 0 ? 1 : total));
+      }
+      // console.log(weeklyDataLogScale);
+      // console.log(totalDataLogScale);
     });
-  // .then((res) => fetch("https://api.covid19india.org/data.json"))
-  // .catch((err) => fetch("Covid19/json/india.json"))
-  // .then((res) => res.json())
-  // .then((res) => {
-  //   document.getElementById("to-be-updated").innerHTML = "";
-  //   entireIndiaData = res;
-  //   time_series_data = res.cases_time_series;
-  //   statewise = res.statewise;
-  //   dailyVSTotalCountPlot();
-  // });
 }
 
 function plotCountryWiseChart(countries, cat) {
@@ -251,11 +304,20 @@ function plotCountryWiseChart(countries, cat) {
           {
             gridLines: { display: false },
             ticks: {
+              type: "linear",
               fontSize: 9,
               callback: (value) =>
-                value > 999 ? String(value / 1000) + "k" : value,
+                value > 99000
+                  ? String(value / 100000) + "M"
+                  : value > 800
+                  ? String(value / 1000) + "K"
+                  : value,
             },
           },
+          {
+            
+            type: 'logarithmic'
+        }
         ],
       },
     },
@@ -275,7 +337,11 @@ function plotCountryWiseChart(countries, cat) {
         ticks: {
           fontSize: 12,
           callback: (value) =>
-            value > 800 ? String(value / 1000) + "k" : value,
+            value > 80000
+              ? String(value / 100000) + "M"
+              : value > 800
+              ? String(value / 1000) + "K"
+              : value,
         },
       },
     ];
