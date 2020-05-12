@@ -1,10 +1,12 @@
-let dates = [],
-  total = 0,
+let total = 0,
+  growthFactor = 0,
   temp = [],
+  dates = [],
   dateLabel = [],
   indiaTotalData = [],
-  totalDataLogScale = [],
   indiaWeeklyData = [],
+  growthFactorArray = [],
+  totalDataLogScale = [],
   weeklyDataLogScale = [];
 const colors = [
   "#fc3903",
@@ -202,7 +204,7 @@ function readData() {
     .catch((err) => fetch("Covid19/json/india.json"))
     .then((res) => res.json())
     .then((res) => {
-      document.getElementById("to-be-updated").innerHTML = "";
+      // document.getElementById("to-be-updated").innerHTML = "";
       entireIndiaData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
@@ -212,23 +214,40 @@ function readData() {
         dates.push(a["date"]);
       });
       for (let index = 0; index < indiaWeeklyData.length; index += 7) {
-        dateLabel.push(dates[Math.min(index + 7, indiaWeeklyData.length)]);
+        dateLabel.push(dates[Math.min(index + 7, indiaWeeklyData.length - 1)]);
         total = 0;
-        temp = indiaWeeklyData.slice(
-          index,
-          Math.min(index + 7, indiaWeeklyData.length)
-        );
+        temp = indiaWeeklyData.slice(index, index + 7);
         temp.forEach((t) => (total += t));
         weeklyDataLogScale.push(Math.log(total == 0 ? 1 : total));
 
         total = 0;
-        temp = indiaTotalData.slice(
-          index,
-          Math.min(index + 7, indiaTotalData.length)
-        );
+        temp = indiaTotalData.slice(index, index + 7);
         temp.forEach((t) => (total += t));
         totalDataLogScale.push(Math.log(total == 0 ? 1 : total));
       }
+      let tempData = [];
+      for (let index = 1; index < indiaWeeklyData.length - 1; index++) {
+        if (indiaWeeklyData[index] == 0 || indiaWeeklyData[index - 1] == 0) {
+          continue;
+        } else {
+          tempData.push(
+            Math.abs(
+              (indiaWeeklyData[index + 1] - indiaWeeklyData[index]) /
+                (indiaWeeklyData[index] - indiaWeeklyData[index - 1])
+            )
+          );
+        }
+      }
+      let tempTotal = 0;
+      tempData.forEach((el) => {
+        if (el != "Infinity") {
+          tempTotal += el;
+        } else {
+          console.log(el);
+        }
+      });
+      document.getElementById("growth-factor").innerText =
+        (tempTotal / tempData.length).toLocaleString();
       weeklyLogScaleCountPlot();
     });
 }
@@ -294,9 +313,6 @@ function plotCountryWiseChart(countries, cat) {
                   ? String(value / 1000) + "K"
                   : value,
             },
-          },
-          {
-            type: "logarithmic",
           },
         ],
       },
@@ -397,7 +413,6 @@ function weeklyLogScaleCountPlot() {
   chart4 = new Chart(canvas4, config4);
 }
 
-// // growth factor-no of new cases today / no of new cases previoud day
 // // no.of cases per day delayed by 15 days
 // // mortality rate
 // // infection to day count
