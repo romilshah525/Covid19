@@ -1,3 +1,11 @@
+let dates = [],
+  total = 0,
+  temp = [],
+  dateLabel = [],
+  indiaTotalData = [],
+  totalDataLogScale = [],
+  indiaWeeklyData = [],
+  weeklyDataLogScale = [];
 const colors = [
   "#fc3903",
   "#f2b438",
@@ -185,21 +193,6 @@ function readData() {
       document.getElementById(
         "last-updated"
       ).innerHTML = `<h6 class="black-text truncate center-align text-small"> Last updated 25th April </h6>`;
-      // const india = data[" India"];
-      // let updatedData = [];
-      // let total = 0;
-      // for (let index = 0; index < india.length; index += 7) {
-        // console.log(india.slice(index, Math.min(index + 7, india.length)));
-        // console.log(
-      //     [india
-      //       .slice(index, Math.min(index + 7, india.length))
-            // .forEach((a) => console.log(a["confirmed"]))]
-      //   );
-      //   updatedData.push(
-      //     Math.log(india.slice(index, Math.min(index + 7, india.length)))
-      //   );
-      // }
-      // console.log(updatedData);
       plotCountryWiseChart(
         instance[0].chipsData,
         document.getElementById("my-select").value
@@ -213,29 +206,19 @@ function readData() {
       entireIndiaData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
-      // dailyVSTotalCountPlot();
-      // console.log(time_series_data);
-
-      let indiaWeeklyData = [],
-        indiaTotalData = [];
       time_series_data.forEach((a) => {
         indiaTotalData.push(Number(a["totalconfirmed"]));
         indiaWeeklyData.push(Number(a["dailyconfirmed"]));
+        dates.push(a["date"]);
       });
-      // console.log(indiaTotalData);
-
-      let weeklyDataLogScale = [],
-        totalDataLogScale = [],
-        total = 0,
-        temp = [];
       for (let index = 0; index < indiaWeeklyData.length; index += 7) {
+        dateLabel.push(dates[Math.min(index + 7, indiaWeeklyData.length)]);
         total = 0;
         temp = indiaWeeklyData.slice(
           index,
           Math.min(index + 7, indiaWeeklyData.length)
         );
         temp.forEach((t) => (total += t));
-        // console.log(total);
         weeklyDataLogScale.push(Math.log(total == 0 ? 1 : total));
 
         total = 0;
@@ -244,11 +227,9 @@ function readData() {
           Math.min(index + 7, indiaTotalData.length)
         );
         temp.forEach((t) => (total += t));
-        // console.log(total);
         totalDataLogScale.push(Math.log(total == 0 ? 1 : total));
       }
-      // console.log(weeklyDataLogScale);
-      // console.log(totalDataLogScale);
+      weeklyLogScaleCountPlot();
     });
 }
 
@@ -315,9 +296,8 @@ function plotCountryWiseChart(countries, cat) {
             },
           },
           {
-            
-            type: 'logarithmic'
-        }
+            type: "logarithmic",
+          },
         ],
       },
     },
@@ -356,126 +336,69 @@ function toggleCategory() {
   );
 }
 
-// function dailyVSTotalCountPlot() {
-//   let confirmedDaily = [],
-//     deceasedDaily = [],
-//     activeDaily = [],
-//     recoveredDaily = [],
-//     confirmedTotal = [],
-//     deceasedTotal = [],
-//     activeTotal = [],
-//     recoveredTotal = [];
-//   time_series_data.forEach((element) => {
-//     confirmedDaily.push(Number(element["dailyconfirmed"]));
-//     deceasedDaily.push(Number(element["dailydeceased"]));
-//     recoveredDaily.push(Number(element["dailyrecovered"]));
-//     activeDaily.push(
-//       Math.max(
-//         Number(element["dailyconfirmed"]) -
-//           (Number(element["dailyrecovered"]) +
-//             Number(element["dailydeceased"])),
-//         0
-//       )
-//     );
-//     confirmedTotal.push(Number(element["totalconfirmed"]));
-//     deceasedTotal.push(Number(element["totaldeceased"]));
-//     recoveredTotal.push(Number(element["totalrecovered"]));
-//     activeTotal.push(
-//       Math.max(
-//         Number(element["totalconfirmed"]) -
-//           (Number(element["totaldeceased"]) +
-//             Number(element["totalrecovered"])),
-//         0
-//       )
-//     );
-//   });
-//   let config4 = {
-//     data: {
-//       labels: confirmedTotal,
-//       datasets: [
-//         {
-//           label: "Confirmed ",
-//           data: confirmedDaily,
-//           fill: false,
-//           backgroundColor: "#223e80ff",
-//           borderColor: "#223e80ff",
-//           pointRadius: 1,
-//         },
-//         // {
-//         //   label: "Active ",
-//         //   data: activeDaily,
-//         //   fill: false,
-//         //   backgroundColor: "#e82727a0",
-//         //   borderColor: "#e82727ff",
-//         //   pointRadius: 1,
-//         // },
-//         // {
-//         //   label: "Recovered ",
-//         //   data: recoveredDaily,
-//         //   fill: false,
-//         //   backgroundColor: "#2adb2aa0",
-//         //   borderColor: "#2adb2aff",
-//         //   pointRadius: 1,
-//         // },
-//         // {
-//         //   label: "Deaths ",
-//         //   data: deceasedDaily,
-//         //   fill: false,
-//         //   backgroundColor: "#8f8c8ca0",
-//         //   borderColor: "#8f8c8cf0",
-//         //   pointRadius: 1,
-//         // },
-//       ],
-//     },
-//     type: "line",
-//     options: {
-//       responsive: true,
-//       legend: {
-//         display: false,
-//         position: "bottom",
-//         labels: { fontColor: "#222", fontSize: size },
-//       },
-//       title: {
-//         display: true,
-//         text: `Covid19 Daily Count - ${name}`,
-//         fontSize: size + 4,
-//       },
-//       tooltips: { mode: "index", intersect: false },
-//       hover: { mode: "nearest", intersect: true },
-//       chartArea: { backgroundColor: "#223e8011" },
-//       scales: {
-//         xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
-//         yAxes: [
-//           {
-//             gridLines: { display: false },
-//             ticks: { fontSize: 9 },
-//           },
-//         ],
-//       },
-//     },
-//   };
-//   if (size > 12) {
-//     config4.options.legend.display = true;
-//     config4.options.scales.xAxes = [
-//       {
-//         display: true,
-//         scaleLabel: { display: true, labelString: "Date" },
-//       },
-//     ];
-//     config4.options.scales.yAxes = [
-//       {
-//         display: true,
-//         scaleLabel: { display: true, labelString: "Count " },
-//         ticks: { fontSize: 12 },
-//       },
-//     ];
-//   }
-//   chart4 = new Chart(canvas4, config4);
-// }
+function weeklyLogScaleCountPlot() {
+  let config4 = {
+    data: {
+      labels: dateLabel,
+      datasets: [
+        {
+          label: "Confirmed",
+          data: weeklyDataLogScale,
+          fill: false,
+          backgroundColor: "#223e80ff",
+          borderColor: "#223e80ff",
+          pointRadius: 1,
+        },
+      ],
+    },
+    type: "line",
+    options: {
+      responsive: true,
+      legend: {
+        display: false,
+        position: "bottom",
+        labels: { fontColor: "#222", fontSize: size },
+      },
+      title: {
+        display: true,
+        text: `Covid19 Daily Count - ${name}`,
+        fontSize: size + 4,
+      },
+      tooltips: { mode: "index", intersect: false },
+      hover: { mode: "nearest", intersect: true },
+      chartArea: { backgroundColor: "#223e8011" },
+      scales: {
+        xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
+        yAxes: [
+          {
+            gridLines: { display: false },
+            ticks: { fontSize: 9 },
+          },
+        ],
+      },
+    },
+  };
+  if (size > 12) {
+    config4.options.legend.display = true;
+    config4.options.scales.xAxes = [
+      {
+        display: true,
+        scaleLabel: { display: true, labelString: "Date" },
+      },
+    ];
+    config4.options.scales.yAxes = [
+      {
+        display: true,
+        scaleLabel: { display: true, labelString: "Count " },
+        ticks: { fontSize: 12 },
+      },
+    ];
+  }
+  chart4 = new Chart(canvas4, config4);
+}
 
-// growth factor-no of new cases today / no of new cases previoud day
-//  try out log scale
-// no.of cases per day delayed by 15 days
-// mortality rate
-// infection to day count
-//  SIR Model
+// // growth factor-no of new cases today / no of new cases previoud day
+// // no.of cases per day delayed by 15 days
+// // mortality rate
+// // infection to day count
+// // SIR Model
