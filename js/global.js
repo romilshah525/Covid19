@@ -4,9 +4,13 @@ let jsondata,
   myChart12,
   myChart13,
   myChart14,
-  country = "India";
+  country = "India",
+  confirmed,
+  active,
+  recovered,
+  death;
 const ctx11 = document.getElementById("myChart11");
-let confirmed, active, recovered, death;
+
 Chart.pluginService.register({
   beforeDraw: function (chart, easing) {
     if (
@@ -32,11 +36,11 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   if (myChart11) {
     myChart11.destroy();
   }
-  confirmed = [];
-  death = [];
-  recovered = [];
-  active = [];
-  let labels = [],
+  let confirmed = [],
+    death = [],
+    recovered = [],
+    active = [],
+    labels = [],
     totalDeath = 0,
     totalRecovered = 0,
     totalConfirmed = 0,
@@ -114,6 +118,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           backgroundColor: "#223e80ff",
           borderColor: "#223e80ff",
           pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
         {
           label: "Active ",
@@ -122,6 +127,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           backgroundColor: "#e82727a0",
           borderColor: "#e82727ff",
           pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
         {
           label: "Recovered ",
@@ -130,6 +136,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           backgroundColor: "#2adb2aa0",
           borderColor: "#2adb2aff",
           pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
         {
           label: "Deaths ",
@@ -139,6 +146,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
           hoverBorderColor: "#8f8c8cff",
           borderColor: "#8f8c8cf0",
           pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
       ],
     },
@@ -201,24 +209,69 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   myChart11 = new Chart(ctx11.getContext("2d"), optionsConfirmed);
 }
 
+function toggle() {
+  country = document.getElementById("my-select").value;
+  if (window.screen.availWidth <= 650)
+    plotGraph(
+      entiredata[country],
+      !document.getElementById("mySwitch").checked,
+      8
+    );
+  else
+    plotGraph(
+      entiredata[country],
+      !document.getElementById("mySwitch").checked,
+      14
+    );
+}
+
+function insertWorldData(res) {
+  document.getElementById("to-be-updated").innerHTML = ``;
+  document.getElementById(
+    "global-total-confirmed-cases"
+  ).innerText = `${res.confirmed.value.toLocaleString()}`;
+  document.getElementById(
+    "global-total-recovered-cases"
+  ).innerText = `${res.recovered.value.toLocaleString()}`;
+  document.getElementById("global-total-active-cases").innerText = `${(
+    res.confirmed.value -
+    (res.recovered.value + res.deaths.value)
+  ).toLocaleString()}`;
+  document.getElementById(
+    "global-total-death-cases"
+  ).innerText = `${res.deaths.value.toLocaleString()}`;
+  document.getElementById(
+    "global-recovery-rate"
+  ).innerText = `Recovery Rate: ${String(
+    (res.recovered.value / res.confirmed.value) * 100
+  ).slice(0, 5)}%`;
+  document.getElementById(
+    "global-death-rate"
+  ).innerText = `Death Rate: ${String(
+    (res.deaths.value / res.confirmed.value) * 100
+  ).slice(0, 5)}%`;
+}
+
+function insertOptionList(data) {
+  let elem = document.getElementById("my-select");
+  let res = "";
+  Object.keys(data).forEach((key) => {
+    res += `<option value="${key}">${key}</option>`;
+  });
+  elem.innerHTML = res;
+  elem.value = country;
+  entiredata = data;
+  $(document).ready(function () {
+    $("select").formSelect();
+  });
+  return data;
+}
+
 function readData() {
   fetch("https://pomber.github.io/covid19/timeseries.json")
     .catch((err) => fetch("Covid19/json/global.json"))
     .then((response) => response.json())
-    .then((data) => {
-      let elem = document.getElementById("my-select");
-      let res = "";
-      Object.keys(data).forEach((key) => {
-        res += `<option value="${key}">${key}</option>`;
-      });
-      elem.innerHTML = res;
-      elem.value = country;
-      entiredata = data;
-      $(document).ready(function () {
-        $("select").formSelect();
-      });
-      return data;
-    })
+    .then((data) => insertOptionList(data))
     .then((data) => {
       jsondata = data;
       if (window.screen.availWidth <= 650)
@@ -236,47 +289,6 @@ function readData() {
     })
     .then((res) => fetch("https://covid19.mathdro.id/api/"))
     .then((res) => res.json())
-    .then((res) => {
-      document.getElementById("to-be-updated").innerHTML = ``;
-      document.getElementById(
-        "global-total-confirmed-cases"
-      ).innerText = `${res.confirmed.value.toLocaleString()}`;
-      document.getElementById(
-        "global-total-recovered-cases"
-      ).innerText = `${res.recovered.value.toLocaleString()}`;
-      document.getElementById("global-total-active-cases").innerText = `${(
-        res.confirmed.value -
-        (res.recovered.value + res.deaths.value)
-      ).toLocaleString()}`;
-      document.getElementById(
-        "global-total-death-cases"
-      ).innerText = `${res.deaths.value.toLocaleString()}`;
-      document.getElementById(
-        "global-recovery-rate"
-      ).innerText = `Recovery Rate: ${String(
-        (res.recovered.value / res.confirmed.value) * 100
-      ).slice(0, 5)}%`;
-      document.getElementById(
-        "global-death-rate"
-      ).innerText = `Death Rate: ${String(
-        (res.deaths.value / res.confirmed.value) * 100
-      ).slice(0, 5)}%`;
-    })
+    .then((res) => insertWorldData(res))
     .catch((err) => console.log(err));
-}
-
-function toggle() {
-  country = document.getElementById("my-select").value;
-  if (window.screen.availWidth <= 650)
-    plotGraph(
-      entiredata[country],
-      !document.getElementById("mySwitch").checked,
-      8
-    );
-  else
-    plotGraph(
-      entiredata[country],
-      !document.getElementById("mySwitch").checked,
-      14
-    );
 }

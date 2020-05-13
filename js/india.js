@@ -54,52 +54,27 @@ let entireData,
 const ctx11 = document.getElementById("myChart11").getContext("2d"),
   ctx15 = document.getElementById("myChart15").getContext("2d");
 
-function readData() {
-  fetch("https://api.covid19india.org/data.json")
-    .catch((err) => fetch("Covid19/json/india.json"))
-    .then((res) => res.json())
-    .then((res) => {
-      entireData = res;
-      time_series_data = res.cases_time_series;
-      statewise = res.statewise;
-    })
-    .then((res) => fetch("https://api.covid19india.org/states_daily.json"))
-    .catch((err) => fetch("Covid19/json/states_daily.json"))
-    .then((res) => res.json())
-    .then((res) => {
-      states_daily = res.states_daily;
-      let elem = document.getElementById("my-select");
-      let ret = "";
-      statewise[0]["state"] = "India";
-      statewise[0]["statecode"] = "IN";
-      let keys = Object.keys(mapper);
-      keys.forEach((a) => {
-        ret += `<option value="${a}">${mapper[a]}</option>`;
-      });
-      elem.innerHTML = ret;
-      elem.value = name;
-      document.getElementById("to-be-updated").innerHTML = `<div class="col s6">
-                                                                <h6 class="black-text right">Last Updated At</h6>
-                                                              </div>
-                                                              <div class="col s6">
-                                                                <h6 class="black-text left">${statewise[0]["lastupdatedtime"]}</h6>
-                                                            </div>`;
-      document.getElementById("my-select").value = "in";
-      if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
-      else plotGraph(time_series_data, 14, "in");
-      $(document).ready(function () {
-        $("select").formSelect();
-      });
-    })
-    .then((res) =>
-      fetch("https://api.covid19india.org/state_district_wise.json")
-    )
-    .catch((err) => fetch("Covid19/json/state_district_wise.json"))
-    .then((res) => res.json())
-    .then((res) => {
-      state_district_data = res;
-      fillStateDataTable();
-    });
+function insertOptionList(res) {
+  states_daily = res.states_daily;
+  let elem = document.getElementById("my-select");
+  let ret = "";
+  statewise[0]["state"] = "India";
+  statewise[0]["statecode"] = "IN";
+  let keys = Object.keys(mapper);
+  keys.forEach((a) => {
+    ret += `<option value="${a}">${mapper[a]}</option>`;
+  });
+  elem.innerHTML = ret;
+  elem.value = name;
+  document.getElementById(
+    "to-be-updated"
+  ).innerHTML = `<div class="col s6"><h6 class="black-text right">Last Updated At</h6></div><div class="col s6"><h6 class="black-text left">${statewise[0]["lastupdatedtime"]}</h6></div>`;
+  document.getElementById("my-select").value = "in";
+  if (window.screen.availWidth <= 650) plotGraph(time_series_data, 6, "in");
+  else plotGraph(time_series_data, 14, "in");
+  $(document).ready(function () {
+    $("select").formSelect();
+  });
 }
 
 function plotGraph(data, size, ct) {
@@ -158,7 +133,8 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#223e80ff",
           borderColor: "#223e80ff",
-          pointRadius: 1,
+          pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
         {
           label: "Active ",
@@ -166,7 +142,8 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#e82727a0",
           borderColor: "#e82727ff",
-          pointRadius: 1,
+          pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
         {
           label: "Recovered ",
@@ -174,7 +151,8 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#2adb2aa0",
           borderColor: "#2adb2aff",
-          pointRadius: 1,
+          pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
         {
           label: "Deaths ",
@@ -182,7 +160,8 @@ function plotGraph(data, size, ct) {
           fill: false,
           backgroundColor: "#8f8c8ca0",
           borderColor: "#8f8c8cf0",
-          pointRadius: 1,
+          pointRadius: 0,
+          borderWidth: size > 12 ? 3.5 : 1.5,
         },
       ],
     },
@@ -283,19 +262,14 @@ function toggle() {
   else plotGraph(name == "in" ? time_series_data : selectedData, 14, name);
 }
 
-function fillStateDataTable() {
+function fillStateDataTable(res) {
+  state_district_data = res;
   let tbody = document.getElementById("state-data-table"),
     inputForm = document.getElementById("my-select-tabulate"),
     tbodyData = "",
     ipFormData = "";
   statewise.slice(1, 6).forEach((data) => {
-    tbodyData += `<tr>
-                    <td>${data["state"]}</td>
-                    <td>${data["confirmed"]}</td>
-                    <td>${data["active"]}</td>
-                    <td>${data["recovered"]}</td>
-                    <td>${data["deaths"]}</td>
-                  </tr>`;
+    tbodyData += `<tr><td>${data["state"]}</td><td>${data["confirmed"]}</td><td>${data["active"]}</td><td>${data["recovered"]}</td><td>${data["deaths"]}</td></tr>`;
   });
   statewise.slice(1).forEach((data) => {
     ipFormData += `<option value="${data["statecode"]}">${data["state"]}</option>`;
@@ -391,4 +365,23 @@ function tabulateToggle() {
     optionsStateSummary.options.scales.yAxes[0].ticks.fontSize = 8;
   }
   myChart15 = new Chart(ctx15, optionsStateSummary);
+}
+
+function readData() {
+  fetch("https://api.covid19india.org/data.json")
+    .catch((err) => fetch("Covid19/json/india.json"))
+    .then((res) => res.json())
+    .then((res) => {
+      entireData = res;
+      time_series_data = res.cases_time_series;
+      statewise = res.statewise;
+    })
+    .then((res) => fetch("https://api.covid19india.org/states_daily.json"))
+    .catch((err) => fetch("Covid19/json/states_daily.json"))
+    .then((res) => res.json())
+    .then((res) => insertOptionList(res))
+    .then((r) => fetch("https://api.covid19india.org/state_district_wise.json"))
+    .catch((err) => fetch("Covid19/json/state_district_wise.json"))
+    .then((res) => res.json())
+    .then((res) => fillStateDataTable(res));
 }

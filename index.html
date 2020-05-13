@@ -1,106 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>Covid19 Global</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="css/materialize.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>Covid19 Global</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-</head>
+  <body onload="readData()">
+    <ul id="dropdownforlinks" class="dropdown-content">
+      <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
+      <li><a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a></li>
+      <li>
+        <a
+          href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/"
+          target="_blank"
+          >WHO</a
+        >
+      </li>
+      <li>
+        <a href="https://coronavirus.thebaselab.com/" target="_blank"
+          >World Tracker</a
+        >
+      </li>
+      <li class="divider"></li>
+      <li><a href="./resources.html">Resources(India)</a></li>
+      <li class="divider"></li>
+      <li>
+        <a href="https://github.com/romilshah525/" target="_blank"
+          >Find Me On Github</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/pomber/covid19/" target="_blank"
+          >Data Source</a
+        >
+      </li>
+    </ul>
+    <nav class="grey darken-3" role="navigation">
+      <div class="nav-wrapper container">
+        <a
+          id="logo-container"
+          href="/Covid19/index.html"
+          class="brand-logo center-align res-text"
+          >Covid19 Global</a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./india.html">India Dashboard</a></li>
+          <li><a href="./analysis.html">Analysis (India)</a></li>
+          <li>
+            <a class="dropdown-trigger" href="" data-target="dropdownforlinks"
+              >Important Links<i class="material-icons right"
+                >arrow_drop_down</i
+              ></a
+            >
+          </li>
+        </ul>
 
-<body onload="readData()">
-  <ul id="dropdownforlinks" class="dropdown-content">
-    <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
-    <li><a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a></li>
-    <li>
-      <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a>
-    </li>
-    <li>
-      <a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a>
-    </li>
-    <li class="divider"></li>
-    <li><a href="./resources.html">Resources(India)</a></li>
-    <li class="divider"></li>
-    <li>
-      <a href="https://github.com/romilshah525/" target="_blank">Find Me On Github</a>
-    </li>
-    <li>
-      <a href="https://github.com/pomber/covid19/" target="_blank">Data Source</a>
-    </li>
-  </ul>
-  <nav class="grey darken-3" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="/Covid19/index.html" class="brand-logo center-align res-text">Covid19 Global</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="./india.html">India Dashboard</a></li>
-        <li><a href="./analysis.html">Analysis (India)</a></li>
-        <li>
-          <a class="dropdown-trigger" href="" data-target="dropdownforlinks">Important Links<i
-              class="material-icons right">arrow_drop_down</i></a>
-        </li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
-        <li>
-          <a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a>
-        </li>
-        <li>
-          <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/" target="_blank">WHO</a>
-        </li>
-        <li>
-          <a href="https://coronavirus.thebaselab.com/" target="_blank">World Tracker</a>
-        </li>
-        <li class="divider"></li>
-        <li><a href="./india.html">India Dashboard</a></li>
-        <li><a href="./analysis.html">Analysis (India)</a></li>
-        <li><a href="./resources.html">Resources (India)</a></li>
-        <li class="divider"></li>
-        <li>
-          <a href="https://github.com/romilshah525/" target="_blank">Find Me On Github</a>
-        </li>
-        <li>
-          <a href="https://github.com/pomber/covid19/" target="_blank">Data Source</a>
-        </li>
-        <li class="divider"></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <main>
-    <div class="container add-class">
-      <div class="section" style="padding-bottom: 0;">
-        <div class="row valign-wrapper" id="to-be-updated">
-          <div class="col s6">
-            <h6 class="black-text truncate center-align">
-              Fetching Latest Data
-            </h6>
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="https://www.mohfw.gov.in/" target="_blank">MOHFW</a></li>
+          <li>
+            <a href="https://www.mygov.in/covid-19/" target="_blank">GOI</a>
+          </li>
+          <li>
+            <a
+              href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/"
+              target="_blank"
+              >WHO</a
+            >
+          </li>
+          <li>
+            <a href="https://coronavirus.thebaselab.com/" target="_blank"
+              >World Tracker</a
+            >
+          </li>
+          <li class="divider"></li>
+          <li><a href="./india.html">India Dashboard</a></li>
+          <li><a href="./analysis.html">Analysis (India)</a></li>
+          <li><a href="./resources.html">Resources (India)</a></li>
+          <li class="divider"></li>
+          <li>
+            <a href="https://github.com/romilshah525/" target="_blank"
+              >Find Me On Github</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/pomber/covid19/" target="_blank"
+              >Data Source</a
+            >
+          </li>
+          <li class="divider"></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+      </div>
+    </nav>
+    <main>
+      <div class="container add-class">
+        <div class="section" style="padding-bottom: 0;">
+          <div class="row valign-wrapper" id="to-be-updated">
+            <div class="col s6">
+              <h6 class="black-text truncate center-align">
+                Fetching Latest Data
+              </h6>
+            </div>
+            <div class="col s6">
+              <div class="progress">
+                <div class="indeterminate"></div>
+              </div>
+            </div>
           </div>
-          <div class="col s6">
-            <div class="progress">
-              <div class="indeterminate"></div>
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s6">
+              <label for="switchcase">Choose type</label>
+              <div class="switch">
+                <label>
+                  Daily
+                  <input type="checkbox" id="mySwitch" onchange="toggle()" />
+                  <span class="lever slider" id="mySpan"></span>
+                  Cumulative
+                </label>
+              </div>
+            </div>
+            <div class="input-field col s6">
+              <select id="my-select" onchange="toggle()"> </select>
+              <label>Choose Country</label>
+            </div>
+          </div>
+          <table class="centered">
+            <thead>
+              <tr>
+                <th>Confirmed Cases</th>
+                <th>Death Cases</th>
+                <th>Active Cases</th>
+                <th>Recovered Cases</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  class="bold-text blue-text text-darken-4"
+                  id="total-confirmed-cases"
+                ></td>
+                <td
+                  class="bold-text grey-text text-darken-1"
+                  id="total-death-cases"
+                ></td>
+                <td class="bold-text my-red-text" id="total-active-cases"></td>
+                <td
+                  class="bold-text light-green-text text-accent-3"
+                  id="total-recovered-cases"
+                ></td>
+              </tr>
+              <tr>
+                <td
+                  colspan="2"
+                  class="bold-text light-green-text text-accent-3 text-small"
+                  id="recovery-rate"
+                ></td>
+                <td
+                  colspan="2"
+                  class="bold-text grey-text text-darken-1 text-small"
+                  id="death-rate"
+                ></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row">
+            <div class="col s12">
+              <canvas id="myChart11" class="center"></canvas>
             </div>
           </div>
         </div>
-        <div class="row" style="margin-bottom: 0;">
-          <div class="col s6">
-            <label for="switchcase">Choose type</label>
-            <div class="switch">
-              <label>
-                Daily
-                <input type="checkbox" id="mySwitch" onchange="toggle()" />
-                <span class="lever slider" id="mySpan"></span>
-                Cumulative
-              </label>
-            </div>
-          </div>
-          <div class="input-field col s6">
-            <select id="my-select" onchange="toggle()"> </select>
-            <label>Choose Country</label>
-          </div>
-        </div>
+      </div>
+      <section class="container">
+        <h6 class="grey-text text-darken-3 bold-text center-align">
+          Worldwide Cases
+        </h6>
         <table class="centered">
           <thead>
             <tr>
@@ -112,81 +207,91 @@
           </thead>
           <tbody>
             <tr>
-              <td class="bold-text blue-text text-darken-4" id="total-confirmed-cases"></td>
-              <td class="bold-text grey-text text-darken-1" id="total-death-cases"></td>
-              <td class="bold-text my-red-text" id="total-active-cases"></td>
-              <td class="bold-text light-green-text text-accent-3" id="total-recovered-cases"></td>
+              <td
+                class="bold-text blue-text text-darken-4"
+                id="global-total-confirmed-cases"
+              ></td>
+              <td
+                class="bold-text grey-text text-darken-1"
+                id="global-total-death-cases"
+              ></td>
+              <td
+                class="bold-text my-red-text"
+                id="global-total-active-cases"
+              ></td>
+              <td
+                class="bold-text light-green-text text-accent-3"
+                id="global-total-recovered-cases"
+              ></td>
             </tr>
             <tr>
-              <td colspan="2" class="bold-text light-green-text text-accent-3 text-small" id="recovery-rate"></td>
-              <td colspan="2" class="bold-text grey-text text-darken-1 text-small" id="death-rate"></td>
+              <td
+                colspan="2"
+                class="bold-text light-green-text text-accent-3 text-small"
+                id="global-recovery-rate"
+              ></td>
+              <td
+                colspan="2"
+                class="bold-text grey-text text-darken-1 text-small"
+                id="global-death-rate"
+              ></td>
             </tr>
           </tbody>
         </table>
+      </section>
+    </main>
+    <footer class="page-footer grey darken-3">
+      <div class="container valign-wrapper">
         <div class="row">
-          <div class="col s12">
-            <canvas id="myChart11" class="center"></canvas>
-          </div>
+          <ul>
+            <li class="col s3">
+              <a
+                target="_blank"
+                class="white-text"
+                href="https://github.com/romilshah525"
+                >Github</a
+              >
+            </li>
+            <li class="col s3">
+              <a
+                target="_blank"
+                class="white-text"
+                href="mailto:romilshah525@gmail.com"
+                >Email</a
+              >
+            </li>
+            <li class="col s3">
+              <a
+                target="_blank"
+                class="white-text"
+                href="https://linkedin.com/in/romil-shah-990303150"
+                >LinkedIn</a
+              >
+            </li>
+            <li class="col s3">
+              <a
+                target="_blank"
+                class="white-text"
+                href="https://www.instagram.com/romilshah525"
+                >Instagram</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-    <section class="container">
-      <h6 class="grey-text text-darken-3 bold-text center-align">Worldwide Cases</h6>
-      <table class="centered">
-        <thead>
-          <tr>
-            <th>Confirmed Cases</th>
-            <th>Death Cases</th>
-            <th>Active Cases</th>
-            <th>Recovered Cases</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="bold-text blue-text text-darken-4" id="global-total-confirmed-cases"></td>
-            <td class="bold-text grey-text text-darken-1" id="global-total-death-cases"></td>
-            <td class="bold-text my-red-text" id="global-total-active-cases"></td>
-            <td class="bold-text light-green-text text-accent-3" id="global-total-recovered-cases"></td>
-          </tr>
-          <tr>
-            <td colspan="2" class="bold-text light-green-text text-accent-3 text-small" id="global-recovery-rate"></td>
-            <td colspan="2" class="bold-text grey-text text-darken-1 text-small" id="global-death-rate"></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-  <footer class="page-footer grey darken-3">
-    <div class="container valign-wrapper">
-      <div class="row">
-        <ul>
-          <li class="col s3">
-            <a target="_blank" class="white-text" href="https://github.com/romilshah525">Github</a>
-          </li>
-          <li class="col s3">
-            <a target="_blank" class="white-text" href="mailto:romilshah525@gmail.com">Email</a>
-          </li>
-          <li class="col s3">
-            <a target="_blank" class="white-text" href="https://linkedin.com/in/romil-shah-990303150">LinkedIn</a>
-          </li>
-          <li class="col s3">
-            <a target="_blank" class="white-text" href="https://www.instagram.com/romilshah525">Instagram</a>
-          </li>
-        </ul>
+      <div class="footer-copyright">
+        <div class="container center">
+          &copy; Made by
+          <a href="https://github.com/romilshah525" target="_blank"
+            >Romil Shah</a
+          >
+        </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container center">
-        &copy; Made by
-        <a href="https://github.com/romilshah525" target="_blank">Romil Shah</a>
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-  <script src="./js/jQuery.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="./js/global.js"></script>
-</body>
-
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="./js/jQuery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="./js/global.js"></script>
+  </body>
 </html>
