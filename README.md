@@ -7,15 +7,15 @@ Global and India-specific dashboard for Covid19 pandemic to help visualize, inte
 - [Analysis (India)](https://romilshah525.github.io/Covid19/analysis.html)
 
 ## Getting Started
-[Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the repository [Covid19](https://github.com/romilshah525/Covid19) and [clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) it to your local machine to get started. Active internet connection is required for dynamic data fetching API requests.
+[Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [Covid19](https://github.com/romilshah525/Covid19) repository and [clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) it to your local machine to get started. Active internet connection is required for dynamic data fetching API requests.
 
 ## Learnings:
 - Effectively visualize the data.
 - Effectively interprating the data.
-- Handling large data effectively.
+- Handling large data effectively.wz
 - Using live data/API.
 - Dealing with github merge conflicts.
-- How to study pandemic data.
+- How to study and understand pandemic data.
 
 ## API's used:
 - Global data: [Rodrigo Pombo](https://github.com/pomber/covid19)
@@ -46,10 +46,10 @@ Global and India-specific dashboard for Covid19 pandemic to help visualize, inte
 - Having more plots to aid effective visualizations.
 - Makinfg more analytical data available.
 
-
 ## Project Inspiration
 - [Coivd19India](https://covid19india.org/)
+- [3Blue1Brown](https://www.youtube.com/watch?v=Kas0tIxDvrg)
+- [Minute Physics](https://www.youtube.com/watch?v=54XLXg4fYsc)
 
-
-## Contributing
-For any queries, suggesstions or contributions, feel free to contact me at [Romil Shah](mailto:romilshah525@gmail.com) or raise an [issue](https://help.github.com/en/enterprise/2.15/user/articles/creating-an-issue).
+## Contributions & Suggestions
+For any queries, suggesstions or contributions, feel free to contact me at [Romil Shah](mailto:romilshah525@gmail.com) or [raise an issue](https://help.github.com/en/enterprise/2.15/user/articles/creating-an-issue).
