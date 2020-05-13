@@ -42,7 +42,7 @@ function renderResourcesDetails(resources) {
   $(document).ready(function () {
     $("select").formSelect();
   });
-  document.getElementById("to-be-updated").innerHTML = ``;
+  document.getElementById("to-be-updated").remove();
   document.getElementById("state").value = "Andaman & Nicobar";
   updateResourcesTable();
 }
