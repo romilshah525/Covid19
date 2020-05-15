@@ -94,6 +94,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   totalRecovered = prevElement["recovered"];
   totalConfirmed = prevElement["confirmed"];
   totalActive = totalConfirmed - (totalDeath + totalRecovered);
+  document.getElementById("country-name").innerText = country;
   document.getElementById(
     "total-confirmed-cases"
   ).innerText = `${totalConfirmed.toLocaleString()}`;
@@ -226,7 +227,7 @@ function toggle() {
 }
 
 function insertWorldData(res) {
-  document.getElementById("to-be-updated").innerHTML = ``;
+  document.getElementById("to-be-updated").remove();
   document.getElementById(
     "global-total-confirmed-cases"
   ).innerText = `${res.confirmed.value.toLocaleString()}`;

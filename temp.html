@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Chart</title>
+  </head>
+
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="./math.js"></script>
+    <script>
+      let weeklyData = [];
+      let totalData = [];
+      let dailyData = [1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,22,2,1,3,5,9,15,8,10,10,11,10,14,20,25,27,58,78,69,94,74,86,73,153,136,120,187,309,424,486,560,579,609,484,573,565,813,871,854,758,1243,1031,886,1061,922,1371,1580,1239,1537,1292,1667,1408,1835,1607,1568,1902,1705,1801,2396,2564,2952,3656,2971,3602,3344,3339,3175,4311,3592,3562,3726];
+      for (let index = 0; index < dailyData.length; index += 7) {
+        weeklyData.push(
+          math.sum(
+            dailyData.slice(index, Math.min(index + 6, dailyData.length))
+          )
+        );
+        totalData.push(
+          math.sum(dailyData.slice(0, Math.min(index + 6, dailyData.length)))
+        );
+      }
+      var configlinear = {
+        type: "line",
+        data: {
+          labels: totalData,
+          datasets: [
+            {
+              label: "Confirmed Cases in India",
+              backgroundColor: "red",
+              borderColor: "red",
+              data: weeklyData,
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          title: {
+            display: true,
+            text: "Chart.js Line Chart",
+          },
+          tooltips: {
+            mode: "index",
+            intersect: false,
+          },
+          hover: {
+            mode: "nearest",
+            intersect: true,
+          },
+          scales: {
+            xAxes: [
+              {
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: "Total Cases",
+                },
+              },
+            ],
+            yAxes: [
+              {
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: "Weekly New Cases",
+                },
+              },
+            ],
+          },
+        },
+      };
+      var configLog = {
+        type: "line",
+        data: {
+          labels: totalData,
+          datasets: [
+            {
+              label: "My First dataset",
+              backgroundColor: "red",
+              borderColor: "red",
+              data: weeklyData,
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          title: {
+            display: true,
+            text: "Chart.js Line Chart - Logarithmic",
+          },
+          scales: {
+            xAxes: [
+              {
+                display: true,
+                type: "logarithmic",
+              },
+            ],
+            yAxes: [
+              {
+                display: true,
+                type: "logarithmic",
+              },
+            ],
+          },
+        },
+      };
+
+      let c = new Chart(
+        document.getElementById("canvas").getContext("2d"),
+        configLog
+      );
+    </script>
+  </body>
+</html>
