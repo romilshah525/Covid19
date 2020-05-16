@@ -1,14 +1,14 @@
-let jsondata,
+let death,
+  active,
+  jsondata,
   entiredata,
   myChart11,
   myChart12,
   myChart13,
   myChart14,
-  country = "India",
   confirmed,
-  active,
   recovered,
-  death;
+  country = "India";
 const ctx11 = document.getElementById("myChart11");
 
 Chart.pluginService.register({
@@ -46,7 +46,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
     totalConfirmed = 0,
     totalActive = 0,
     currElement,
-    prevElement = {
+    prevElement = {  
       confirmed: 0,
       deaths: 0,
       recovered: 0,
@@ -275,18 +275,11 @@ function readData() {
     .then((data) => insertOptionList(data))
     .then((data) => {
       jsondata = data;
-      if (window.screen.availWidth <= 650)
-        plotGraph(
-          jsondata[country],
-          !document.getElementById("mySwitch").checked,
-          8
-        );
-      else
-        plotGraph(
-          jsondata[country],
-          !document.getElementById("mySwitch").checked,
-          14
-        );
+      plotGraph(
+        jsondata[country],
+        !document.getElementById("mySwitch").checked,
+        window.screen.availWidth <= 650 ? 8 : 14
+      );
     })
     .then((res) => fetch("https://covid19.mathdro.id/api/"))
     .then((res) => res.json())

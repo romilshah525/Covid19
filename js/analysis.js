@@ -42,8 +42,8 @@ const colors = [
 
 let canvas1 = document.getElementById("canvas1").getContext("2d"),
   canvas2 = document.getElementById("canvas2").getContext("2d"),
-  canvas3 = document.getElementById("canvas3").getContext("2d"),
-  canvas4 = document.getElementById("canvas4").getContext("2d");
+  canvas3 = document.getElementById("canvas3").getContext("2d");
+// canvas4 = document.getElementById("canvas4").getContext("2d");
 
 let chipsElems = document.querySelectorAll(".chips-autocomplete");
 let instance = M.Chips.init(chipsElems, {
@@ -198,51 +198,51 @@ function insertOptionList(data) {
   );
 }
 
-function logScaleCalculation(res) {
-  entireIndiaData = res;
-  time_series_data = res.cases_time_series;
-  statewise = res.statewise;
-  time_series_data.forEach((a) => {
-    indiaTotalData.push(Number(a["totalconfirmed"]));
-    indiaWeeklyData.push(Number(a["dailyconfirmed"]));
-    dates.push(a["date"]);
-  });
-  for (let index = 0; index < indiaWeeklyData.length; index += 7) {
-    dateLabel.push(
-      dates[Math.min(index + 7, indiaWeeklyData.length - 1)].slice(0, 6)
-    );
-    total = 0;
-    temp = indiaWeeklyData.slice(index, index + 7);
-    temp.forEach((t) => (total += t));
-    weeklyDataLogScale.push(Math.log(total == 0 ? 1 : total).toLocaleString());
+// function logScaleCalculation(res) {
+//   entireIndiaData = res;
+//   time_series_data = res.cases_time_series;
+//   statewise = res.statewise;
+//   time_series_data.forEach((a) => {
+//     indiaTotalData.push(Number(a["totalconfirmed"]));
+//     indiaWeeklyData.push(Number(a["dailyconfirmed"]));
+//     dates.push(a["date"]);
+//   });
+//   for (let index = 0; index < indiaWeeklyData.length; index += 7) {
+//     dateLabel.push(
+//       dates[Math.min(index + 7, indiaWeeklyData.length - 1)].slice(0, 6)
+//     );
+//     total = 0;
+//     temp = indiaWeeklyData.slice(index, index + 7);
+//     temp.forEach((t) => (total += t));
+//     weeklyDataLogScale.push(Math.log(total == 0 ? 1 : total).toLocaleString());
 
-    total = 0;
-    temp = indiaTotalData.slice(index, index + 7);
-    temp.forEach((t) => (total += t));
-    totalDataLogScale.push(Math.log(total == 0 ? 1 : total).toLocaleString());
-  }
-  let tempData = [];
-  for (let index = 1; index < indiaWeeklyData.length - 1; index++) {
-    if (indiaWeeklyData[index] == 0 || indiaWeeklyData[index - 1] == 0) {
-      continue;
-    } else {
-      tempData.push(
-        Math.abs(
-          (indiaWeeklyData[index + 1] - indiaWeeklyData[index]) /
-            (indiaWeeklyData[index] - indiaWeeklyData[index - 1])
-        )
-      );
-    }
-  }
-  let tempTotal = 0;
-  tempData.forEach((el) => {
-    if (el != "Infinity") tempTotal += el;
-  });
-  document.getElementById("growth-factor").innerText = (
-    tempTotal / tempData.length
-  ).toLocaleString();
-  weeklyLogScaleCountPlot();
-}
+//     total = 0;
+//     temp = indiaTotalData.slice(index, index + 7);
+//     temp.forEach((t) => (total += t));
+//     totalDataLogScale.push(Math.log(total == 0 ? 1 : total).toLocaleString());
+//   }
+//   let tempData = [];
+//   for (let index = 1; index < indiaWeeklyData.length - 1; index++) {
+//     if (indiaWeeklyData[index] == 0 || indiaWeeklyData[index - 1] == 0) {
+//       continue;
+//     } else {
+//       tempData.push(
+//         Math.abs(
+//           (indiaWeeklyData[index + 1] - indiaWeeklyData[index]) /
+//             (indiaWeeklyData[index] - indiaWeeklyData[index - 1])
+//         )
+//       );
+//     }
+//   }
+//   let tempTotal = 0;
+//   tempData.forEach((el) => {
+//     if (el != "Infinity") tempTotal += el;
+//   });
+//   document.getElementById("growth-factor").innerText = (
+//     tempTotal / tempData.length
+//   ).toLocaleString();
+//   weeklyLogScaleCountPlot();
+// }
 
 function plotCountryWiseChart(countries, cat) {
   if (chart3) {
@@ -345,67 +345,67 @@ function toggleCategory() {
   );
 }
 
-function weeklyLogScaleCountPlot() {
-  let config4 = {
-    data: {
-      labels: dateLabel,
-      datasets: [
-        {
-          label: "Ratio",
-          data: weeklyDataLogScale,
-          fill: false,
-          backgroundColor: "#223e80ff",
-          borderColor: "#223e80ff",
-          pointRadius: 0,
-          borderWidth: size > 12 ? 3.5 : 1.5,
-        },
-      ],
-    },
-    type: "line",
-    options: {
-      responsive: true,
-      legend: {
-        display: false,
-        position: "bottom",
-        labels: { fontColor: "#222", fontSize: size },
-      },
-      title: {
-        display: true,
-        text: `Covid19 Weekly Count vs Total Count (Log Scale)`,
-        fontSize: size + 4,
-      },
-      tooltips: { mode: "index", intersect: false },
-      hover: { mode: "nearest", intersect: true },
-      chartArea: { backgroundColor: "#223e8011" },
-      scales: {
-        xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
-        yAxes: [
-          {
-            gridLines: { display: false },
-            ticks: { fontSize: 9 },
-          },
-        ],
-      },
-    },
-  };
-  if (size > 12) {
-    config4.options.legend.display = true;
-    config4.options.scales.xAxes = [
-      {
-        display: true,
-        scaleLabel: { display: true, labelString: "Date" },
-      },
-    ];
-    config4.options.scales.yAxes = [
-      {
-        display: true,
-        scaleLabel: { display: true, labelString: "Count " },
-        ticks: { fontSize: 12 },
-      },
-    ];
-  }
-  chart4 = new Chart(canvas4, config4);
-}
+// function weeklyLogScaleCountPlot() {
+//   let config4 = {
+//     data: {
+//       labels: dateLabel,
+//       datasets: [
+//         {
+//           label: "Ratio",
+//           data: weeklyDataLogScale,
+//           fill: false,
+//           backgroundColor: "#223e80ff",
+//           borderColor: "#223e80ff",
+//           pointRadius: 0,
+//           borderWidth: size > 12 ? 3.5 : 1.5,
+//         },
+//       ],
+//     },
+//     type: "line",
+//     options: {
+//       responsive: true,
+//       legend: {
+//         display: false,
+//         position: "bottom",
+//         labels: { fontColor: "#222", fontSize: size },
+//       },
+//       title: {
+//         display: true,
+//         text: `Covid19 Weekly Count vs Total Count (Log Scale)`,
+//         fontSize: size + 4,
+//       },
+//       tooltips: { mode: "index", intersect: false },
+//       hover: { mode: "nearest", intersect: true },
+//       chartArea: { backgroundColor: "#223e8011" },
+//       scales: {
+//         xAxes: [{ gridLines: { display: false }, ticks: { fontSize: 9 } }],
+//         yAxes: [
+//           {
+//             gridLines: { display: false },
+//             ticks: { fontSize: 9 },
+//           },
+//         ],
+//       },
+//     },
+//   };
+//   if (size > 12) {
+//     config4.options.legend.display = true;
+//     config4.options.scales.xAxes = [
+//       {
+//         display: true,
+//         scaleLabel: { display: true, labelString: "Date" },
+//       },
+//     ];
+//     config4.options.scales.yAxes = [
+//       {
+//         display: true,
+//         scaleLabel: { display: true, labelString: "Count " },
+//         ticks: { fontSize: 12 },
+//       },
+//     ];
+//   }
+//   chart4 = new Chart(canvas4, config4);
+// }
 
 function readData() {
   fetch("https://api.covid19india.org/raw_data.json")
@@ -414,11 +414,11 @@ function readData() {
     .then((res) => fetch("https://pomber.github.io/covid19/timeseries.json"))
     .catch((err) => fetch("Covid19/json/global.json"))
     .then((response) => response.json())
-    .then((data) => insertOptionList(data))
-    .then((res) => fetch("https://api.covid19india.org/data.json"))
-    .catch((err) => fetch("Covid19/json/india.json"))
-    .then((res) => res.json())
-    .then((res) => logScaleCalculation(res));
+    .then((data) => insertOptionList(data));
+  // .then((res) => fetch("https://api.covid19india.org/data.json"))
+  // .catch((err) => fetch("Covid19/json/india.json"))
+  // .then((res) => res.json())
+  // .then((res) => logScaleCalculation(res));
 }
 
 // // no.of cases per day delayed by 15 days
