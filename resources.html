@@ -143,11 +143,15 @@
         <h6>Scroll to see more</h6>
       </div>
       <div class="row" style="margin-top: 1.5rem !important;">
-        <div class="input-field col s12 m6">
-          <select id="zone-state" onchange="updateZoneColor()"></select>
+        <div class="input-field col s12 m4">
+          <select id="zone-state" onchange="selectDistrict()"></select>
+          <label>Select State</label>
+        </div>
+        <div class="input-field col s12 m4">
+          <select id="zone-district" onchange="updateZoneColor()"></select>
           <label>Select District</label>
         </div>
-        <div class="col s12 m6 center-align" id="zone-name-text"></div>
+        <div class="col s12 m4 center-align margin-top" id="zone-name-text"></div>
       </div>
     </main>
     <footer class="page-footer grey darken-3">
@@ -201,7 +205,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./js/jQuery.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
     <script src="./js/resources.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
