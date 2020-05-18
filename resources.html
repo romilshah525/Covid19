@@ -58,7 +58,7 @@
         >
         <ul class="right hide-on-med-and-down">
           <li><a href="./india.html">India Dashboard</a></li>
-          <li><a href="./analysis.html">Analysis (India)</a></li>
+          <li><a href="./analysis.html">Analysis</a></li>
           <li>
             <a class="dropdown-trigger" href="#!" data-target="dropdownforlinks"
               >Important Links<i class="material-icons right"
@@ -87,7 +87,7 @@
           <li class="divider"></li>
           <li><a href="./index.html">Global Dashboard</a></li>
           <li><a href="./india.html">India Dashboard</a></li>
-          <li><a href="./analysis.html">Analysis (India)</a></li>
+          <li><a href="./analysis.html">Analysis</a></li>
           <li class="divider"></li>
           <li>
             <a href="https://github.com/romilshah525/" target="_blank"
@@ -142,16 +142,23 @@
       <div class="center-align hide-on-med-and-up" style="margin: 1rem;">
         <h6>Scroll to see more</h6>
       </div>
-      <div class="row" style="margin-top: 1.5rem !important;">
-        <div class="input-field col s12 m4">
+      <div class="row my-margin-top">
+        <div class="input-field col s12 m6 l4">
           <select id="zone-state" onchange="selectDistrict()"></select>
           <label>Select State</label>
         </div>
-        <div class="input-field col s12 m4">
+        <div class="input-field col s12 m6 l4">
           <select id="zone-district" onchange="updateZoneColor()"></select>
           <label>Select District</label>
         </div>
-        <div class="col s12 m4 center-align margin-top" id="zone-name-text"></div>
+        <div
+          class="col s12 l4 center-align margin-top"
+          id="zone-name-text"
+        ></div>
+        <h6
+          class="col s12 center-align grey-text text-darken-4"
+          id="zone-name-tips"
+        ></h6>
       </div>
     </main>
     <footer class="page-footer grey darken-3">
@@ -195,7 +202,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container center">
-          &copy; Made by
+          &copy; Made with <span style="color: rgb(245, 35, 35);">&#10084;</span> by
           <a href="https://github.com/romilshah525" target="_blank"
             >Romil Shah</a
           >

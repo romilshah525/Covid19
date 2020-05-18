@@ -5,6 +5,17 @@ let data = [],
     Red: "#ff0d0d",
     Orange: "#ff8a0d",
     Green: "#78d669",
+  },
+  statementForZone = {
+    Red: `
+    The risk out is very high. Try and avoid stepping out as much as you can. Step out only when it is absolutely necessary. Having said that, don't start hoarding
+    either. Essential services won't ever be stopped. Stay Home, Stay Safe and Take Care of you & your family. And remember, we will beat this!`,
+    Green: `
+    The risk out is quite low. But that doesn't mean you should stop taking precautions. Remember, the pandemic is not gone, it is just avoided by your precautions.
+    So keep taking precautions and be safe. Stay Home, Stay Safe and Take Care of you & your family. And remember, we will beat this!`,
+    Orange: `
+    The risk out is moderate. Even though things seem under control, conditions aren't perfect yet. So, keep following the precaution steps as adviced and help
+    in some way, if possible. Stay Home, Stay Safe and Take Care of you & your family. And remember, we will beat this!`,
   };
 
 function renderResourcesDetails(resources) {
@@ -32,6 +43,8 @@ function renderResourcesDetails(resources) {
     $("select").formSelect();
   });
   document.getElementById("to-be-updated").remove();
+  document.getElementById("state").value = "Andaman & Nicobar";
+  updateResourcesTable();
 }
 
 function updateResourcesTable() {
@@ -82,6 +95,9 @@ function updateZoneColor() {
   } !important; font-weight: bolder;">${
     state_district_wise[state][district]
   }</h5>`;
+  document.getElementById("zone-name-tips").innerHTML = `${
+    statementForZone[state_district_wise[state][district]]
+  }`;
 }
 
 function readData() {

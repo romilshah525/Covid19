@@ -33,8 +33,11 @@ canvas {
   .text-small {
     font-size: small !important;
   }
-  .margin-top{
+  .margin-top {
     margin-top: 0 !important;
+  }
+  .my-margin-top{
+    margin-top: 0rem !important;
   }
 }
 
@@ -62,10 +65,14 @@ canvas {
   color: #fff;
 }
 
-.chip{
+.chip {
   font-size: 1rem;
 }
 
-.margin-top{
+.margin-top {
   margin-top: 1rem;
+}
+
+.my-margin-top {
+  margin-top: 1.5rem !important;
 }

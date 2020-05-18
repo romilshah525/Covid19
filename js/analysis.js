@@ -32,9 +32,6 @@ let instance = M.Chips.init(chipsElems, {
   data: [
     { tag: "India" },
     { tag: "China" },
-    { tag: "Spain" },
-    { tag: "Italy" },
-    { tag: "US" },
   ],
   autocompleteOptions: {
     data: countryList,
