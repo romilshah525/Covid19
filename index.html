@@ -192,6 +192,29 @@
             <div class="col s12">
               <canvas id="myChart11" class="center"></canvas>
             </div>
+            <ul class="pagination center-align">
+              <li
+                class="waves-effect active grey darken-1"
+                id="plot-begining"
+              >
+                <a href="#" onclick="changeTimeline('1')"
+                  >Begining</a
+                >
+              </li>
+              <li class="waves-effect" id="plot-2-months">
+                <a href="#" onclick="changeTimeline('2')"
+                  >Last 2 Months</a
+                >
+              </li>
+              <li class="waves-effect" id="plot-month">
+                <a href="#" onclick="changeTimeline('3')"
+                  >Last 1 Month</a
+                >
+              </li>
+            </ul>
+            <div class="center-align">
+              <small>Hover / Glide over the graph for more details.</small>
+            </div>
           </div>
         </div>
       </div>

@@ -143,6 +143,29 @@
               style="margin: 0% !important; padding: 0rem !important;"
             >
               <canvas id="myChart11" class="center"></canvas>
+              <ul class="pagination center-align">
+                <li
+                  class="waves-effect active grey darken-1"
+                  id="plot-begining"
+                >
+                  <a href="#" onclick="changeTimeline('1')"
+                    >Begining</a
+                  >
+                </li>
+                <li class="waves-effect" id="plot-2-months">
+                  <a href="#" onclick="changeTimeline('2')"
+                    >Last 2 Months</a
+                  >
+                </li>
+                <li class="waves-effect" id="plot-month">
+                  <a href="#" onclick="changeTimeline('3')"
+                    >Last 1 Month</a
+                  >
+                </li>
+              </ul>
+              <div class="center-align">
+                <small>Hover / Glide over the graph for more details.</small>
+              </div>
             </div>
           </div>
           <table class="centered">
@@ -272,7 +295,8 @@
       </div>
       <div class="footer-copyright">
         <div class="container center">
-          &copy; Made with <span style="color: rgb(245, 35, 35);">&#10084;</span> by
+          &copy; Made with
+          <span style="color: rgb(245, 35, 35);">&#10084;</span> by
           <a href="https://github.com/romilshah525" target="_blank"
             >Romil Shah</a
           >

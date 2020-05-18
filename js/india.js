@@ -244,22 +244,47 @@ function plotGraph(data, size, ct) {
   ).slice(0, 5)}%`;
 }
 
-function toggle() {
-  name = document.getElementById("my-select").value;
+function toggle(len = 0, fromSelectStates = true) {
+  if (fromSelectStates) {
+    let id = "plot-begining";
+    let classes = ["active", "grey", "darken-1"];
+    let previousElement = document.querySelectorAll("li.active")[0];
+    let selectedElement = document.getElementById(id);
+    classes.forEach((cls) => {
+      previousElement.classList.remove(cls);
+      selectedElement.classList.add(cls);
+    });
+  }
+
+  let name = document.getElementById("my-select").value,
+    selectedData = [],
+    temp_time_series_data = [];
   if (name != "in") {
-    selectedData = [];
-    for (let i = 0; i < states_daily.length; i += 3) {
+    if (len == 0) len = states_daily.length;
+    let temp_states_daily = states_daily.slice(
+      states_daily.length - len * 3,
+      states_daily.length
+    );
+    for (let i = 0; i < temp_states_daily.length; i += 3) {
       let temp = {};
-      temp["date"] = states_daily[i]["date"];
-      temp["dailyconfirmed"] = states_daily[i][name];
-      temp["dailyrecovered"] = states_daily[i + 1][name];
-      temp["dailydeceased"] = states_daily[i + 2][name];
+      temp["date"] = temp_states_daily[i]["date"];
+      temp["dailyconfirmed"] = temp_states_daily[i][name];
+      temp["dailyrecovered"] = temp_states_daily[i + 1][name];
+      temp["dailydeceased"] = temp_states_daily[i + 2][name];
       selectedData.push(JSON.parse(JSON.stringify(temp)));
     }
+  } else {
+    if (len == 0) len = time_series_data.length;
+    temp_time_series_data = time_series_data.slice(
+      time_series_data.length - len,
+      time_series_data.length
+    );
   }
-  if (window.screen.availWidth <= 650)
-    plotGraph(name == "in" ? time_series_data : selectedData, 6, name);
-  else plotGraph(name == "in" ? time_series_data : selectedData, 14, name);
+  plotGraph(
+    name == "in" ? temp_time_series_data : selectedData,
+    window.screen.availWidth <= 650 ? 6 : 14,
+    name
+  );
 }
 
 function fillStateDataTable(res) {
@@ -365,6 +390,28 @@ function tabulateToggle() {
     optionsStateSummary.options.scales.yAxes[0].ticks.fontSize = 8;
   }
   myChart15 = new Chart(ctx15, optionsStateSummary);
+}
+
+function changeTimeline(key) {
+  let id = "";
+  let len = 0;
+  if (key == "1") {
+    id = "plot-begining";
+  } else if (key == "2") {
+    id = "plot-2-months";
+    len = 60;
+  } else if (key == "3") {
+    id = "plot-month";
+    len = 30;
+  }
+  let classes = ["active", "grey", "darken-1"];
+  let previousElement = document.querySelectorAll("li.active")[0];
+  let selectedElement = document.getElementById(id);
+  classes.forEach((cls) => {
+    previousElement.classList.remove(cls);
+    selectedElement.classList.add(cls);
+  });
+  toggle(len, false);
 }
 
 function readData() {

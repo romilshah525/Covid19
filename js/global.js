@@ -46,7 +46,7 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
     totalConfirmed = 0,
     totalActive = 0,
     currElement,
-    prevElement = {  
+    prevElement = {
       confirmed: 0,
       deaths: 0,
       recovered: 0,
@@ -59,7 +59,9 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
       );
       confirmed.push(currElement["confirmed"] - prevElement["confirmed"]);
       death.push(Math.max(currElement["deaths"] - prevElement["deaths"], 0));
-      recovered.push(currElement["recovered"] - prevElement["recovered"]);
+      recovered.push(
+        Math.max(currElement["recovered"] - prevElement["recovered"], 0)
+      );
       active.push(
         Math.max(
           currElement["confirmed"] -
@@ -210,20 +212,28 @@ function plotGraph(data = entiredata, daily = false, size = 16) {
   myChart11 = new Chart(ctx11.getContext("2d"), optionsConfirmed);
 }
 
-function toggle() {
+function toggle(len = 0, fromSelectCountries = true) {
   country = document.getElementById("my-select").value;
-  if (window.screen.availWidth <= 650)
-    plotGraph(
-      entiredata[country],
-      !document.getElementById("mySwitch").checked,
-      8
-    );
-  else
-    plotGraph(
-      entiredata[country],
-      !document.getElementById("mySwitch").checked,
-      14
-    );
+  if (fromSelectCountries) {
+    let id = "plot-begining";
+    let classes = ["active", "grey", "darken-1"];
+    let previousElement = document.querySelectorAll("li.active")[0];
+    let selectedElement = document.getElementById(id);
+    classes.forEach((cls) => {
+      previousElement.classList.remove(cls);
+      selectedElement.classList.add(cls);
+    });
+  }
+  if (len == 0) len = entiredata[country].length;
+  let data = entiredata[country].slice(
+    entiredata[country].length - len,
+    entiredata[country].length
+  );
+  plotGraph(
+    data,
+    !document.getElementById("mySwitch").checked,
+    window.screen.availWidth <= 650 ? 8 : 14
+  );
 }
 
 function insertWorldData(res) {
@@ -266,6 +276,29 @@ function insertOptionList(data) {
     $("select").formSelect();
   });
   return data;
+}
+
+function changeTimeline(key) {
+  let id = "";
+  let len = 0;
+  if (key == "1") {
+    id = "plot-begining";
+    len = 0;
+  } else if (key == "2") {
+    id = "plot-2-months";
+    len = 60;
+  } else if (key == "3") {
+    id = "plot-month";
+    len = 30;
+  }
+  let classes = ["active", "grey", "darken-1"];
+  let previousElement = document.querySelectorAll("li.active")[0];
+  let selectedElement = document.getElementById(id);
+  classes.forEach((cls) => {
+    previousElement.classList.remove(cls);
+    selectedElement.classList.add(cls);
+  });
+  toggle(len, false);
 }
 
 function readData() {

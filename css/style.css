@@ -36,7 +36,7 @@ canvas {
   .margin-top {
     margin-top: 0 !important;
   }
-  .my-margin-top{
+  .my-margin-top {
     margin-top: 0rem !important;
   }
 }
@@ -75,4 +75,8 @@ canvas {
 
 .my-margin-top {
   margin-top: 1.5rem !important;
+}
+
+.pagination li a {
+  font-size: 0.9rem;
 }
