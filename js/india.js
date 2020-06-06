@@ -328,7 +328,7 @@ function tabulateToggle() {
   let optionsStateSummary = {
     type: "bar",
     data: {
-      labels: ["Confirmed", "Active", "Deaths", "Recovered"],
+      labels: ["Confirmed", "Active", "Recovered", "Deaths"],
       datasets: [
         {
           label: `${mapper[name.toLowerCase()]}`,
@@ -422,6 +422,9 @@ function readData() {
       entireData = res;
       time_series_data = res.cases_time_series;
       statewise = res.statewise;
+      document.getElementById("total-tested").innerText =
+        " Total Tests Conducted : " +
+        Number(entireData.tested[87]["totalsamplestested"]).toLocaleString();
     })
     .then((res) => fetch("https://api.covid19india.org/states_daily.json"))
     .catch((err) => fetch("Covid19/json/states_daily.json"))
